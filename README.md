@@ -1,70 +1,74 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <h1 align="center">Thirteen Moons 🌙</h1>
 
-## Available Scripts
+<div align="center">  
 
-In the project directory, you can run:
+An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.herokuapp.com/).
 
-### `yarn start`
+</div>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- ## Preview
 
-### `yarn test`
+--- -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `yarn build`
+- 52 Cards with their image, points, and activities.
+- Ability to edit certain face cards for custom challenge.
+- Score Board adding up the total values of the cards chosen.
+- 13 Rounds in total, Each round user is presented 4 cards, they choose one thing to do. When they do it, points are added to the board.
+- See your total points at the end of the game!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation & Start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the project and install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```szh
+git clone git@github.com:andrewvallejo/thirteen-moons.git
+cd thirteen-moons
+npm install 
+npm start
+```
 
-### `yarn eject`
+<!-- ## Future Additions 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> - User login feature 
+> - User profile that contains their answers and ratings 
+> - Add a set of backend interview questions and backend/frontend modes 
+> - Allow users to add questions
+> - Sort answers by rating, date added, and authors
+> - Ability to favorite questions and answers -->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## <h2 align="center">  **Author**  </h2>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### <h3 align="center">  **Andrew Vallejo**  </h3>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<div align="center">
 
-## Learn More
+**Learning Goals** Lorem ipsum dolor, sit amet consectetur adipisicing elit.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Challenges:** Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo consequuntur laboriosam id veritatis atque totam sit, magni repellat amet, magnam, sunt tempore saepe commodi numquam unde cupiditate nemo accusamus possimus.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<div align="center">  
+<img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
+<img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square" alt="HTML5 Badge">
+<img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
+<img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge">
+<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=flat-square" alt="Heroku Badge">
+<img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge">  
+</div>
 
-### Code Splitting
+</div>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+<div align="center">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Follow me on [Github](https://www.github.com/andrewvallejo)!
 
-### Making a Progressive Web App
+Or find me on [Linkedin](https://www.linkedin.com/in/andrewvallejo/)!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</div>
