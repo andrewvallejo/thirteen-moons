@@ -7,3 +7,11 @@ export const reducer = (state, action) => {
   }
 }
  
+export const getAction = (type, item) =>  {
+  switch (type) {
+    case 'deck':
+      return ({type: 'ADD_DECK', deck: item})
+    default:
+      break;
+  }
+}  
