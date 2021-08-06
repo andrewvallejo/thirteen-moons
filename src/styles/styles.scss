@@ -1,18 +1,18 @@
 /* ==========================================================================
 l - Tools & Settings - Global Variables & Mixins
 ========================================================================== */
-@use './l-tools-&-settings/settings-colors.scss';
-@use './l-tools-&-settings/settings-typography.scss';
-@use './l-tools-&-settings/tools-keyframes.scss';
-@use './l-tools-&-settings/tools-mixins.scss';
+@import './l-tools-&-settings/settings-colors.scss';
+@import './l-tools-&-settings/settings-typography.scss';
+@import './l-tools-&-settings/tools-keyframes.scss';
+@import './l-tools-&-settings/tools-mixins.scss';
 
 /* ==========================================================================
 ll - Elements - Semantic Elements & Defaults
 ========================================================================== */
-@use './ll-elements/defaults.scss';
-@use './ll-elements/elements.scss';
+@import './ll-elements/defaults.scss';
+@import './ll-elements/elements.scss';
 
 /* ==========================================================================
 lll - Components 
 ========================================================================== */
-@use './lll-components/MoonCard.scss';
+@import './lll-components/MoonCard.scss';
