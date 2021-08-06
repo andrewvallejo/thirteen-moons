@@ -12,7 +12,8 @@ header {
 }
 
 main {
-  @include grid(desktop)
+  width: 100vw;
+  height: 100vh;
 }
 
 article {
