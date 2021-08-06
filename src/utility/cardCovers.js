@@ -10,7 +10,8 @@ import cover9 from "../assets/saturn-pandelum.png";
 import cover10 from "../assets/shiny-gem.png";
 import cover11 from "../assets/sun-lunar-flower.png";
 
-export {
+
+export const covers = [
   cover1,
   cover2,
   cover3,
@@ -22,4 +23,4 @@ export {
   cover9,
   cover10,
   cover11,
-};
+]
