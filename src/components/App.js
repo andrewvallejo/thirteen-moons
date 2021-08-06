@@ -1,7 +1,8 @@
 import React, { useEffect, useReducer  } from 'react';
-import { MoonCard } from './Card'
-import { reducer } from '../utility/reducer';
+import { MoonCard } from './MoonCard'
+import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck } from '../utility/api'
+
 
 const initialState = {
   deck: []
@@ -13,14 +14,13 @@ export const App = () => {
   useEffect(() => {
     (async () => {
       const cards = await fetchDeck()
-      const action = {type: 'ADD_DECK', deck: cards}  
-      dispatch(action)
+      dispatch(action('deck', cards))
     })();
   }, []);
  
     return (
        <main>
-          <MoonCard deck={state.deck} />
+                 <MoonCard deck={state.deck} />
       </main> 
     )
 }
