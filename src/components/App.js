@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer  } from 'react';
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
-import { shuffle, spread } from '../utility/util'
+import { shuffle, drawHand } from '../utility/util'
 import { Spread } from './Spread';
 
 const initialState = {
@@ -17,14 +17,14 @@ export const App = () => {
       let cards = await fetchDeck()
       cards = cleanCards(cards)
       shuffle(cards)
-      let {currentDeck: deck, currentHand:hand} = spread(cards)
+      let {currentDeck: deck, currentHand:hand} = drawHand(cards)
       dispatch(action(deck.type, deck.deck))
       dispatch(action(hand.type, hand.deck))
     })();
   }, []);
  
   const updateDeck = (currentDeck) => {
-    let {currentDeck: deck, currentHand:hand} = spread(currentDeck)
+    let {currentDeck: deck, currentHand:hand} = drawHand(currentDeck)
     dispatch(action(deck.type, deck.deck))
     dispatch(action(hand.type, hand.deck))
   }
