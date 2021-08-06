@@ -35,7 +35,6 @@ export const cleanCards = (cards) => {
       suit: suit,
       abrv: suit[0] + value
    } 
-      
    return newCard
   })
   return cleanedCards
