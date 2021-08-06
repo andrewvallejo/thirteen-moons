@@ -1,0 +1,48 @@
+html {
+  background: $color-primary;
+}
+
+body {
+  background-color: $color-primary;
+}
+
+header {
+  @include flex(row, between);
+}
+
+main {
+  @include grid(desktop)
+}
+
+article {
+  @include flex(column, around);
+}
+
+form {
+  @include flex(column, space);
+}
+
+button {
+  @include flex(column, center);
+}
+
+h1 {
+  @include heading;
+}
+
+h2 {
+  @include subheading;
+}
+
+h3 {
+  @include paragraph;
+}
+
+p {
+  @include paragraph;
+}
+
+a {
+  color: $color-dark;
+}
+
