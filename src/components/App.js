@@ -2,7 +2,7 @@ import React, { useEffect, useReducer  } from 'react';
 import { MoonCard } from './MoonCard'
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
-import { drawFour, shuffle, discard } from '../utility/util'
+import { shuffle, spread} from '../utility/util'
 
 const initialState = {
   deck: [],
@@ -19,17 +19,15 @@ export const App = () => {
       dispatch(action('deck', cards))
     })();
   }, []);
-
-  const spread = () => {
-    const cards = drawFour(state.deck)
-    const remainingCards = discard(state.deck, cards)
-    return cards
+ 
+  const updateDeck = (action) => {
+    const {type, deck} = action
+    dispatch(action(type, deck))
   }
 
- 
     return (
        <main>
-          <MoonCard deck={spread()} />
+          <MoonCard deck={state.deck} draw={updateDeck} />
       </main> 
     )
 }
