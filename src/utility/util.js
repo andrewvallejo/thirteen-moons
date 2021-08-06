@@ -16,7 +16,7 @@ export const discardFour = (deck, cards) => {
   })
 }
 
-export const spread = (deck) => {
+export const drawHand = (deck) => {
   const cards = drawFour(deck)
   const currentDeck = discardFour(deck, cards)
   const actions = {
