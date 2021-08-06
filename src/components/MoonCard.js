@@ -9,7 +9,12 @@ export const MoonCard = ({ deck }) => {
       const { code, suit, value } = card
       return (
         <article key={id}>
-         <img className="moon-card" alt="card" src={createCover()} id={code} key={id} value={value} talent={suit}/>
+         
+        <div className="blending-modes"> 
+         <img className="moon-card" alt="card" src={createCover()} id={code} key={id} value={value} talent={suit} />
+         <aside className='darken'/> <aside className='overlay'/> <aside className='hue'/> 
+        </div>
+
         </article>
        )
    })
