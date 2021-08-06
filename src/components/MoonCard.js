@@ -8,8 +8,8 @@ export const MoonCard = ({ deck }) => {
       const id = nanoid(10)
       const { code, suit, value } = card
       return (
-        <article className="moon-card" key={id}>
-         <img alt="card" src={createCover()} id={code} key={id} value={value} className={suit}  />
+        <article key={id}>
+         <img className="moon-card" alt="card" src={createCover()} id={code} key={id} value={value} talent={suit}/>
         </article>
        )
    })
