@@ -20,7 +20,7 @@ export const App = () => {
  
     return (
        <main>
-                 <MoonCard deck={state.deck} />
+          <MoonCard deck={state.deck} />
       </main> 
     )
 }
