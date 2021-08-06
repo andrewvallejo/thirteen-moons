@@ -19,6 +19,10 @@ export const discardFour = (deck, cards) => {
 export const spread = (deck) => {
   const cards = drawFour(deck)
   const currentDeck = discardFour(deck, cards)
-  const action = {type: 'UPDATE_DECK', deck: currentDeck}
-  return action
+  const actions = {
+   currentDeck: {type: 'currentDeck', deck: currentDeck},
+   currentHand: {type: 'hand', deck: cards}
 }
+  return actions
+}
+
