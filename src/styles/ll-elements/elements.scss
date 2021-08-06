@@ -1,9 +1,10 @@
 html {
-  background: $color-primary;
+  background: $color-l;
 }
 
 body {
-  background-color: $color-primary;
+  background-color: $color-l;
+  color: $color-white
 }
 
 header {
@@ -43,6 +44,6 @@ p {
 }
 
 a {
-  color: $color-dark;
+  color: $color-white;
 }
 
