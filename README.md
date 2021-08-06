@@ -4,6 +4,8 @@
 <div align="center">  
 
 An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.herokuapp.com/).
+  
+Curious about my wireframe? Check it our on [Figma](https://www.figma.com/file/uHVglY9n41qDzZRELkm0LB/Thirteen-Moons)!
 
 </div>
 
