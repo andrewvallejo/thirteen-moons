@@ -1,0 +1,83 @@
+.message-bar {
+  position: absolute;
+  top: 2.5%;
+  z-index: 1;
+  border-radius: 100px;
+  border: 2px solid $color-lV;
+  width: 30rem;
+  height: 5.5rem;
+  background: $color-l;
+  .moon-face {
+    transform: scale(.42);
+    position: absolute;
+    left: -11.5%;
+    border: 3px solid $color-black;
+    border-radius: 50%;
+    background-color: $color-black;
+    mix-blend-mode: darken;
+  }
+  .dialog-container {
+    position: absolute;
+    z-index: 2;
+    border-radius: 7px;
+    right: 10%;
+    width: 70%;
+    height: 75%;
+    &:after {
+      content: "";
+      position: absolute;
+      top: -1.4%;
+      left: -.5%;
+      border-radius: 7px;
+      opacity: .3;
+      background: $color-V;
+      width: 100%;
+      height: 100%;
+      border: 1.5px solid $color-lll;
+    }
+    .dialog {
+      @include flex(column, center);
+      position: absolute;
+      z-index: 10;
+      inset: 0;
+      margin: 0 .4rem;
+      width: 95%;
+      height: 100%;
+      font-size: clamp(1rem, 3vw, 3rem);
+      color: $color-V;
+      text-align: center;
+      filter: opacity(1);
+    }
+  }
+}
+
+/* Rectangle 33 */
+
+// position: absolute;
+// width: 834.67px;
+// height: 154.85px;
+// left: 876.78px;
+// top: 32.29px;
+
+// /* Swarm Black */
+// background: #004643;
+// /* honey yellow */
+// border: 1px solid #F6AE2D;
+// box-sizing: border-box;
+// border-radius: 84px;
+
+// /* Rectangle 34 */
+
+// position: absolute;
+// width: 551.17px;
+// height: 103.18px;
+// left: 1045.37px;
+// top: 58px;
+
+// /* rhythem */
+// background: #797A9E;
+// opacity: 0.5;
+// /* light cyan */
+// border: 0.5px solid #D9FFF5;
+// box-sizing: border-box;
+// border-radius: 7px;

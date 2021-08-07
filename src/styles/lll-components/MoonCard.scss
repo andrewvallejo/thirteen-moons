@@ -1,6 +1,5 @@
-
 .moon-card {
-  margin: 0 1rem;
+  margin: 7rem 1rem 0rem 1rem;
   .style-container, .card-image {
     position: relative;
     width: 7.5rem;
@@ -23,24 +22,21 @@
   }
 }
   
-  .darken {
-    position: absolute;
-    inset: 0;
-    background: $color-white;
-    mix-blend-mode: darken;
-    opacity: 0.9;
-    z-index: 4;
-    pointer-events: none;
-  }
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: $color-black;
-    mix-blend-mode: lighten;
-    opacity: 0.4;
-    z-index: 3;
-    pointer-events: none;
-  }
-
-
-  
+.darken {
+  position: absolute;
+  inset: 0;
+  background: $color-white;
+  mix-blend-mode: darken;
+  opacity: 0.9;
+  z-index: 4;
+  pointer-events: none;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: $color-black;
+  mix-blend-mode: lighten;
+  opacity: 0.4;
+  z-index: 3;
+  pointer-events: none;
+}

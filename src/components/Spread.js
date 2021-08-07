@@ -1,15 +1,14 @@
 import React from "react"
 import { MoonCard } from './MoonCard'
-
+import { MoonLevel } from "./MoonLevel"
+import { MoonMsgBar } from './MoonMsgBar'
 
 export const Spread = ({deck, hand, draw}) => {
-  
-
-
-
-  return (
+    return (
     <section className="card-spread">
-      <MoonCard deck={hand}/>
-    </section>
+      <MoonMsgBar />
+      <MoonLevel levels={deck}/>
+        <MoonCard deck={hand}/>
+      </section>
   )
 }
