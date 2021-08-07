@@ -3,8 +3,7 @@ html {
 }
 
 body {
-  background-color: $color-lll;
-  background-image: $background-texture
+  background: $color-lll $background-texture;
 }
 
 header {
@@ -41,7 +40,7 @@ h3 {
 }
 
 p {
-  font-size: 2em;
+  font-size: $font-size-paragraph;
 }
 
 a {
