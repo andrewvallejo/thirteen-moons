@@ -3,7 +3,7 @@
 
 <div align="center">  
 
-An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.herokuapp.com/).
+An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.netlify.app/).
   
 Curious about my wireframe? Check it our on [Figma](https://www.figma.com/file/uHVglY9n41qDzZRELkm0LB/Thirteen-Moons)!
 
@@ -34,6 +34,8 @@ npm install
 npm start
 ```
 
+
+
 <!-- ## Future Additions 
 
 > - User login feature 
@@ -59,7 +61,7 @@ npm start
 <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=flat-square" alt="HTML5 Badge">
 <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=flat-square" alt="CSS3 Badge">
 <img src="https://img.shields.io/badge/Sass-C69?logo=sass&logoColor=fff&style=flat-square" alt="Sass Badge">
-<img src="https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=flat-square" alt="Heroku Badge">
+<img src="https://img.shields.io/badge/Netlify-00C7B7?logo=netlify&logoColor=fff&style=flat-square" alt="Netlify Badge" Badge">
 <img src="https://img.shields.io/badge/Cypress-17202C?logo=cypress&logoColor=fff&style=flat-square" alt="Cypress Badge">  
 </div>
 
