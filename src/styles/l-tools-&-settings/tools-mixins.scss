@@ -46,19 +46,19 @@
 
 /* === Fonts === */
 @mixin heading {
-  @include scaling($font-size-heading, font);
+  @include scaling-font($font-size-heading);
 }
 
 @mixin subheading {
-  @include scaling($font-size-subheading, font);
+  @include scaling-font($font-size-subheading);
 }
 
 @mixin paragraph {
-  @include scaling($font-size-paragraph, font);
+  @include scaling-font((1rem, 1vw, 2.5rem));
 }
 
 @mixin button {
-  @include scaling($font-size-button, font);
+  @include scaling-font($font-size-button);
 }
 
 /* === Media Queries === */
@@ -91,10 +91,8 @@
   background: adjust-color($color, $alpha: $value);
 }
 
-@mixin scaling($value, $property) {
-  @if $property==font {
-  font-size: clamp($value);
-  } 
+@mixin scaling-font($property) {
+  font-size: $property;
 }
 
 
