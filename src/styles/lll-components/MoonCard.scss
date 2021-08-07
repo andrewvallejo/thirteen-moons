@@ -23,7 +23,6 @@
   }
 }
   
-.blending-modes {
   .darken {
     position: absolute;
     inset: 0;
@@ -42,15 +41,6 @@
     z-index: 3;
     pointer-events: none;
   }
-  .hue {
-    position: absolute;
-    inset: 0;
-    background: $color-l;
-    mix-blend-mode: saturation;
-    opacity: 0.3;
-    z-index: 2;
-    pointer-events: none;
-  } 
-}
+
 
   
