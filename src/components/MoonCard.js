@@ -10,7 +10,7 @@ export const MoonCard = ({ deck }) => {
          <article className='moon-card' key={id}>
             <div className="style-container"> 
                <img className="card-image" alt="card" src={createCover()} id={code} key={id} value={value} talent={suit} />
-               <aside className='darken'/> <aside className='overlay'/> <aside className='hue'/> 
+               <aside className='darken'/> <aside className='overlay'/> 
             </div>
          </article>
        )
