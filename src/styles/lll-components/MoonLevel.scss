@@ -1,0 +1,13 @@
+.moon-levels {
+  @include flex(column, space-between);
+  position: absolute;
+  right: 0;
+  height: 100%;
+  padding: 1rem 0;
+  .moon-divider {
+    position: absolute;
+    height: 90%; 
+    width: .5rem;
+    right: 95%;
+  }
+}
