@@ -6,14 +6,23 @@
 An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.netlify.app/).
   
 Curious about my wireframe? Check it our on [Figma](https://www.figma.com/file/uHVglY9n41qDzZRELkm0LB/Thirteen-Moons)!
-
+  
 </div>
 
----
 
-<!-- ## Preview
 
---- -->
+ ## Preview - Current Version!
+ 
+ <div align="right">  
+
+**Dislaimer:** If you're on a phone, this is meant be played on sideways. 
+  
+  If you are viewing this currently on desktop, know that I am designing this with mobile first in mind! 📱
+  
+<div>
+
+![image](https://user-images.githubusercontent.com/17935770/128615434-7917faa6-1074-4e16-bb0b-6c6e5ee90397.png)
+
 
 ## Features
 
