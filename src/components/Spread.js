@@ -5,7 +5,7 @@ import { MoonLevel } from "./MoonLevel"
 export const Spread = ({deck, hand, draw}) => {
     return (
     <section className="card-spread">
-      <MoonLevel />
+      <MoonLevel levels={deck}/>
         <MoonCard deck={hand}/>
       </section>
   )
