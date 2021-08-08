@@ -8,7 +8,7 @@ export const Spread = ({deck, hand, draw}) => {
         <section className="card-spread">
               <MoonMsgBar />
               <MoonLevel levels={deck}/>
-              <MoonCard deck={hand}/>
+              <MoonCard cards={hand}/>
             </section>
   )
 }
