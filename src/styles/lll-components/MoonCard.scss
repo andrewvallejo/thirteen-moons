@@ -1,43 +1,44 @@
 .moon-card {
   margin: 7rem 1rem 0rem 1rem;
-
-    .inner-card {
-      position: relative;
-      width: 7.5rem;
+  .inner-card {
+    position: relative;
+    width: 7.5rem;
+    border-radius: 27px;
+    .card-back, .card-front {
+      width: 100%;
+      height: 100%;
       border-radius: 27px;
-      .card-back, .card-front  {
-        width: 100%;
-        height: 100%;
-        border: .1px solid $color-V;
-        border-radius: 27px;
-        filter: brightness(1.3);
-        filter: drop-shadow(0 0 .75rem $color-black);
-        will-change: transform;
-        transition: all 400ms;
-      }
-    &:hover {
-      > .card-back, .card-front { 
-        @include opacity($color-l, -0.5); 
-        border: none;
-        transition-delay: 200ms;
-        transition: all 400ms;
-        transform: rotateY(180deg) scale(1.2);
-        filter: drop-shadow(0 0 1rem $color-black);
-        opacity: 1;
-        z-index: 5;
-        }
-      }
-    .card-front {
-      position: absolute;
-      inset: 4% 7.5%;
-      width: 85%;
-      height: 90%;
-      opacity: 0; 
+      filter: brightness(1.3);
+      filter: drop-shadow(0 0 .75rem $color-black);
+      will-change: transform;
+      transition: all 400ms; 
+    }
+  &:hover {
+    > .card-back, .card-front { 
+      @include opacity($color-l, -0.5); 
       border: none;
-
+      transition-delay: 200ms;
+      transition: all 400ms;
+      transform: rotateY(180deg) scale(1.2);
+      filter: drop-shadow(0 0 1rem $color-black);
+      opacity: 1;
+      z-index: 5;
+      }
+    }
+  .card-front {
+    position: absolute;
+    inset: 4% 7.5%;
+    width: 85%;
+    height: 90%;
+    opacity: 0; 
+    border: none;
+    &:active > * {
+      box-shadow: inset 0 0 10px $color-lV;
+      }
     }
   }
 }
+
 
 .card-content {
   @include flex(column, center);
@@ -50,14 +51,13 @@
     -webkit-text-stroke: .1px $color-lV;
     color: transparent;
     text-align: center;
-  }
+   }
   .talent {
     -webkit-text-stroke: .3px $color-lV;
     text-transform: uppercase;
     letter-spacing: clamp(0.15em, .2vw, 0.35em);
     margin-bottom: auto;
-    font-size: $font-size-talent;
-    
+    font-size: $font-size-talent; 
   }
   .terms {
     align-self: center;
@@ -66,7 +66,6 @@
     line-height: 20px;
     -webkit-text-stroke: .3px $color-lV;
     color: $color-lll;
-
     > .terms-value {
       display: block;
       font-size: $font-size-number;
@@ -81,9 +80,8 @@
     margin: auto;
     transform: scaleY(-1)scaleX(-1);
   }
-
 }
-  
+
 .darken {
   position: absolute;
   inset: 0;
