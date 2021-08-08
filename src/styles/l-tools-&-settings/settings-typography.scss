@@ -11,8 +11,9 @@ $font-weight-defaults: normal;
 $font-style-defaults: normal;
 
 /* === Font Size === */
-$font-size-heading: 4rem, 5vw, 7rem;
-$font-size-subheading: 1rem, 2vw, 2.5rem;     
+$font-size-heading: clamp(4rem, 5vw, 7rem);
+$font-size-subheading: clamp(4rem, 5vw, 7rem);
+$font-size-button: clamp(1rem, 2vw, 2.5rem);     
 $font-size-paragraph: clamp(1rem, 3vw, 1.75rem);
 $font-size-talent: clamp(1rem, 1.25vw, 2rem);
 $font-size-number: clamp(1.5rem, 3vw, 1.75rem);
