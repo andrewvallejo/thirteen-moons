@@ -14,11 +14,17 @@ export const MoonCard = ({ deck }) => {
       return (
          <article className='moon-card' key={id}>
             <Link to={`${match}/quarum/${level}`} >
-            <div className="style-container"    
-                onClick={()=> {setLevel(level + 1) } }> 
-               <img className="card-image" alt="card" src={createCover()} id={code} key={id} value={value} talent={suit} />
-               <aside className='darken'/> <aside className='overlay'/> 
-            </div>
+               <div 
+                  className="card-back"    
+                  onClick={()=> setLevel(level + 1)}> 
+                     <img className="card-image" 
+                     alt="card" src={createCover()} 
+                     id={code} key={id}
+                     value={value} 
+                     talent={suit} />
+                  <aside className='darken'/> 
+                  <aside className='overlay'/> 
+               </div>
             </Link>
          </article>
        )
