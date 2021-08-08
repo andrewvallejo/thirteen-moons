@@ -1,3 +1,7 @@
 .creation-view {
-  @include flex(column, center)
+  @include flex(column, center);
+  .creation-form{
+    margin-top: 20rem;
+  }
 }
+
