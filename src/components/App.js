@@ -4,6 +4,7 @@ import { Spread } from './Spread';
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
 import { shuffle, drawHand } from '../utility/util'
+import { Creation } from './Creation';
 
 const initialState = {
   deck: [],
@@ -34,6 +35,7 @@ export const App = () => {
         <Switch>
           <Route  path='/'>
             <main>
+              <Creation />
               <Route path='/lunares'>
                 <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
               </Route>
