@@ -31,8 +31,8 @@ export const cleanCards = (cards) => {
    if (suit === 'HEARTS') suit = 'mind' 
  
    const newCard = {
-      value: parseInt(value),
-      suit: suit,
+      count: parseInt(value),
+      talent: suit,
       abrv: suit[0] + value
    } 
    return newCard
