@@ -1,24 +1,28 @@
 import React from "react";
 import moonFace from '../assets/moon-face.png'
 import { Route , Switch } from 'react-router-dom';
+import { nanoid } from "nanoid";
 
 export const MoonMsgBar = () => {
+  const id = nanoid(10)
   return (
-    <Switch>
-        <article className="message-bar">
-          <img alt="the face of the moon" src={moonFace} className='moon-face' />
-          <blockquote className="dialog-container">
-          <Route  path='/wrong-turn'>
-            <p className= 'dialog'>Where do you think you are?</p>
-          </Route>
-          <Route exact path="/lunares/quarum/:level">
-            <p className='dialog'>Choose your fate, child</p>
-          </Route>
-          <Route exact path="/">
-            <p className='dialog'>Craft a card?</p>
-          </Route>
-        </blockquote>
-      </article>
+    <Switch> 
+      <>
+        <article className="message-bar" key={id}>
+            <img alt="the face of the moon" src={moonFace} className='moon-face' />
+              <blockquote className="dialog-container">
+                <Route  path='/wrong-turn'>
+                  <p className= 'dialog'>Where do you think you are?</p>
+                </Route>
+                <Route exact path="/lunares/quarum/:level">
+                  <p className='dialog'>Choose your fate, child</p>
+                </Route>
+                <Route exact path="/">
+                  <p className='dialog'>Craft a card?</p>
+                </Route>
+            </blockquote>
+        </article>
+      </>
     </Switch>
   )
 }
