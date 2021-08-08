@@ -32,9 +32,9 @@ export const App = () => {
 
     return (
         <Switch>
-          <Route path='/'>
+          <Route  path='/'>
             <main>
-              <Route path='/lunares/'>
+              <Route path='/lunares'>
                 <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
               </Route>
             </main> 
