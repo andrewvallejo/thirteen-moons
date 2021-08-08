@@ -33,14 +33,16 @@ export const App = () => {
 
     return (
         <Switch>
+        <>
             <main>
           <Route exact path='/'>
-              <Creation deck={state.deck}/>
+              <Creation deck={state.deck} update={updateDeck}/>
           </Route>
-              <Route  path='/lunares/quarum/'>
-                <Spread hand={state.hand} draw={updateDeck}/>
+              <Route path='/lunares/quarum/'>
+                <Spread  hand={state.hand} draw={updateDeck}/>
               </Route>
             </main> 
+            </>
         </Switch>
     )
 }
