@@ -7,7 +7,7 @@ import { MoonMsgBar } from './MoonMsgBar'
 export const Spread = ({deck, hand, draw}) => {
   const match = useRouteMatch().url;
     return (
-      <Route path={`${match}`} >
+      <Route path={`${match}/`}>
         <section className="card-spread">
               <MoonMsgBar />
               <MoonLevel levels={deck}/>
