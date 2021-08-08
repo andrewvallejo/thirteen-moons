@@ -14,27 +14,27 @@ export const MoonCard = ({ deck }) => {
       return (
          <article className='moon-card' key={id}>
             <Link exact to={`${match}/${level}`} >
-     
                <div className="inner-card">
-               <div className="card-front"> 
+                  <div className="card-front"> 
+                     <aside className="card-content">
+                           <h2 className='talent'>{suit}</h2>
+                           <h3 className='terms'>
+                           Stretch towards the heavens for 
+                           <span className="terms-value">{value}</span>
+                            minutes</h3>
+                           <h3 className='talent mirrored'>{suit}</h3>
 
-                     </div>
-
-                        <img className="card-back"    
+                     </aside>
+                  </div>
+                     <img className="card-back"    
                         id={code} 
                         key={id}
-                        value={value} 
-                        talent={suit}
                         onClick={()=> setLevel(level + 1)}
                         alt="card" 
-                        src={createCover()} 
-                        />
+                        src={createCover()} />
                      <aside className='darken'/> 
-                     <aside className='overlay'/> 
-
-              
-              
-                        </div>
+                     <aside className='overlay'/>  
+               </div>
             </Link>
          </article>
        )
