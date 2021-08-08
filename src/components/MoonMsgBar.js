@@ -25,7 +25,7 @@ export const MoonMsgBar = () => {
                   <p className='dialog'>Good, keep on going.</p>
                 </Route>
                 <Route exact path='/'>
-                  <p className='dialog'>Craft a card?</p>
+                  <p className='dialog'>Do you wish to craft a Moon challenge card?</p>
                 </Route>
             </blockquote>
         </article>
