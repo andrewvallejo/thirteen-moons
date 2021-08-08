@@ -8,7 +8,7 @@ export const MoonCard = ({ cards }) => {
    const match = useRouteMatch().url;
    return cards.map((card) => {
       const id = nanoid(10)
-      const { code, talent, terms, count, interval } = card
+      const { abrv, talent, terms, count, interval } = card
 
       return (
          <article className='moon-card' key={id}>
@@ -26,7 +26,7 @@ export const MoonCard = ({ cards }) => {
                      </aside>
                   </div>
                      <img className="card-back"    
-                        id={code} 
+                        id={abrv} 
                         key={id}
                         onClick={()=> setLevel(level + 1)}
                         alt="card" 
