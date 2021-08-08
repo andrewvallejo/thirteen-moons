@@ -54,7 +54,7 @@
 }
 
 @mixin paragraph {
-  @include scaling-font((1rem, 1vw, 2.5rem));
+  @include scaling-font($font-size-paragraph);
 }
 
 @mixin button {
