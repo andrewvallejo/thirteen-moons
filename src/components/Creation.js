@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-
+import { Link } from "react-router-dom"
 import { DummyCard } from "./DummyCard"
 import { MoonMsgBar } from "./MoonMsgBar"
 
@@ -72,7 +72,8 @@ export const Creation = () =>  {
         </select>
       </form>
       <button onChange={(event) => onHandle(event)}>Submit.</button>
-    <button>I'm content</button>
+      <Link className="start-button" to="/lunares/quarum/">I'm content</Link>
+
     </section>
 
 
