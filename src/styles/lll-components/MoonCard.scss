@@ -33,53 +33,52 @@
     opacity: 0; 
     border: none;
     &:active > * {
-      box-shadow: inset 0 0 10px $color-lV;
+      box-shadow: inset 0 0 5px $color-lV,
+      0 0 10px $color-lV;
       }
     }
   }
-}
-
-
-.card-content {
-  @include flex(column, center);
-  transform: scaleX(-1);
-  border-radius: 27px;
-  height: 100%;
-  border: .1px solid $color-lV;
-  padding: .5rem .3rem;
-   > * {
-    -webkit-text-stroke: .1px $color-lV;
-    color: transparent;
-    text-align: center;
-   }
-  .talent {
-    -webkit-text-stroke: .3px $color-lV;
-    text-transform: uppercase;
-    letter-spacing: clamp(0.15em, .2vw, 0.35em);
-    margin-bottom: auto;
-    font-size: $font-size-talent; 
-  }
-  .terms {
-    align-self: center;
-    margin: auto;
-    font-size: $font-size-terms;
-    line-height: 20px;
-    -webkit-text-stroke: .3px $color-lV;
-    color: $color-lll;
-    > .terms-value {
-      display: block;
-      font-size: $font-size-number;
-      color: $color-lV;
-      filter: drop-shadow(0 0 .1rem $color-lV);
+  .card-content {
+    @include flex(column, center);
+    transform: scaleX(-1);
+    border-radius: 27px;
+    height: 100%;
+    border: .1px solid $color-lV;
+    padding: .5rem .3rem;
+     > * {
+      -webkit-text-stroke: .1px $color-lV;
+      color: transparent;
+      text-align: center;
+     }
+    .talent {
+      -webkit-text-stroke: .3px $color-lV;
+      text-transform: uppercase;
+      letter-spacing: clamp(0.15em, .2vw, 0.35em);
+      margin-bottom: auto;
+      font-size: $font-size-talent; 
     }
-  }
-  .number, .terms-value  {
-    color: $color-lll;
-  }
-  .mirrored {
-    margin: auto;
-    transform: scaleY(-1)scaleX(-1);
-  }
+    .terms {
+      align-self: center;
+      margin: auto;
+      font-size: $font-size-terms;
+      line-height: 20px;
+      -webkit-text-stroke: .3px $color-lV;
+      color: $color-lll;
+      > .terms {
+        display: block;
+        font-size: $font-size-number;
+        color: $color-lV;
+        filter: drop-shadow(0 0 .1rem $color-lV);
+      }
+    }
+    .count  {
+      color: $color-lll;
+    }
+    .mirrored {
+      margin: auto;
+      transform: scaleY(-1)scaleX(-1);
+    }
+  }  
 }
 
 .darken {
@@ -100,3 +99,59 @@
   z-index: 3;
   pointer-events: none;
 }
+
+
+
+
+// import { nanoid } from 'nanoid'
+// import React, { useState } from 'react'
+// import { dummyCover } from '../utility/cardCovers'
+
+// export const DummyCard = ({ card }) => {
+//   const [code, setCode] = useState('') 
+//   const [talent, setTalent] = useState('')
+//   const [terms, setTerms] = useState('')
+//   const [count, setCount] = useState(0)
+//   const [interval, setInterval] = useState('')
+
+
+//   const onChange = (event) => {
+//     event.preventDefault()
+//     setTalent(card.talent)
+//     setCount(event.target.value)
+//     setTerms(event.target.value)
+//     setInterval(event.target.value)
+//   }
+
+// const id = nanoid(10)
+
+
+
+
+//       return (
+//          <article className='dummy-card' key={id}>
+//                <div className="inner-card">
+                 
+//                      <img className="card-back"    
+//                         id={code} 
+//                         key={id}
+//                         alt="card" 
+//                         src={dummyCover} />
+//                      <aside className='darken'/> 
+//                      <aside className='overlay'/>  
+//                      <div className="card-front"> 
+//                      <aside className="card-content">
+//                         <h2 className='talent'
+//                          onChange={onChange} value={talent}>{talent}</h2>
+//                         <h3 className='terms'>
+//                            {terms}
+//                               <span className="count">{count}</span>
+//                            {interval}
+//                         </h3>
+//                         <h3 className='talent mirrored'>{talent}</h3>
+//                      </aside>
+//                   </div>
+//                </div>
+//          </article>
+//        )
+//       }
