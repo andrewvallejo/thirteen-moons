@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { DummyCard } from "./DummyCard"
 import { MoonMsgBar } from "./MoonMsgBar"
+import { Talents } from './Talents'
 
 
 export const Creation = () =>  {
@@ -32,6 +33,7 @@ export const Creation = () =>  {
       <form className="creation-form">
         <label htmlFor="talent">Choose a talent</label> 
         <select 
+          className='talent choice'
           id='talent'
           name='talent'
           value={talent} 
@@ -44,6 +46,7 @@ export const Creation = () =>  {
         </select>
         <label htmlFor='count'>Choose a number between 1 and 13.</label> 
         <input 
+          className='count choice'       
           id='count'
           type="range" 
           name="count"
@@ -52,6 +55,7 @@ export const Creation = () =>  {
           setCount(event.target.value)}/>
         <label htmlFor='terms'>Write your terms.</label> 
         <input 
+          className='terms choice'
           id='terms'
           type="text"
           name="terms"
@@ -60,6 +64,7 @@ export const Creation = () =>  {
           setTerms(event.target.value)} />
         <label htmlFor='interval'>Choose an interval.</label> 
         <select 
+          className='interval choice'
           id='interval'
           value={interval} 
           onChange={(event) => 
@@ -70,10 +75,10 @@ export const Creation = () =>  {
           <option name="pages">pages</option>
           <option name="chapter">chapters</option>
         </select>
-      </form>
       <button className="create-button" onChange={(event) => onHandle(event)}>Create a  moon card.</button>
       <Link className="start-button" to="/lunares/quarum/">I'm content</Link>
-
+      </form>
+      <Talents />
     </section>
 
 
