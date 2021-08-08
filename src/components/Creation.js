@@ -6,10 +6,10 @@ import { MoonMsgBar } from "./MoonMsgBar"
 
 export const Creation = () =>  {
   const [abrv, setAbrv] = useState('') 
-  const [talent, setTalent] = useState('talent')
-  const [terms, setTerms] = useState('Find space and meditate for')
-  const [count, setCount] = useState('7')
-  const [interval, setInterval] = useState('minutes')
+  const [talent, setTalent] = useState('Example')
+  const [terms, setTerms] = useState('Your terms are an activity that difficulty depends your chosen number')
+  const [count, setCount] = useState('∞')
+  const [interval, setInterval] = useState('Pair the number with the correct ilk')
 
 
   const uniqueCard = {
@@ -30,7 +30,7 @@ export const Creation = () =>  {
       <DummyCard card={uniqueCard} />   
       <MoonMsgBar  />
       <form className="creation-form">
-        <label for="talent">Choose a talent</label> 
+        <label htmlFor="talent">Choose a talent</label> 
         <select 
           id='talent'
           name='talent'
@@ -42,7 +42,7 @@ export const Creation = () =>  {
           <option name="wisdom">Wisdom</option>
           <option name="vitality">Vitality</option>
         </select>
-        <label for='count'>Choose a number between 1 and 13.</label> 
+        <label htmlFor='count'>Choose a number between 1 and 13.</label> 
         <input 
           id='count'
           type="range" 
@@ -50,7 +50,7 @@ export const Creation = () =>  {
           min="1" max="13"
           onChange={(event) => 
           setCount(event.target.value)}/>
-        <label for='terms'>Write your terms.</label> 
+        <label htmlFor='terms'>Write your terms.</label> 
         <input 
           id='terms'
           type="text"
@@ -58,7 +58,7 @@ export const Creation = () =>  {
           placeholder="Enter your challenge here"
           onChange={(event) => 
           setTerms(event.target.value)} />
-        <label for='interval'>Choose an interval.</label> 
+        <label htmlFor='interval'>Choose an interval.</label> 
         <select 
           id='interval'
           value={interval} 
@@ -71,7 +71,7 @@ export const Creation = () =>  {
           <option name="chapter">chapters</option>
         </select>
       </form>
-      <button onChange={(event) => onHandle(event)}>Submit.</button>
+      <button className="create-button" onChange={(event) => onHandle(event)}>Create a  moon card.</button>
       <Link className="start-button" to="/lunares/quarum/">I'm content</Link>
 
     </section>
