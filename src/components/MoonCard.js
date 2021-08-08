@@ -3,13 +3,12 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 import { createCover } from '../utility/util'
 
-export const MoonCard = ({ deck }) => {
+export const MoonCard = ({ cards }) => {
    const [level, setLevel] = useState(1)
    const match = useRouteMatch().url;
-
-   return deck.map((card) => {
+   return cards.map((card) => {
       const id = nanoid(10)
-      const { code, suit, value } = card
+      const { code, talent, terms, count, interval } = card
 
       return (
          <article className='moon-card' key={id}>
@@ -17,13 +16,13 @@ export const MoonCard = ({ deck }) => {
                <div className="inner-card">
                   <div className="card-front"> 
                      <aside className="card-content">
-                           <h2 className='talent'>{suit}</h2>
-                           <h3 className='terms'>
-                           Stretch towards the heavens for 
-                           <span className="terms-value">{value}</span>
-                            minutes</h3>
-                           <h3 className='talent mirrored'>{suit}</h3>
-
+                        <h2 className='talent'>{talent}</h2>
+                        <h3 className='terms'>
+                           {terms}
+                              <span className="count">{count}</span>
+                           {interval}
+                        </h3>
+                        <h3 className='talent mirrored'>{talent}</h3>
                      </aside>
                   </div>
                      <img className="card-back"    
