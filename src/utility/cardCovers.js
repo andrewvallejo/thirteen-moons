@@ -24,3 +24,5 @@ export const covers = [
   cover10,
   cover11,
 ]
+
+export const dummyCover = cover8
