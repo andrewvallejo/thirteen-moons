@@ -1,9 +1,7 @@
 /* ==========================================================================
 Settings - Typography
 ========================================================================== */
-
-/* === Font Import === */
-@import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');/* === Defaults === */
+/* === Defaults === */
 
 $font-family-defaults: 'Stylish', sans-serif;
 $font-size-defaults: 1rem;
@@ -15,7 +13,6 @@ $font-style-defaults: normal;
 /* === Font Size === */
 $font-size-heading: 4rem, 5vw, 7rem;
 $font-size-subheading: 1rem, 2vw, 2.5rem;     
-$font-size-paragraph: 1rem, 1vw, 2.5rem;
+$font-size-paragraph: clamp(1rem, 3vw, 1.75rem);
 $font-size-button: 1rem, 1.2vw, 2rem;
 $font-size-icon: 1.5rem, 3vw, 3rem;
-

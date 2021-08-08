@@ -1,8 +1,9 @@
 import React, { useEffect, useReducer  } from 'react';
+import { Route, Switch } from "react-router-dom";
+import { Spread } from './Spread';
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
 import { shuffle, drawHand } from '../utility/util'
-import { Spread } from './Spread';
 
 const initialState = {
   deck: [],
@@ -30,8 +31,14 @@ export const App = () => {
   }
 
     return (
-       <main>
-          <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
-      </main> 
+        <Switch>
+          <Route  path='/'>
+            <main>
+              <Route path='/lunares'>
+                <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
+              </Route>
+            </main> 
+          </Route>
+        </Switch>
     )
 }
