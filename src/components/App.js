@@ -37,7 +37,7 @@ export const App = () => {
           <Route exact path='/'>
               <Creation deck={state.deck}/>
           </Route>
-              <Route exact path='/lunares/quarum/:level'>
+              <Route  path='/lunares/quarum/'>
                 <Spread hand={state.hand} draw={updateDeck}/>
               </Route>
             </main> 
