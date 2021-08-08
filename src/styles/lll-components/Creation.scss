@@ -1,7 +1,40 @@
 .creation-view {
   @include flex(column, center);
-  .creation-form{
-    margin-top: 20rem;
+  position: relative;
+  padding-top: 8rem;
+  .message-bar{
+    position: absolute;
+    top: 2.5%;
+    left: 5%
+    }
+  .dummy-card {
+    position: absolute;
+    top: 80%;
+    margin-top: auto;
   }
+  .creation-form{
+    position: absolute;
+    color: $color-lV;
+    top: 80%;
+    right: 35%;
+    width: 40%;
+    height: 50%;
+    .choice {
+      color: $color-lll;
+      margin: .5rem 0;
+    }
+  }
+  .create-button {
+    margin-top: .5rem;
+  }
+  .start-button {
+    @extend button;
+  }
+  .rules {
+    position: absolute;
+    top: 9.5%;
+    right: 2%;
+  }
+  
 }
 
