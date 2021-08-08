@@ -1,0 +1,7 @@
+.error-page {
+  @include flex(column, center);
+  height: 100vh;
+  .error-field {
+    margin-top: 5rem;
+  }
+}
