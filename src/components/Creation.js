@@ -5,24 +5,29 @@ import { MoonMsgBar } from "./MoonMsgBar"
 
 
 export const Creation = () =>  {
-  const [code, setCode] = useState('') 
+  const [abrv, setAbrv] = useState('') 
   const [talent, setTalent] = useState('talent')
   const [terms, setTerms] = useState('Find space and meditate for')
   const [count, setCount] = useState('7')
   const [interval, setInterval] = useState('minutes')
 
 
-  const blankCard = {
-    code: '',
+  const uniqueCard = {
+    abrv: abrv,
     talent: talent ,
     terms: terms ,
     count: count,
     interval: interval
   }
+
+  const onHandle = (event) => {
+    event.preventDefault()
+    setAbrv(talent[0] + count)
+  }
   
   return (
     <section className="creation-view">
-      <DummyCard card={blankCard} />   
+      <DummyCard card={uniqueCard} />   
       <MoonMsgBar  />
       <form className="creation-form">
         <label for="talent">Choose a talent</label> 
@@ -35,7 +40,7 @@ export const Creation = () =>  {
           <option name="mind">Mind</option>
           <option name="spirit">Spirit</option>
           <option name="wisdom">Wisdom</option>
-          <option name="Vitality">Vitality</option>
+          <option name="vitality">Vitality</option>
         </select>
         <label for='count'>Choose a number between 1 and 13.</label> 
         <input 
@@ -66,6 +71,10 @@ export const Creation = () =>  {
           <option name="chapter">chapters</option>
         </select>
       </form>
+      <button onChange={(event) => onHandle(event)}>Submit.</button>
+    <button>I'm content</button>
     </section>
+
+
   )
 }
