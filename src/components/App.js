@@ -35,9 +35,9 @@ export const App = () => {
         <Switch>
           <Route  path='/'>
             <main>
-              <Creation />
+              <Creation deck={state.deck}/>
               <Route path='/lunares'>
-                <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
+                <Spread hand={state.hand} draw={updateDeck}/>
               </Route>
             </main> 
           </Route>
