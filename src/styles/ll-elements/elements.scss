@@ -26,6 +26,11 @@ form {
 
 button {
   @include flex(column, center);
+  color: $color-V;
+  font-size: $font-size-button;
+  &:hover {
+    color: $color-lV;
+  }
 }
 
 h1{
