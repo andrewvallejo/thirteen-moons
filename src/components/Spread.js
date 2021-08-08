@@ -6,8 +6,9 @@ import { MoonMsgBar } from './MoonMsgBar'
 
 export const Spread = ({deck, hand, draw}) => {
   const match = useRouteMatch().url;
+
     return (
-      <Route path={`${match}/`}>
+      <Route exact path={`${match}/quarum/:level`}>
         <section className="card-spread">
               <MoonMsgBar />
               <MoonLevel levels={deck}/>
