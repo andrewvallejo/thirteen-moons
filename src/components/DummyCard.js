@@ -3,14 +3,14 @@ import React  from 'react'
 import { dummyCover } from '../utility/cardCovers'
 
 export const DummyCard = ({ card }) => {
- const { code, talent, terms, count, interval } = card
+ const { abrv, talent, terms, count, interval } = card
  const id = nanoid(10)
     
       return (
          <article className='dummy-card' key={id}>
                <div className="inner-card">
                      <img className="card-back"    
-                        id={code} 
+                        id={abrv} 
                         key={id}
                         alt="card" 
                         src={dummyCover} />
