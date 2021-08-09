@@ -11,7 +11,6 @@ export const Creation = ({update}) =>  {
   const [terms, setTerms] = useState('')
   const [count, setCount] = useState('∞')
   const [intervals, setIntervals] = useState('')
-  const [isComplete, setStatus] = useState(false)
 
   const uniqueCard = {
     code: '',
