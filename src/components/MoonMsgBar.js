@@ -13,19 +13,20 @@ export const MoonMsgBar = () => {
             <img alt='the face of the moon' src={moonFace} className='moon-face' />
               <blockquote className='dialog-container'>
                 <Route  path='/wrong-turn'>
-                  <p className= 'dialog'>Where do you think you are?</p>
+                  <h1 className= 'dialog'>Where do you think you are?</h1>
                 </Route>
+                
                 <Route exact path='/lunares/'>
-                  <p className='dialog'>Choose your fate, child</p>
+                  <h1 className='dialog'>Choose your fate, child</h1>
                 </Route>
                 <Route exact path='/lunares/1'>
-                  <p className='dialog'>Excellent child, you've found my first moon</p>
+                  <h1 className='dialog'>Excellent child, you've found my first moon</h1>
                 </Route>
                 <Route exact path='/lunares/2'>
-                  <p className='dialog'>Good, keep on going.</p>
+                  <h1 className='dialog'>Good, keep on going.</h1>
                 </Route>
                 <Route exact path='/'>
-                  <p className='dialog'>Do you wish to craft a Moon challenge card?</p>
+                  <h1 className='dialog'>Do you wish to craft a Moon challenge card?</h1>
                 </Route>
             </blockquote>
         </article>
