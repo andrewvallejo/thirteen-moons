@@ -28,6 +28,7 @@ export const App = () => {
  
   const updateDeck = (currentDeck) => {
     let {currentDeck: deck, currentHand:hand} = drawHand(currentDeck)
+    console.log(currentDeck)
     dispatch(action(deck.type, deck.deck))
     dispatch(action(hand.type, hand.deck))
   }
@@ -44,8 +45,8 @@ export const App = () => {
           <Route exact path='/'>
               <Creation update={updateCards}/>
           </Route>
-              <Route path='/lunares/quarum/'>
-                <Spread  deck={state.deck} hand={state.hand} draw={updateDeck}/>
+              <Route path='/lunares/'>
+                <Spread deck={state.deck} hand={state.hand} draw={updateDeck}/>
               </Route>
             </main> 
             </>
