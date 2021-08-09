@@ -70,9 +70,9 @@ export const Creation = ({update}) =>  {
       <form className="creation-form">
         <label htmlFor="talent">Choose a talent</label> 
         <select 
-          className='talent choice'
-          id='talent'
-          name='talent'
+          className='talents choice'
+          id='talents'
+          name='talents'
           value={talent} 
           onChange={(event) => {
           event.preventDefault()
@@ -105,10 +105,10 @@ export const Creation = ({update}) =>  {
           onChange={(event) => {
           event.preventDefault()
           setTerms(event.target.value)}} />
-        <label htmlFor='interval'>Choose an interval.</label> 
+        <label htmlFor='intervals'>Choose an interval.</label> 
         <select 
-          className='interval choice'
-          id='interval'
+          className='intervals choice'
+          id='intervals'
           value={intervals} 
           onChange={(event) => {
           event.preventDefault()
@@ -119,8 +119,12 @@ export const Creation = ({update}) =>  {
           <option name="counts">counts</option>
           <option name="pages">pages</option>
           <option name="chapter">chapters</option>
+          <option name="articles">articles</option>
+          <option name="miles">miles</option>
+          <option name="reps-of-ten">reps of 10</option>
+          <option name="ounces">ounces</option>
         </select>
-      <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a  moon card.</button>
+      <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a moon card.</button>
       <Link className="start-button" to="/lunares" onClick={() => update()}>I'm content</Link>
       </form>
       <Talents />
