@@ -26,12 +26,14 @@ export const Creation = ({update}) =>  {
   }
 
   const validateForm = () => {
-   return  !talent ? setTalent('choose talent'): 
+   return ( 
+    !talent ? setTalent('choose talent'): 
     !terms || terms === 'Your terms are the activity you want to do' ? setTerms('Your terms are the activity you want to do') : 
     !count || count === ('∞') ? setCount('∞'):
     !intervals || terms === 'Choose interval'? setIntervals('Choose interval') :
     terms && count && intervals ? submitCard() :
     setTalent('Try again')
+    )
   }
 
   const submitCard = () => {
