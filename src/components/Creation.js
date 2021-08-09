@@ -121,7 +121,7 @@ export const Creation = ({update}) =>  {
           <option name="chapter">chapters</option>
         </select>
       <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a  moon card.</button>
-      <Link className="start-button" to="/lunares/" onClick={() => update()}>I'm content</Link>
+      <Link className="start-button" to="/lunares" onClick={() => update()}>I'm content</Link>
       </form>
       <Talents />
     </section>
