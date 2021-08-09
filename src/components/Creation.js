@@ -6,16 +6,15 @@ import { Talents } from './Talents'
 import { swapCard } from "../utility/util"
 
 
-export const Creation = () =>  {
-  const [code, setCode] = useState('') 
+export const Creation = ({update}) =>  {
   const [talent, setTalent] = useState('')
   const [terms, setTerms] = useState('')
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState('∞')
   const [intervals, setIntervals] = useState('')
-
+  const [isComplete, setStatus] = useState(false)
 
   const uniqueCard = {
-    code: code,
+    code: '',
     talent: talent ,
     terms: terms ,
     count: count,
@@ -29,14 +28,14 @@ export const Creation = () =>  {
 
   const validateForm = () => {
    return  !talent ? setTalent('choose talent'): 
-    !terms ? setTerms('Your terms are the activity you want to do') : 
-    !count ? setCount('∞'):
-    !intervals ? setIntervals('Choose interval') : submitCard()
+    !terms || terms === 'Your terms are the activity you want to do' ? setTerms('Your terms are the activity you want to do') : 
+    !count || count === ('∞') ? setCount('∞'):
+    !intervals || terms === 'Choose interval'? setIntervals('Choose interval') :
+    terms && count && intervals ? submitCard() :
+    setTalent('Try again')
   }
 
   const submitCard = () => {
-    setCode(uniqueCard.talent[0].toLowerCase() + count)
-    updateCardValues()
     updateCardValues()
     swapCard(uniqueCard)
     resetForm()
@@ -49,7 +48,6 @@ export const Creation = () =>  {
   }
 
   const updateCardValues = () => {
-    uniqueCard.code = code
     uniqueCard.talent = talent
     uniqueCard.terms = terms
     uniqueCard.count= count
@@ -57,11 +55,15 @@ export const Creation = () =>  {
   }
 
   const resetForm = () => {
-    setCode('')
     setTalent('')
     setTerms('')
     setCount('')
     setIntervals('')
+
+  }
+
+  const startGame = () => {
+    update()
   }
 
 
@@ -79,6 +81,7 @@ export const Creation = () =>  {
           onChange={(event) => {
           event.preventDefault()
           setTalent(event.target.value)}} >
+          <option hidden> Talents </option>
           <option name="mind">Mind</option>
           <option name="spirit">Spirit</option>
           <option name="wisdom">Wisdom</option>
@@ -112,6 +115,7 @@ export const Creation = () =>  {
           onChange={(event) => {
           event.preventDefault()
           setIntervals(event.target.value)}} >
+          <option hidden> Intervals </option>
           <option name="minutes">minutes</option>
           <option name="repetition">repetitions</option>
           <option name="counts">counts</option>
@@ -119,7 +123,7 @@ export const Creation = () =>  {
           <option name="chapter">chapters</option>
         </select>
       <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a  moon card.</button>
-      <Link className="start-button" to="/lunares/quarum/">I'm content</Link>
+      <Link className="start-button" to="/lunares/quarum/" onClick={() => startGame()}>I'm content</Link>
       </form>
       <Talents />
     </section>
