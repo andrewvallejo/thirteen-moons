@@ -61,11 +61,6 @@ export const Creation = ({update}) =>  {
 
   }
 
-
-
-  
-
-
   return (
     <section className="creation-view">
       <DummyCard card={uniqueCard} />   
