@@ -3,15 +3,19 @@ import { Link, useRouteMatch } from 'react-router-dom'
 import { nanoid } from 'nanoid'
 import { createCover } from '../utility/util'
 
-export const MoonCard = ({ cards }) => {
+export const MoonCard = ({ cards, draw }) => {
    const [level, setLevel] = useState(1)
    const match = useRouteMatch().url;
    return cards.map((card) => {
       const id = nanoid(10)
       const { code, talent, terms, count, intervals } = card
+
       return (
          <article className='moon-card' key={id}>
-            <Link onClick={()=> setLevel(level + 1)} to={`${match}/${level}`} >
+            <Link to={`${match}/${level}`} onClick={()=> {
+               setLevel(level + 1) 
+               draw()
+               } }>
                <div className="inner-card">
                   <div className="card-front"> 
                      <aside className="card-content">
