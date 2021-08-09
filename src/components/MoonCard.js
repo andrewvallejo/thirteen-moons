@@ -8,11 +8,11 @@ export const MoonCard = ({ cards }) => {
    const match = useRouteMatch().url;
    return cards.map((card) => {
       const id = nanoid(10)
-      const { abrv, talent, terms, count, interval } = card
+      const { code, talent, terms, count, intervals } = card
 
       return (
          <article className='moon-card' key={id}>
-            <Link exact to={`${match}/${level}`} >
+            <Link to={`${match}/${level}`} >
                <div className="inner-card">
                   <div className="card-front"> 
                      <aside className="card-content">
@@ -20,13 +20,13 @@ export const MoonCard = ({ cards }) => {
                         <h3 className='terms'>
                            {terms}
                               <span className="count">{count}</span>
-                           {interval}
+                           {intervals}
                         </h3>
                         <h3 className='talent mirrored'>{talent}</h3>
                      </aside>
                   </div>
                      <img className="card-back"    
-                        id={abrv} 
+                        id={code} 
                         key={id}
                         onClick={()=> setLevel(level + 1)}
                         alt="card" 
