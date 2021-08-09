@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Spread } from './Spread';
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
-import { shuffle, drawHand, updateCardInfo } from '../utility/util'
+import { shuffle, drawHand } from '../utility/util'
 import { Creation } from './Creation';
 import { dialogData } from '../dialogData';
 
