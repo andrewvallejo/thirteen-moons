@@ -1,10 +1,19 @@
 /* eslint-disable no-undef */
-describe('User Flow', () => {
+describe('Creation Page', () => {
+  let id, remaining 
   beforeEach(() => {
-    cy.visit('localhost:3000')
-    cy.intercept('GET', 'http://localhost:3000/', {fixture: 'cards'})
+    cy.visit('/')
+    cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{
+      statusCode: 200,
+      fixture: "new-deck.json"
+    })
+   cy.intercept('GET', `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}777/draw/?count=4`, {
+      statusCode: 200,
+      fixture: "cards.json" }
+      )
   })
-  it('Should be able to see the creation page upon first visit', () => {
+
+  it('Should sucessfully load upon initial visit', () => {
     cy.get('button')
     cy.get('.message-bar')
       .should('be.visible')
@@ -55,5 +64,33 @@ describe('User Flow', () => {
       .get('[for="intervals"]')
       .should('have.text', 'Choose an interval.')
       .get('#intervals')
-      .should('include.text', 'minutesrepetitionscountspageschaptersarticlesmilesreps of 10ounces')      })
+      .should('include.text', 'minutesrepetitionscountspageschaptersarticlesmilesreps of 10ounces')      
+    })
+    it('Should be able to successfully make a new card', () => {
+
+    })
+})
+
+describe('Game Page', () =>  {
+
+    let id, remaining 
+    beforeEach(() => {
+      cy.visit('/')
+      cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{
+        statusCode: 200,
+        fixture: "new-deck.json"
+      })
+     cy.intercept('GET', `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}777/draw/?count=4`, {
+        statusCode: 200,
+        fixture: "cards.json" }
+        )
+        cy.get('.start-button')
+        .click()
+    })
+  
+
+  it('Should be able to load the game upon visit', () => {
+    cy.get(':nth-child(3) > a > .inner-card > .card-front > .card-content')
+    .should('exist')
+  })  
 })
