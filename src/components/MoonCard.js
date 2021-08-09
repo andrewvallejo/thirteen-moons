@@ -17,11 +17,9 @@ export const MoonCard = ({ cards }) => {
                   <div className="card-front"> 
                      <aside className="card-content">
                         <h2 className='talent'>{talent}</h2>
-                        <h3 className='terms'>
-                           {terms}
-                              <span className="count">{count}</span>
-                           {intervals}
-                        </h3>
+                        <h3 className='terms'> {terms}</h3>
+                              <h3 className="count">{count}</h3>
+                           <h4 className="intervals">{intervals}</h4>
                         <h3 className='talent mirrored'>{talent}</h3>
                      </aside>
                   </div>
