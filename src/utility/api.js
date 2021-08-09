@@ -1,9 +1,9 @@
 export const deckUrl = 'https://deckofcardsapi.com/api/deck/new/'
-export const drawUrl = (id) => `https://deckofcardsapi.com/api/deck/${id}/draw/?count=52`
+export const drawUrl = (id, remaining) => `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}`
 
 export const fetchDeck = (async () => {
-  const {deck_id} = await fetchApi(deckUrl)
-  const cards = fetchApi(drawUrl(deck_id))
+  const {deck_id, remaining} = await fetchApi(deckUrl)
+  const cards = fetchApi(drawUrl(deck_id, remaining))
   .then((data) => data.cards)
   return cards
 })
