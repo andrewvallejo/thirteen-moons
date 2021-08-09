@@ -1,6 +1,6 @@
 .dummy-card{
-  margin: 7rem 1rem 0rem 1rem;
   position: absolute;
+  margin: 7rem 1rem 0rem 1rem;
   left: 1%;
   .inner-card {
     position: relative;
@@ -38,6 +38,8 @@
       -webkit-text-stroke: .1px $color-lV;
       color: transparent;
       text-align: center;
+      width: 100%;
+
      }
     .talent {
       -webkit-text-stroke: .3px $color-lV;
