@@ -22,7 +22,7 @@ export const DummyCard = ({ card }) => {
                         <h3 className='terms'>
                            {terms}
                               <span className="count">{count}</span>
-                           {intervals}.
+                           {intervals}
                         </h3>
                         <h3 className='talent mirrored'>{talent}</h3>
                      </aside>
