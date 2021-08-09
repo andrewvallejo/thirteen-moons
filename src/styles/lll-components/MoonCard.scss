@@ -61,8 +61,8 @@
       align-self: center;
       margin: auto;
       font-size: $font-size-terms;
-      line-height: 20px;
-      -webkit-text-stroke: .3px $color-lV;
+      line-height: 1.1;
+      -webkit-text-stroke: 0.3px $color-lV;
       color: $color-lll;
       > .terms {
         display: block;
@@ -72,7 +72,13 @@
       }
     }
     .count  {
+      color: $color-lV;
+      font-size: $font-size-number;
+    }
+    .intervals {
+      font-size: $font-size-number;
       color: $color-lll;
+      -webkit-text-stroke: .3px $color-lV;
     }
     .mirrored {
       margin: auto;
