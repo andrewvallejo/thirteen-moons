@@ -9,10 +9,9 @@ export const MoonCard = ({ cards }) => {
    return cards.map((card) => {
       const id = nanoid(10)
       const { code, talent, terms, count, intervals } = card
-
       return (
          <article className='moon-card' key={id}>
-            <Link to={`${match}/${level}`} >
+            <Link onClick={()=> setLevel(level + 1)} to={`${match}/${level}`} >
                <div className="inner-card">
                   <div className="card-front"> 
                      <aside className="card-content">
@@ -28,7 +27,6 @@ export const MoonCard = ({ cards }) => {
                      <img className="card-back"    
                         id={code} 
                         key={id}
-                        onClick={()=> setLevel(level + 1)}
                         alt="card" 
                         src={createCover()} />
                      <aside className='darken'/> 
