@@ -28,12 +28,13 @@ export const drawHand = (deck) => {
 }
 
 export const swapCard = (uniqueCard) => {
-    dialogData.map((card, index) => {
-     if (card.code === uniqueCard.code) {
+  uniqueCard.code = uniqueCard.talent[0].toLowerCase() + uniqueCard.count
+  return dialogData.map((card, index) => {
+    if (card.code === uniqueCard.code) {
       return dialogData.splice(index, 1, uniqueCard)
-     } else {
-       return card
-     }
-   })
+    } else {
+      return card
+    }
+  })
 }
 
