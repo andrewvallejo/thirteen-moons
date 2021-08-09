@@ -53,6 +53,7 @@ export const Creation = ({update}) =>  {
     uniqueCard.terms = terms
     uniqueCard.count= count
     uniqueCard.intervals= intervals
+    uniqueCard.code = talent[0].toLowerCase() + count
   }
 
   const resetForm = () => {
@@ -60,7 +61,6 @@ export const Creation = ({update}) =>  {
     setTerms('')
     setCount('')
     setIntervals('')
-
   }
 
   return (
@@ -85,11 +85,12 @@ export const Creation = ({update}) =>  {
         </select>
         <label htmlFor='count'>Choose a number between 1 and 13.</label> 
         <input 
-          className='count choice'       
+          className='count choice'   
           id='count'
           type="range" 
           name="count"
           min="1" max="13"
+          value={count}
           onChange={(event) => {
           event.preventDefault()
           setCount(event.target.value)}} />
@@ -100,6 +101,7 @@ export const Creation = ({update}) =>  {
           type="text"
           name="terms"
           placeholder="Enter your challenge here"
+          value={terms}
           onChange={(event) => {
           event.preventDefault()
           setTerms(event.target.value)}} />
@@ -119,7 +121,7 @@ export const Creation = ({update}) =>  {
           <option name="chapter">chapters</option>
         </select>
       <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a  moon card.</button>
-      <Link className="start-button" to="/lunares/quarum/" onClick={() => update()}>I'm content</Link>
+      <Link className="start-button" to="/lunares/" onClick={() => update()}>I'm content</Link>
       </form>
       <Talents />
     </section>
