@@ -1,13 +1,13 @@
 [{
   "code": "w1",
-  "talent": "wisdom",
+  "talent": "mind",
   "terms": "dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero.",
   "count": 1,
   "intervals": "chapters"
 },
 {
   "code": "w2",
-  "talent": "wisdom",
+  "talent": "spirit",
   "terms": "sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet",
   "count": 2,
   "intervals": "repetition"
@@ -21,7 +21,7 @@
 },
 {
   "code": "w4",
-  "talent": "wisdom",
+  "talent": "vitality",
   "terms": "Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas",
   "count": 4,
   "intervals": "pages"
