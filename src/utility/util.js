@@ -38,3 +38,17 @@ export const swapCard = (uniqueCard) => {
   })
 }
 
+export const updateCardInfo = (cards) => {
+  const updatedCards = cards.map((card) => {
+   const {code, talent, terms, count, intervals} = card
+   const newCard = {
+      code: code,
+      talent: talent,
+      count: count,
+      terms: terms,
+      intervals: intervals
+   } 
+   return newCard
+  })
+  return updatedCards
+}
