@@ -1,29 +1,69 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { DummyCard } from "./DummyCard"
 import { MoonMsgBar } from "./MoonMsgBar"
 import { Talents } from './Talents'
+import { swapCard } from "../utility/util"
 
 
 export const Creation = () =>  {
-  const [abrv, setAbrv] = useState('e1') 
-  const [talent, setTalent] = useState('Example')
-  const [terms, setTerms] = useState('Your terms are an activity that difficulty depends your chosen number')
-  const [count, setCount] = useState('∞')
-  const [intervals, setIntervals] = useState('Pair the number with the correct ilk')
+  const [code, setCode] = useState('') 
+  const [talent, setTalent] = useState('')
+  const [terms, setTerms] = useState('')
+  const [count, setCount] = useState(0)
+  const [intervals, setIntervals] = useState('')
+
 
   const uniqueCard = {
-    abrv: abrv,
+    code: code,
     talent: talent ,
     terms: terms ,
     count: count,
-    interval: intervals
+    intervals: intervals
   }
 
   const onHandle = (event) => {
     event.preventDefault()
-    setAbrv(talent[0] + count)
+      validateForm()
   }
+
+  const validateForm = () => {
+   return  !talent ? setTalent('choose talent'): 
+    !terms ? setTerms('Your terms are the activity you want to do') : 
+    !count ? setCount('∞'):
+    !intervals ? setIntervals('Choose interval') : submitCard()
+  }
+
+  const submitCard = () => {
+    setCode(uniqueCard.talent[0].toLowerCase() + count)
+    updateCardValues()
+    updateCardValues()
+    swapCard(uniqueCard)
+    resetForm()
+    setTalent('You did it!')
+    setTerms('You made a moon card!')
+    setTimeout(() => {
+      setTalent('')
+      setTerms('')
+  }, 1500)
+  }
+
+  const updateCardValues = () => {
+    uniqueCard.code = code
+    uniqueCard.talent = talent
+    uniqueCard.terms = terms
+    uniqueCard.count= count
+    uniqueCard.intervals= intervals
+  }
+
+  const resetForm = () => {
+    setCode('')
+    setTalent('')
+    setTerms('')
+    setCount('')
+    setIntervals('')
+  }
+
 
   return (
     <section className="creation-view">
@@ -78,7 +118,7 @@ export const Creation = () =>  {
           <option name="pages">pages</option>
           <option name="chapter">chapters</option>
         </select>
-      <button className="create-button" type="submit" onChange={(event) => onHandle(event)}>Create a  moon card.</button>
+      <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a  moon card.</button>
       <Link className="start-button" to="/lunares/quarum/">I'm content</Link>
       </form>
       <Talents />
