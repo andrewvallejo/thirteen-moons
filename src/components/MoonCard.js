@@ -9,7 +9,6 @@ export const MoonCard = ({ cards }) => {
    return cards.map((card) => {
       const id = nanoid(10)
       const { code, talent, terms, count, intervals } = card
-      console.log(card)
       return (
          <article className='moon-card' key={id}>
             <Link onClick={()=> setLevel(level + 1)} to={`${match}/${level}`} >
