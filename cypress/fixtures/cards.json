@@ -1,0 +1,28 @@
+[{
+  "code": "w1",
+  "talent": "wisdom",
+  "terms": "dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero.",
+  "count": 1,
+  "intervals": "chapters"
+},
+{
+  "code": "w2",
+  "talent": "wisdom",
+  "terms": "sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet",
+  "count": 2,
+  "intervals": "repetition"
+},
+{
+  "code": "w3",
+  "talent": "wisdom",
+  "terms": "ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat",
+  "count": 3,
+  "intervals": "chapters"
+},
+{
+  "code": "w4",
+  "talent": "wisdom",
+  "terms": "Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas",
+  "count": 4,
+  "intervals": "pages"
+}]
