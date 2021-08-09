@@ -46,18 +46,18 @@
       text-transform: uppercase;
       letter-spacing: clamp(0.15em, .2vw, 0.35em);
       margin-bottom: auto;
-      font-size: $font-size-talent; 
+      font-size: $font-size-talent-dummy; 
     }
     .terms {
       align-self: center;
       margin: auto;
-      font-size: $font-size-terms;
+      font-size: $font-size-terms-dummy;
       line-height: 20px;
       -webkit-text-stroke: .3px $color-lV;
       color: $color-lll;
       > .count {
         display: block;
-        font-size: $font-size-number;
+        font-size: $font-size-number-dummy;
         color: $color-lV;
         filter: drop-shadow(0 0 .1rem $color-lV);
       }
