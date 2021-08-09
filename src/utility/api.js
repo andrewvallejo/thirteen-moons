@@ -5,7 +5,6 @@ export const fetchDeck = (async () => {
   const {deck_id} = await fetchApi(deckUrl)
   const cards = fetchApi(drawUrl(deck_id))
   .then((data) => data.cards)
-
   return cards
 })
 
@@ -33,7 +32,7 @@ export const cleanCards = (cards) => {
    const newCard = {
       count: parseInt(value),
       talent: suit,
-      abrv: suit[0] + value
+      code: suit[0] + value
    } 
    return newCard
   })
