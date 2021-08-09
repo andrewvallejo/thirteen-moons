@@ -15,13 +15,13 @@ export const MoonMsgBar = () => {
                 <Route  path='/wrong-turn'>
                   <p className= 'dialog'>Where do you think you are?</p>
                 </Route>
-                <Route exact path='/lunares/quarum/'>
+                <Route exact path='/lunares/'>
                   <p className='dialog'>Choose your fate, child</p>
                 </Route>
-                <Route exact path='/lunares/quarum/1'>
+                <Route exact path='/lunares/1'>
                   <p className='dialog'>Excellent child, you've found my first moon</p>
                 </Route>
-                <Route exact path='/lunares/quarum/2'>
+                <Route exact path='/lunares/2'>
                   <p className='dialog'>Good, keep on going.</p>
                 </Route>
                 <Route exact path='/'>
