@@ -5,32 +5,36 @@
 
 An actionable self-improvement app for spiritual souls to practice routine! Seek betterment over at [Thirteen Moons](https://thirteen-moons.netlify.app/).
   
-Curious about my wireframe? Check it our on [Figma](https://www.figma.com/file/uHVglY9n41qDzZRELkm0LB/Thirteen-Moons)!
+Curious about my wireframe? Check it out on [Figma](https://www.figma.com/file/uHVglY9n41qDzZRELkm0LB/Thirteen-Moons)!
   
 </div>
 
-
-
- ## Preview - Current Version!
  
- <div align="right">  
+---
 
-**Dislaimer:** If you're on a phone, this is meant be played on sideways. 
+<div align="center">  
   
-  If you are viewing this currently on desktop, know that I am designing this with mobile first in mind! 📱
-  
+
+**Disclaimer:** Currently this is only optimized for a phone in horizontal mode
+    
 <div>
 
-![image](https://user-images.githubusercontent.com/17935770/128615434-7917faa6-1074-4e16-bb0b-6c6e5ee90397.png)
+---
+  <img width="1000" height="500" src="https://user-images.githubusercontent.com/17935770/128803795-b8ac3f96-5a5c-4ba9-aa12-fcd65fa66189.gif" alt="React Badge">
+  
+  
+
+  
+
+  <div align='left'>
 
 
 ## Features
 
-- 52 Cards with their image, points, and activities.
-- Ability to edit certain face cards for custom challenge.
-- Score Board adding up the total values of the cards chosen.
-- 13 Rounds in total, Each round user is presented 4 cards, they choose one thing to do. When they do it, points are added to the board.
-- See your total points at the end of the game!
+ - 52 Cards with their image, points, and activities.
+ - Ability to edit certain face cards for a custom challenges.
+ - 13 Rounds in total, Each round user has presented 4 cards, they choose one thing to do. When they do it, points are added to the board.
+
 
 ## Installation & Start
 
@@ -43,16 +47,27 @@ npm install
 npm start
 ```
 
+## Roadmap  
+    
+> - Score Board adding up the total values of the cards chosen.
+> - User profile that contains their cards and scores
+> - Backend server to host user data
+> - More dialog for the moon
+> - The intro (which was drawn in the wireframe) 
+     
+  </div>
 
+  
+  
+## Screenshots
+    
+![Demo Website launch](https://user-images.githubusercontent.com/17935770/128804326-c361e8e5-7fd0-46a3-8005-144c8a556cf8.png)
 
-<!-- ## Future Additions 
+![Demo fill out form](https://user-images.githubusercontent.com/17935770/128804333-4ac2b5af-fd5f-44d6-8988-0ca52fb3fd53.png)
 
-> - User login feature 
-> - User profile that contains their answers and ratings 
-> - Add a set of backend interview questions and backend/frontend modes 
-> - Allow users to add questions
-> - Sort answers by rating, date added, and authors
-> - Ability to favorite questions and answers -->
+![Demo view cards](https://user-images.githubusercontent.com/17935770/128804340-753b06f5-b415-464c-af9e-3bdae70df8f5.png)
+
+  
 
 ## <h2 align="center">  **Author**  </h2>
 
@@ -60,10 +75,10 @@ npm start
 
 <div align="center">
 
-**Learning Goals** Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-
-**Challenges:** Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo consequuntur laboriosam id veritatis atque totam sit, magni repellat amet, magnam, sunt tempore saepe commodi numquam unde cupiditate nemo accusamus possimus.
-
+**Learning Goals** Routing ins-and-outs, React hooks, implementing custom art pieces from wireframe into the project
+  
+**Challenges:** This project was supposed to be a flex project for what we knew in React. I know that I tend to be over-ambitious and under estimate things, which I was I chose a simple API with simple data manipulation. I ran into trouble with all aspects of this project mainly due to the constraint of time. I am someone who sees problems but can find 10 other ways to improve it.. so I do. This led to some amazing discoveries like figuring out how to add a hover element to five layers [the moon cards] or all of the different ways you can try to move API calls and state changes outside of App. This sort of creates an 'over-engineered aspect to the project. This led to troubles in error handling and cypress. Due to everything being so isolated from each other and keeping routing in both the card and at home, it caused a lot of unforeseen issues and behaviors. These challenges, like always, bring up a different perspective and means to refactor the way I attempted time goals. I've learned that I need to make a list of things I need to do and not touch anything else along the way. I am pretty good at reprioritizing which means that my goals shift frequently. This also makes me want to take more courses on trouble shoooting so that these problems that go from file to file are easier to capture
+  
 <div align="center">  
 <img src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square" alt="React Badge">
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000&style=flat-square" alt="JavaScript Badge">
@@ -75,6 +90,8 @@ npm start
 </div>
 
 </div>
+                                                                                                                       
+                                                                                                                     
 
 <br>
 
@@ -85,3 +102,6 @@ Follow me on [Github](https://www.github.com/andrewvallejo)!
 Or find me on [Linkedin](https://www.linkedin.com/in/andrewvallejo/)!
 
 </div>
+
+
+
