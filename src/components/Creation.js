@@ -46,7 +46,7 @@ export const Creation = ({update}) =>  {
     setTimeout(() => {
       setTalent('')
       setTerms('')
-  }, 1500)
+    }, 1500)
   }
 
   const updateCardValues = () => {

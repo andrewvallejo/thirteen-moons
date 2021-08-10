@@ -1,19 +1,17 @@
 import React, { useEffect, useReducer  } from 'react';
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Spread } from './Spread';
 import { reducer, getAction as action  } from '../utility/reducer';
 import { fetchDeck, cleanCards } from '../utility/api'
 import { shuffle, drawHand } from '../utility/util'
 import { Creation } from './Creation';
 import { dialogData } from '../dialogData';
-import { WrongTurn } from './WrongTurn'
 
 const initialState = {
   deck: [],
   hand: [],
   error: ''
 }
-
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -46,20 +44,19 @@ export const App = () => {
     dispatch('error', errorMsg)
   }
   
-
     return (
         <Switch>
-        <>
-            <main>
+          <>
+          <main>
             {state.error &&  sendError('Server is down')}
-              <Route path='/lunares/'>
-                <Spread deck={state.deck} hand={state.hand} draw={updateCards}/>
-              </Route>
-          <Route exact path='/'>
+            <Route path='/lunares/'>
+              <Spread deck={state.deck} hand={state.hand} draw={updateCards}/>
+            </Route>
+            <Route exact path='/'>
               <Creation update={updateCards}/>
-          </Route>
-            </main> 
-            </>
-        </Switch>
+            </Route>
+          </main> 
+          </>
+      </Switch>
     )
 }
