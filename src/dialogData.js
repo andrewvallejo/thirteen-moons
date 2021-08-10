@@ -11,7 +11,7 @@ export const dialogData = [
     talent: 'wisdom',
     terms: 'Ask someone older than you and take down',
     count: 2,
-    intervals: 'nots'
+    intervals: 'notes'
   },
   {
     code: 'w3',
