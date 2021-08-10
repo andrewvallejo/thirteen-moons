@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
+import PropTypes from 'prop-types' 
 import { nanoid } from 'nanoid'
 import { createCover } from '../utility/util'
+
 
 export const MoonCard = ({ cards, draw }) => {
    const [level, setLevel] = useState(1)
@@ -39,3 +41,14 @@ export const MoonCard = ({ cards, draw }) => {
        )
    })
 }
+
+MoonCard.propTypes = {
+   card: PropTypes.shape({
+      code: PropTypes.string,
+      talent: PropTypes.string,
+      terms: PropTypes.string,
+      count: PropTypes.number,
+      intervals: PropTypes.string,
+   }),
+   draw: PropTypes.func
+ }
