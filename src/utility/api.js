@@ -12,6 +12,8 @@ export const fetchApi = (async (url) => {
   return ( 
     await fetch(url)
       .then((response) => response.json())
+      .catch(error => console.error('Can not reach server.'))
+  
    )
 })
 
