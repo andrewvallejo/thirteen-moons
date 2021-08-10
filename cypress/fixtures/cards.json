@@ -1,28 +1,28 @@
 [{
-  "code": "w1",
-  "talent": "mind",
-  "terms": "dapibus rutrum, justo. Praesent luctus. Curabitur egestas nunc sed libero.",
-  "count": 1,
-  "intervals": "chapters"
+  "code": "AS",
+  "image": "https://deckofcardsapi.com/static/img/AS.png",
+  "images": {"svg": "https://deckofcardsapi.com/static/img/AS.svg", "png": "https://deckofcardsapi.com/static/img/AS.png"},
+  "suit": "SPADES",
+  "value": "ACE"  
 },
 {
-  "code": "w2",
-  "talent": "spirit",
-  "terms": "sit amet, consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet",
-  "count": 2,
-  "intervals": "repetition"
+  "code": "AS",
+  "image": "https://deckofcardsapi.com/static/img/AS.png",
+  "images": {"svg": "https://deckofcardsapi.com/static/img/AS.svg", "png": "https://deckofcardsapi.com/static/img/AS.png"},
+  "suit": "SPADES",
+  "value": "ACE"  
 },
 {
-  "code": "w3",
-  "talent": "wisdom",
-  "terms": "ut aliquam iaculis, lacus pede sagittis augue, eu tempor erat",
-  "count": 3,
-  "intervals": "chapters"
+  "code": "AS",
+  "image": "https://deckofcardsapi.com/static/img/AS.png",
+  "images": {"svg": "https://deckofcardsapi.com/static/img/AS.svg", "png": "https://deckofcardsapi.com/static/img/AS.png"},
+  "suit": "SPADES",
+  "value": "ACE"  
 },
 {
-  "code": "w4",
-  "talent": "vitality",
-  "terms": "Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla dignissim. Maecenas",
-  "count": 4,
-  "intervals": "pages"
+  "code": "AS",
+  "image": "https://deckofcardsapi.com/static/img/AS.png",
+  "images": {"svg": "https://deckofcardsapi.com/static/img/AS.svg", "png": "https://deckofcardsapi.com/static/img/AS.png"},
+  "suit": "SPADES",
+  "value": "ACE"  
 }]
