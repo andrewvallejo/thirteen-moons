@@ -6,11 +6,11 @@ import { MoonMsgBar } from './MoonMsgBar'
 
 export const Spread = ({deck, hand, draw}) => {
     return (
-        <section className="card-spread">
-              <MoonMsgBar />
-              <MoonLevel levels={deck}/>
-              <MoonCard cards={hand} draw={draw} />
-            </section>
+      <section className="card-spread">
+        <MoonMsgBar />
+        <MoonLevel levels={deck}/>
+        <MoonCard cards={hand} draw={draw} />
+      </section>
   )
 }
 
