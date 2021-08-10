@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom"
 import { DummyCard } from "./DummyCard"
 import { MoonMsgBar } from "./MoonMsgBar"
@@ -129,7 +130,9 @@ export const Creation = ({update}) =>  {
       </form>
       <Talents />
     </section>
-
-
   )
+}
+
+Creation.propTypes = {
+  update: PropTypes.func
 }

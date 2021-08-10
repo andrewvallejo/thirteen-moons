@@ -1,4 +1,5 @@
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types';
 import React  from 'react'
 import { dummyCover } from '../utility/cardCovers'
 
@@ -31,3 +32,13 @@ export const DummyCard = ({ card }) => {
          </article>
        )
 }
+
+DummyCard.propTypes = {
+   card: PropTypes.shape({
+      code: PropTypes.string,
+      talent: PropTypes.string,
+      terms: PropTypes.string,
+      count: PropTypes.string,
+      intervals: PropTypes.string,
+   })
+ }
