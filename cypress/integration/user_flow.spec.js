@@ -1,16 +1,13 @@
 /* eslint-disable no-undef */
-describe('Creation Page', () => {
-  let id, remaining 
+describe('UserFlow', () => {
   beforeEach(() => {
     cy.visit('/')
-    cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{
-      statusCode: 200,
-      fixture: "new-deck.json"
-    })
-   cy.intercept('GET', `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}777/draw/?count=4`, {
-      statusCode: 200,
-      fixture: "cards.json" }
-      )
+    cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{  
+      "success": true,
+        "deck_id": "777",
+        "remaining": 4,
+        "shuffled": true
+      })
   })
 
   it('Should sucessfully load upon initial visit', () => {
@@ -20,7 +17,7 @@ describe('Creation Page', () => {
       .get('.moon-face')
       .should('be.visible')
       .get('.dialog')
-    .should('have.text','Do you wish to craft a Moon challenge card?')
+      .should('have.text','Do you wish to craft a Moon challenge card?')
     cy.get('.dummy-card')
       .should('be.visible')
       .get('.terms > .count')
@@ -67,30 +64,42 @@ describe('Creation Page', () => {
       .should('include.text', 'minutesrepetitionscountspageschaptersarticlesmilesreps of 10ounces')      
     })
     it('Should be able to successfully make a new card', () => {
-
+    cy.get('#talents')
+      .select('Spirit')
+      .should('have.value', 'Spirit')
+    cy.get('input[type=range]')
+      .invoke("val", 2)
+      .click({ force: true })
+      .should('have.value', 7)
+      .trigger("change")
+    cy.get('#terms')
+      .type('Meditate for').should('have.value', 'Meditate for')
+    cy.get('#intervals')
+      .select('minutes')
+      .should('have.value', 'minutes')
+    cy.get('.card-content')
+      .get('h2.talent')
+      .should('have.text', 'Spirit')
+      .get('.card-content > .terms')
+      .should('have.text', 'Meditate for7minutes')
+      .get('.create-button')
+      .click()
+    cy.get('.card-content')
+      .should('include.text', 'You did it!')
+      .should('include.text', 'You made a moon card!')
+    cy.get('.card-content > h2')
+      .should('not.be.visible')
     })
-})
-
-describe('Game Page', () =>  {
-
-    let id, remaining 
-    beforeEach(() => {
-      cy.visit('/')
-      cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{
-        statusCode: 200,
-        fixture: "new-deck.json"
-      })
-     cy.intercept('GET', `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}777/draw/?count=4`, {
-        statusCode: 200,
-        fixture: "cards.json" }
-        )
-        cy.get('.start-button')
-        .click()
-    })
-  
-
   it('Should be able to load the game upon visit', () => {
+    cy.get('.start-button')
+      .click()
+    cy.get('.card-spread')
+      .should('be.visible')
     cy.get(':nth-child(3) > a > .inner-card > .card-front > .card-content')
-    .should('exist')
-  })  
+      .should('exist')
+    cy.get(':nth-child(3) > a').click({ force: true })
+    cy.get(':nth-child(3) > a').click({ force: true })
+    cy.get('.moon-card').first().trigger('mouseover')
+      .should('be.visible')
+    })  
 })
