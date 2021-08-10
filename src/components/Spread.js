@@ -5,7 +5,6 @@ import { MoonLevel } from "./MoonLevel"
 import { MoonMsgBar } from './MoonMsgBar'
 
 export const Spread = ({deck, hand, draw}) => {
-  console.log(deck, hand)
     return (
         <section className="card-spread">
               <MoonMsgBar />
