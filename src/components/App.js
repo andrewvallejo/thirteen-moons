@@ -21,7 +21,6 @@ export const App = () => {
     (async () => {
       let cards = await fetchDeck()
       cards = cleanCards(cards)
-      shuffle(cards)
       let {currentDeck: deck, currentHand:hand} = drawHand(cards)
       dispatch(action(deck.type, deck.deck))
       dispatch(action(hand.type, hand.deck))
@@ -29,20 +28,23 @@ export const App = () => {
     .catch(error => sendError('error', 'Server is down, sorry. The stars must not be aligned.'))
   }, []);
  
-  const updateDeck = (currentDeck) => {
-    if(!currentDeck) sendError('No cards found')
-    shuffle(dialogData)
-    let {currentDeck: deck, currentHand: hand} = drawHand(currentDeck)
-    dispatch(action(deck.type, deck.deck))
-    dispatch(action(hand.type, hand.deck))
-  }
 
-  const updateCards = (page) => {
-   page === 'lunares' ? (updateDeck(dialogData)) : dispatch(action('currentDeck', dialogData))
+  const updateCards = () => {
+  let {currentDeck: deck, currentHand: hand} = drawHand(dialogData)
+  if(!state.deck) sendError('No cards found')
+  dispatch(action(deck.type, deck.deck))
+  dispatch(action(hand.type, hand.deck))
   }
 
   const sendError = (errorMsg) => {
     dispatch('error', errorMsg)
+  }
+
+  const drawCards = () => {
+    shuffle(state.deck)
+    let {currentDeck: deck, currentHand: hand} = drawHand(state.deck)
+    dispatch(action(deck.type, deck.deck))
+    dispatch(action(hand.type, hand.deck))
   }
   
     return (
@@ -51,7 +53,7 @@ export const App = () => {
           <main>
             {state.error &&  sendError('Server is down')}
             <Route path='/lunares/'>
-              <Spread deck={state.deck} hand={state.hand} draw={updateCards}/>
+              <Spread deck={state.deck} hand={state.hand} draw={drawCards}/>
             </Route>
             <Route exact path='/'>
               <Creation update={updateCards}/>
