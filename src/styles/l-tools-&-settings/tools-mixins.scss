@@ -39,7 +39,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem 2rem;
   } @else if $viewport==desktop{
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(52, 1fr);
     gap: 1rem 4rem;
   }
 }
