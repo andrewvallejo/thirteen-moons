@@ -8,7 +8,7 @@ export const Collection = ({ deck }) => {
       <section className="card-collection">
         <MoonMsgBar />
         <div className="card-containers">
-          <MoonCard cards={deck} />
+        <MoonCard cards={deck} />
         </div>
       </section>
   )
