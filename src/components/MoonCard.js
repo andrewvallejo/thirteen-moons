@@ -11,12 +11,17 @@ export const MoonCard = ({ cards, draw }) => {
    return cards.map((card) => {
       const id = nanoid(10)
       const { code, talent, terms, count, intervals } = card
+      const endTurn = () => {
+         setLevel(level + 1) 
+         draw()
+      }
+
+      
 
       return (
          <article className='moon-card' key={id}>
-            <Link to={`${match}/${level}`} onClick={()=> {
-               setLevel(level + 1) 
-               draw()
+            <Link to={match.includes('lunares') && `${match}/${level}` } onClick={()=> {
+              if(match.includes('lunares')) endTurn() 
                } }>
                <div className="inner-card">
                   <div className="card-front"> 
@@ -36,7 +41,7 @@ export const MoonCard = ({ cards, draw }) => {
                      <aside className='darken'/> 
                      <aside className='overlay'/>  
                </div>
-            </Link>
+               </Link>
          </article>
        )
    })
