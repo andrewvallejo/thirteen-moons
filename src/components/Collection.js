@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types';
 import { MoonCard } from './MoonCard'
 import { MoonMsgBar } from './MoonMsgBar'
+import { Link } from "react-router-dom";
 
 export const Collection = ({ deck }) => {
   return (
@@ -10,6 +11,8 @@ export const Collection = ({ deck }) => {
         <div className="card-containers">
         <MoonCard cards={deck} />
         </div>
+        <Link className="back-button" to="/">Go Back</Link>
+
       </section>
   )
 }
