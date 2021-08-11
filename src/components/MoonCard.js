@@ -20,7 +20,7 @@ export const MoonCard = ({ cards, draw }) => {
 
       return (
          <article className='moon-card' key={id}>
-            <Link to={match.includes('lunares') && `${match}/${level}` } onClick={()=> {
+            <Link to={match.includes('lunares') ? `${match}/${level}` : match } onClick={()=> {
               if(match.includes('lunares')) endTurn() 
                } }>
                <div className="inner-card">
