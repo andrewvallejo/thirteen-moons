@@ -31,14 +31,14 @@ export const App = () => {
  
   const updateDeck = (currentDeck) => {
     if(!currentDeck) sendError('No cards found')
+    shuffle(dialogData)
     let {currentDeck: deck, currentHand: hand} = drawHand(currentDeck)
     dispatch(action(deck.type, deck.deck))
     dispatch(action(hand.type, hand.deck))
   }
 
   const updateCards = (page) => {
-    shuffle(dialogData)
-   page === 'lunares' ? updateDeck(dialogData) : dispatch(action('currentDeck', dialogData))
+   page === 'lunares' ? (updateDeck(dialogData)) : dispatch(action('currentDeck', dialogData))
   }
 
   const sendError = (errorMsg) => {
