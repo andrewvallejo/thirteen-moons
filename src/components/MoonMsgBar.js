@@ -60,6 +60,9 @@ export const MoonMsgBar = () => {
                 <Route exact path='/'>
                   <h1 className='dialog'>Do you wish to craft a Moon challenge card?</h1>
                 </Route>
+                <Route exact path='/collection'>
+                  <h1 className='dialog'>Your collection</h1>
+                </Route>
             </blockquote>
         </article>
       </>
