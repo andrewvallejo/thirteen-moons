@@ -6,6 +6,7 @@ import { fetchDeck, cleanCards } from '../utility/api'
 import { shuffle, drawHand } from '../utility/util'
 import { Creation } from './Creation';
 import { dialogData } from '../dialogData';
+import { Collection } from './Collection';
 
 const initialState = {
   deck: [],
@@ -30,14 +31,14 @@ export const App = () => {
  
   const updateDeck = (currentDeck) => {
     if(!currentDeck) sendError('No cards found')
-    let {currentDeck: deck, currentHand:hand} = drawHand(currentDeck)
+    let {currentDeck: deck, currentHand: hand} = drawHand(currentDeck)
     dispatch(action(deck.type, deck.deck))
     dispatch(action(hand.type, hand.deck))
   }
 
-  const updateCards = () => {
+  const updateCards = (page) => {
     shuffle(dialogData)
-    updateDeck(dialogData)
+   page === 'lunares' ? updateDeck(dialogData) : dispatch(action('currentDeck', dialogData))
   }
 
   const sendError = (errorMsg) => {
@@ -54,6 +55,9 @@ export const App = () => {
             </Route>
             <Route exact path='/'>
               <Creation update={updateCards}/>
+            </Route>
+            <Route exact path='/collection/'>
+              <Collection deck={state.deck}/>
             </Route>
           </main> 
           </>
