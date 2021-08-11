@@ -30,6 +30,9 @@
   .start-button {
     @extend button;
   }
+  .view-collection-button {
+     @extend button;
+  }
   .rules {
     position: absolute;
     top: 9.5%;
