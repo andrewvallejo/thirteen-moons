@@ -126,7 +126,8 @@ export const Creation = ({update}) =>  {
           <option name="ounces">ounces</option>
         </select>
       <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a moon card.</button>
-      <Link className="start-button" to="/lunares" onClick={() => update()}>I'm content</Link>
+      <Link className="start-button" to="/lunares" onClick={() => update('lunares')}>I'm content</Link>
+      <Link className="view-collection-button" to="/collection" onClick={() => update()}>See your collection.</Link>
       </form>
       <Talents />
     </section>
