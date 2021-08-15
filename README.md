@@ -9,23 +9,6 @@ Curious about my wireframe? Check it out on [Figma](https://www.figma.com/file/u
   
 </div>
 
- 
----
-
-<div align="center">  
-  
-
-**Disclaimer:** Currently this is only optimized for a phone in horizontal mode
-    
-<div>
-
----
-  <img width="1000" height="500" src="https://user-images.githubusercontent.com/17935770/128803795-b8ac3f96-5a5c-4ba9-aa12-fcd65fa66189.gif" alt="React Badge">
-  
-  
-
-  
-
   <div align='left'>
 
 
