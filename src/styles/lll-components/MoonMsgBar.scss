@@ -2,7 +2,7 @@
   z-index: 1;
   border-radius: 100px;
   border: 2px solid $color-lV;
-  width: clamp(30rem, 60vw, 60rem);
+  width: clamp(20rem, 95vw, 60rem);
   height: clamp(5.5rem, 40vh, 8rem);
   background: $color-l;
   .moon-face {
@@ -16,11 +16,11 @@
     
   }
   .dialog-container {
+    @include mediaQueries(dialog-size);
     position: absolute;
     z-index: 2;
     border-radius: 7px;
     right: 10%;
-    width: clamp(18rem, 40vw, 45rem);
     height: clamp(5.5rem, 40vw, 6.5rem);
     &:after {
       content: "";
