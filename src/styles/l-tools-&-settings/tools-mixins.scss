@@ -63,7 +63,34 @@
 
 /* === Media Queries === */
 @mixin mobile($property) {
-  @media only screen and (min-width: 375px) {
+  @media only screen and (min-width: 350px) {
+    @content;
+    transition: 100ms;
+    @if $property == moon-pos {
+      left: -9.5%;
+    } 
+      @if $property == form-pos {
+      margin-top: 23.5rem;
+      top: 100%;
+      right: 20%;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      margin-top: 2rem;
+      left: 20%;
+    }
+    @if $property == dialog-size {
+      width: 11.5rem;
+      margin-right: .3rem;
+    }
+    @if $property == rules {
+      visibility: hidden;
+    }
+  }
+}
+
+@mixin small-window($property) {
+  @media only screen and (min-width: 500px) {
     @content;
     transition: 100ms;
     @if $property == moon-pos {
@@ -77,36 +104,50 @@
     @if $property == dummy-pos {
       top: 100%;
       margin-top: 2rem;
-      left: 10%;
+      left: 12%;
+    }
+    @if $property == dialog-size {
+      width: clamp(9rem, 58vw, 35rem);
+    }
+    @if $property == rules {
+      visibility: unset;
     }
   }
 }
+
+
 @mixin tablet($property) { 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 650px) {
     @content;
     transition: 100ms;
     @if $property == moon-pos {
-      left: -5.9%;
+      left: -4.5%;
     }
     @if $property == form-pos {
-      margin-top: 22rem;
+      margin-top: 24rem;
       top: 100%;
-      right: 2%;
+      right: 40%;
     }
     @if $property == dummy-pos {
       top: 100%;
-      left: 40%;
-      margin-top: 5rem;
+      left: 22%;
+      margin-top: 2rem;
+    }
+    @if $property == dialog-size {
+      width: clamp(7rem, 64vw, 60rem);
+    }
+    @if $property == rules {
+      visibility: unset;
     }
   }
 }
 
 @mixin desktop($property) {
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 950px) {
     @content;
     transition: 100ms;
     @if $property == moon-pos {
-      left: -4%;
+      left: -3.5%;
     }
     @if $property == form-pos {
       margin-top: 5rem;
@@ -117,12 +158,22 @@
       top: 100%;
       margin-top: 5rem;
     }
+    @if $property == msgbar-size {
+      width: clamp(20rem, 95vw, 60rem);
+    }
+    @if $property == dialog-size {
+      width: 45.5rem;
+    }
+    @if $property == rules {
+      visibility: unset;
+    }
   }
 }
 
 /* === Helpers === */
 @mixin mediaQueries($property) {
   @include mobile($property);
+  @include small-window($property);
   @include tablet($property);
   @include desktop($property);
 }
