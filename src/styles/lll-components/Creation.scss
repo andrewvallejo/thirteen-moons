@@ -7,9 +7,8 @@
     top: 10%;
   }
   .dummy-card {
+    @include mediaQueries(dummy-pos);
     position: absolute;
-    top: 100%;
-    margin-top: 5rem;
   }
   .creation-form{
     @include mediaQueries(form-pos);
