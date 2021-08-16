@@ -68,6 +68,11 @@
     transition: 100ms;
     @if $property == moon-pos {
       left: -7%;
+    } 
+      @if $property == form-pos {
+      margin-top: 23.5rem;
+      top: 100%;
+      right: 42%;
     }
   }
 }
@@ -78,6 +83,11 @@
     @if $property == moon-pos {
       left: -6%;
     }
+    @if $property == form-pos {
+      margin-top: 22rem;
+      top: 100%;
+      right: 35%;
+    }
   }
 }
 
@@ -87,6 +97,11 @@
     transition: 100ms;
     @if $property == moon-pos {
       left: -4%;
+    }
+    @if $property == form-pos {
+      margin-top: 5rem;
+      top: 100%;
+      right: 35%;
     }
   }
 }
