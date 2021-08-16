@@ -2,17 +2,18 @@
   z-index: 1;
   border-radius: 100px;
   border: 2px solid $color-lV;
-  width: 30rem;
-  height: 5.5rem;
+  width: clamp(30rem, 60vw, 60rem);
+  height: clamp(5.5rem, 40vw, 8rem);
   background: $color-l;
   .moon-face {
-    transform: scale(.42);
+    @include mediaQueries(moon-pos);
+    transform: scale(.63);
     position: absolute;
-    left: -11.5%;
     border: 3px solid $color-black;
     border-radius: 50%;
     background-color: $color-black;
     mix-blend-mode: darken;
+    
   }
   .dialog-container {
     position: absolute;
