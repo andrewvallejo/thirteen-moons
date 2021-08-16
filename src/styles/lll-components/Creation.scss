@@ -12,11 +12,10 @@
     margin-top: 5rem;
   }
   .creation-form{
+    @include mediaQueries(form-pos);
+
     position: absolute;
     color: $color-lV;
-    margin-top: 5rem;
-    top: 100%;
-    right: 35%;
     width: clamp(15rem, 40vw, 34rem);
     height: 50%;
     .choice {
