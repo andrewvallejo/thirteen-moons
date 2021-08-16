@@ -3,7 +3,7 @@
   border-radius: 100px;
   border: 2px solid $color-lV;
   width: clamp(30rem, 60vw, 60rem);
-  height: clamp(5.5rem, 40vw, 8rem);
+  height: clamp(5.5rem, 40vh, 8rem);
   background: $color-l;
   .moon-face {
     @include mediaQueries(moon-pos);
