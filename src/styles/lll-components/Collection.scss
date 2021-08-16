@@ -3,7 +3,6 @@
   height: 100%;
   .message-bar{
     position: absolute;
-    left: 33%;
     top: 2.5%;
     }
   .card-containers{
@@ -11,6 +10,9 @@
     max-width: 100%;
     overflow-x: scroll;
     height: 80%;
+   .inner-card {
+    width: clamp(10rem, 40vw, 15rem);
+    }
     }
   .back-button {
     @extend button;
