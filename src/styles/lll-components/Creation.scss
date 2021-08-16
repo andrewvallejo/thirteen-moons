@@ -16,7 +16,7 @@
     position: absolute;
     color: $color-lV;
     width: clamp(15rem, 40vw, 34rem);
-    height: 50%;
+    height: 30%;
     .choice {
       color: $color-lll;
       margin: .3rem 0;
@@ -32,6 +32,7 @@
      @extend button;
   }
   .rules {
+    @include mediaQueries(rules);
     position: absolute;
     top: 80%;
     right: 2%;
