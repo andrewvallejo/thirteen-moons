@@ -33,14 +33,17 @@
   display: grid;
   justify-items: center;
   @if $viewport==mobile {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1 , 1fr);
+    gap: 0rem 0rem;;
+  } @else if $viewport==small-window {
+    grid-template-columns: repeat(1 , 1fr);
     gap: 1rem 1rem;
   } @else if $viewport==tablet {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 0rem;
   } @else if $viewport==desktop{
     grid-template-columns: repeat(52, 1fr);
-    gap: 1rem 4rem;
+    gap: 1rem 6rem;
   }
 }
 
@@ -89,6 +92,21 @@
     @if $property == dummy-size {
       width: clamp(12rem, 20vw ,20rem);
     }
+    @if $property == spread-grid {
+      @include grid(mobile);
+      margin-top: 9rem;
+      margin-right: 3rem;
+      overflow: hidden;
+
+      > .moon-card {
+        margin: .5rem 0;
+      }
+    }
+    @if $property == levels-pos {
+     top: 18%;
+     right: 5%;
+     height: 80%;
+    }
   }
 }
 
@@ -118,6 +136,23 @@
     @if $property == dummy-size {
       width: clamp(12rem, 20vw ,20rem);
     }
+    @if $property == spread-grid {
+      @include grid(small-window);
+      margin-top: 10rem;
+      margin-left: 0rem;
+      margin-right: 0rem;
+
+      .moon-card {
+        margin: 0;
+      .inner-card {
+          width: clamp(10rem, 50vw, 20rem );
+        }
+      }
+    }
+    @if $property == levels-pos {
+      right: 1%;
+      height: 83%;
+     }
   }
 }
 
@@ -146,14 +181,31 @@
     }
     @if $property == rules {
       visibility: unset;
-      // height: 30.5rem;
-      // width: 17rem;
-
       line-height: 2;
     }
     @if $property == dummy-size {
       width: clamp(12rem, 20vw ,20rem);
     }
+    @if $property == spread-grid {
+      @include grid(tablet);
+        margin-top: 15rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+
+        padding: 1rem;
+        .moon-card {
+          margin: 0;
+          .inner-card {
+            width: clamp(13rem, 20vw, 17rem);
+          }
+        }
+    }
+    @if $property == levels-pos {
+      transform: rotate(90deg) scale(2);
+      top: 65%;
+      right: 48%;
+      height: 60%;
+     }
   }
 }
 
@@ -193,10 +245,20 @@
     }
     @if $property == rules {
       visibility: unset;
-
-
       font-size: $font-size-paragraph;
     }
+    @if $property == spread-grid {
+      @include grid(tablet);
+      margin-top: 11rem;
+      margin-right: 0rem;
+      margin-left: 1rem;
+    }
+    @if $property == levels-pos {
+      transform: rotate(90deg) scale(2);
+      top: 55%;
+      right: 48%;
+      height: 80%;
+     }
   }
 }
 
