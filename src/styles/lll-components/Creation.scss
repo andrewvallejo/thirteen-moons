@@ -12,7 +12,6 @@
   }
   .creation-form{
     @include mediaQueries(form-pos);
-
     position: absolute;
     color: $color-lV;
     width: clamp(15rem, 40vw, 34rem);
@@ -32,7 +31,7 @@
      @extend button;
   }
   .rules {
-    @include mediaQueries(rules);
+    @include mediaQueries(rules-pos);
     position: absolute;
     top: 80%;
     right: 2%;
