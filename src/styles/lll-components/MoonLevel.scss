@@ -1,4 +1,5 @@
 .moon-levels {
+  @include mediaQueries(levels-pos);
   @include flex(column, space-between);
   position: absolute;
   right: 0;
