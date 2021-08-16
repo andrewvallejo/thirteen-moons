@@ -4,7 +4,7 @@
   left: 1%;
   .inner-card {
     position: relative;
-    width: 9.5rem;
+    width: clamp(12rem, 20vw ,20rem);
     border-radius: 27px;
     .card-back, .card-front {
       width: 100%;
