@@ -71,12 +71,14 @@
 @mixin tablet($property) { 
   @media only screen and (min-width: 768px) {
     @content;
+    transition: 100ms;
   }
 }
 
 @mixin desktop($property) {
   @media only screen and (min-width: 1024px) {
     @content;
+    transition: 100ms;
   }
 }
 
