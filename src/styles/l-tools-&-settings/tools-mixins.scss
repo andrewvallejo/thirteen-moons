@@ -74,6 +74,11 @@
       top: 100%;
       right: 42%;
     }
+    @if $property == dummy-pos {
+      top: 100%;
+      margin-top: 2rem;
+      left: 10%;
+    }
   }
 }
 @mixin tablet($property) { 
@@ -81,12 +86,17 @@
     @content;
     transition: 100ms;
     @if $property == moon-pos {
-      left: -6%;
+      left: -5.9%;
     }
     @if $property == form-pos {
       margin-top: 22rem;
       top: 100%;
-      right: 35%;
+      right: 2%;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      left: 40%;
+      margin-top: 5rem;
     }
   }
 }
@@ -102,6 +112,10 @@
       margin-top: 5rem;
       top: 100%;
       right: 35%;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      margin-top: 5rem;
     }
   }
 }
