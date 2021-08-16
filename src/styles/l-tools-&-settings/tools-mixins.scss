@@ -76,7 +76,7 @@
     @content;
     transition: 100ms;
     @if $property == moon-pos {
-      left: -6.8%;
+      left: -6%;
     }
   }
 }
@@ -86,7 +86,7 @@
     @content;
     transition: 100ms;
     @if $property == moon-pos {
-      left: -4.3%;
+      left: -4%;
     }
   }
 }
