@@ -1,13 +1,13 @@
 /* eslint-disable no-undef */
 describe('UserFlow', () => {
   beforeEach(() => {
-    cy.visit('/')
     cy.intercept('GET', 'https://deckofcardsapi.com/api/deck/new/',{  
       "success": true,
-        "deck_id": "777",
-        "remaining": 4,
-        "shuffled": true
-      })
+      "deck_id": "777",
+      "remaining": 4,
+      "shuffled": true
+    })
+    cy.visit('/')
   })
 
   it('Should sucessfully load upon initial visit', () => {
@@ -25,24 +25,24 @@ describe('UserFlow', () => {
     cy.get('.rules')
       .get('.rules > h2')
       .should('have.text', 'Talents')
-      .get('.rules > :nth-child(2)')
+      .get('.rules > :nth-child(2) > h3')
       .should('have.text', 'Mind')
-      .get('.rules > :nth-child(3)')
-      .should('include.text', 'challenges your brain. Repetition ')
-      .get('.rules > :nth-child(4)')
+      .get('.rules > :nth-child(3) > h3')
       .should('have.text', 'Spirit')
-      .get('.rules > :nth-child(5)')
-      .should('include.text', 'your soul. Just')
-      .get('.rules > :nth-child(6)')
+      .get('.rules > :nth-child(4) > h3')
       .should('have.text', 'Wisdom')
-      .get('.rules > :nth-child(7)')
-      .should('include.text', 'perspective. The moon')
-      .get('.rules > :nth-child(8)')
+      .get('.rules > :nth-child(5) > h3')
       .should('have.text', 'Vitality')
-      .get('.rules > :nth-child(9)')
+      .get('.rules > :nth-child(2) > p')
+      .should('include.text', 'Repetition over intellect')
+      .get('.rules > :nth-child(3) > p')
+      .should('include.text', 'your soul. Just')
+      .get('.rules > :nth-child(4) > p')
+      .should('include.text', 'perspective. The moon')
+      .get('.rules > :nth-child(5) > p')
       .should('include.text', 'your muscles. You')
     cy.get('.create-button')
-      .should('have.text', 'Create a moon card.')
+      .should('have.text', 'Create a moon card')
     cy.get('.start-button')
       .should('have.text', 'I\'m content')
     cy.get('.creation-form') 
@@ -68,10 +68,10 @@ describe('UserFlow', () => {
       .select('Spirit')
       .should('have.value', 'Spirit')
     cy.get('input[type=range]')
-      .invoke("val", 2)
       .click({ force: true })
-      .should('have.value', 7)
       .trigger("change")
+      .invoke("val", 2)
+      .should('have.value', 2)
     cy.get('#terms')
       .type('Meditate for').should('have.value', 'Meditate for')
     cy.get('#intervals')
