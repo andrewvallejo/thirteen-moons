@@ -38,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "8.3.0"
+    "cypress": "8.3.0",
+    "netlify-cli": "^6.5.8"
   }
 }
