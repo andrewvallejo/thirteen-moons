@@ -1,7 +1,8 @@
-export const reducer = (state, action) => {
-  switch (action.type) {
+export const reducer = (state, { action }) => {
+  const { type, value } = action
+  switch (type) {
     case 'ADD_DECK':
-      return { ...state, deck: action.deck }
+      return { ...state, deck: value }
     case 'UPDATE_DECK':
       return { ...state, deck: action.deck }
     case 'UPDATE_HAND':
@@ -10,20 +11,5 @@ export const reducer = (state, action) => {
       return { ...state, hand: action.status }
     default:
       return state
-  }
-}
-
-export const getAction = (type, item) => {
-  switch (type) {
-    case 'deck':
-      return { type: 'ADD_DECK', deck: item }
-    case 'currentDeck':
-      return { type: 'UPDATE_DECK', deck: item }
-    case 'hand':
-      return { type: 'UPDATE_HAND', deck: item }
-    case 'error':
-      return { type: 'ADD_ERROR', status: item }
-    default:
-      break
   }
 }
