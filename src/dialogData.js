@@ -43,7 +43,7 @@ export const dialogData = [
   },
   {
     code: 'w7',
-    talent: 'wisdom',
+talent: 'wisdom',
     terms: 'Enjoy scenary, stare through the window for',
     count: 7,
     intervals: 'minutes'

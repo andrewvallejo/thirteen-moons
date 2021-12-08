@@ -2,10 +2,9 @@
   @include flex(row, center);
   width: 100%;
   overflow: hidden;
-.message-bar{
-
-  position: absolute;
-  top: 2.5%;
+  .message-bar {
+    position: absolute;
+    top: 2.5%;
   }
   .card-containers {
     @include mediaQueries(spread-grid);
@@ -14,9 +13,8 @@
     height: 100%;
     width: 100%;
 
-
-  .inner-card {
-    width: clamp(12rem, 20vw, 16rem);
+    .inner-card {
+      width: clamp(12rem, 20vw, 16rem);
     }
   }
 }

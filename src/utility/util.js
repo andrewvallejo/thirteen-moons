@@ -1,9 +1,9 @@
-import { covers } from "./cardCovers";
-import { dialogData } from "../dialogData";
+import { dialogData } from '../dialogData'
+import { covers } from './cardCovers'
 
-export const randomize = (items) => Math.floor(Math.random() * items.length);
+export const randomize = (items) => Math.floor(Math.random() * items.length)
 
-export const createCover = () => covers[randomize(covers)];
+export const createCover = () => covers[randomize(covers)]
 
 export const shuffle = (deck) => deck.sort(() => Math.random() - 0.5)
 
@@ -21,9 +21,9 @@ export const drawHand = (deck) => {
   const cards = drawFour(deck)
   const currentDeck = discardFour(deck, cards)
   const actions = {
-   currentDeck: {type: 'currentDeck', deck: currentDeck},
-   currentHand: {type: 'hand', deck: cards}
-}
+    currentDeck: { type: 'currentDeck', deck: currentDeck },
+    currentHand: { type: 'hand', deck: cards }
+  }
   return actions
 }
 
@@ -39,15 +39,15 @@ export const swapCard = (uniqueCard) => {
 
 export const updateCardInfo = (cards) => {
   const updatedCards = cards.map((card) => {
-   const {code, talent, terms, count, intervals} = card
-   const newCard = {
+    const { code, talent, terms, count, intervals } = card
+    const newCard = {
       code: code,
       talent: talent,
       count: count,
       terms: terms,
       intervals: intervals
-   } 
-   return newCard
+    }
+    return newCard
   })
   return updatedCards
 }

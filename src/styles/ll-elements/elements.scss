@@ -13,7 +13,7 @@ header {
 main {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 article {
@@ -33,7 +33,7 @@ button {
   }
 }
 
-h1{
+h1 {
   @include heading;
 }
 
@@ -52,4 +52,3 @@ p {
 a {
   color: $color-white;
 }
-
