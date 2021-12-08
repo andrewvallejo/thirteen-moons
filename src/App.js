@@ -1,72 +1,40 @@
 import React, { useEffect, useReducer } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import { Collection } from './components/Collection'
-import { Creation } from './components/Creation'
-import { Spread } from './components/Spread'
-import { dialogData } from './dialogData'
+import { CollectionPage } from './pages/CollectionsPage'
+import { CreationPage } from './pages/CreationPage'
+import { GamePage } from './pages/GamePage'
 import { cleanCards, fetchDeck } from './utility/api'
-import { getAction as action, reducer } from './utility/reducer'
-import { drawHand, shuffle } from './utility/util'
+import { GameContext } from './utility/GameContext'
+import { reducer } from './utility/reducer'
+import { drawHand } from './utility/util'
 
 const initialState = {
   deck: [],
-  hand: [],
-  error: ''
+  hand: []
 }
 
 export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    ;(async () => {
-      let cards = await fetchDeck()
-      cards = cleanCards(cards)
-      let { currentDeck: deck, currentHand: hand } = drawHand(cards)
-      dispatch(action(deck.type, deck.deck))
-      dispatch(action(hand.type, hand.deck))
-    })().catch((error) =>
-      sendError(
-        'error',
-        'Server is down, sorry. The stars must not be aligned.'
-      )
-    )
-  }, [])
-
-  const updateCards = () => {
-    let { currentDeck: deck, currentHand: hand } = drawHand(dialogData)
-    if (!state.deck) sendError('No cards found')
-    dispatch(action(deck.type, deck.deck))
-    dispatch(action(hand.type, hand.deck))
-  }
-
-  const sendError = (errorMsg) => {
-    dispatch('error', errorMsg)
-  }
-
-  const drawCards = () => {
-    shuffle(state.deck)
-    let { currentDeck: deck, currentHand: hand } = drawHand(state.deck)
-    dispatch(action(deck.type, deck.deck))
-    dispatch(action(hand.type, hand.deck))
-  }
+    !state.deck.length && 
+    (async () => {
+      await fetchDeck().then((cards) => {
+        let cleanedCards = cleanCards(cards)
+        console.log(cleanedCards)
+        dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
+      })
+    })()
+  }, [state])
 
   return (
-    <Switch>
-      <>
-        <main>
-          {state.error && sendError('Server is down')}
-          <Route path="/lunares/">
-            <Spread deck={state.deck} hand={state.hand} draw={drawCards} />
-          </Route>
-          <Route exact path="/">
-            <Creation update={updateCards} />
-          </Route>
-          <Route exact path="/collection/">
-            <Collection deck={state.deck} />
-          </Route>
-        </main>
-      </>
-    </Switch>
+    <GameContext.Provider value={{ state, dispatch }}>
+      <main>
+        <Route path="/lunares/" component={GamePage} />
+        <Route exact path="/" component={CreationPage} />
+        <Route exact path="/collection/" component={CollectionPage} />
+      </main>
+    </GameContext.Provider>
   )
 }
