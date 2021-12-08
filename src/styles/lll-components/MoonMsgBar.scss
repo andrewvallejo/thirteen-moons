@@ -7,13 +7,12 @@
   background: $color-l;
   .moon-face {
     @include mediaQueries(moon-pos);
-    transform: scale(.63);
+    transform: scale(0.63);
     position: absolute;
     border: 3px solid $color-black;
     border-radius: 50%;
     background-color: $color-black;
     mix-blend-mode: darken;
-    
   }
   .dialog-container {
     @include mediaQueries(dialog-size);
@@ -23,12 +22,12 @@
     right: 10%;
     height: clamp(5.5rem, 40vw, 6.5rem);
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       top: -1.4%;
-      left: -.5%;
+      left: -0.5%;
       border-radius: 7px;
-      opacity: .3;
+      opacity: 0.3;
       background: $color-V;
       width: 100%;
       height: 100%;
@@ -40,7 +39,7 @@
       position: absolute;
       z-index: 10;
       inset: 0;
-      margin: 0 .4rem;
+      margin: 0 0.4rem;
       width: 95%;
       height: 100%;
       color: $color-V;
@@ -49,4 +48,3 @@
     }
   }
 }
-

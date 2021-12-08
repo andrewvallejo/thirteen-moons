@@ -2,7 +2,7 @@
   @include flex(column, center);
   position: relative;
   padding-top: 8rem;
-  .message-bar{
+  .message-bar {
     position: absolute;
     top: 10%;
   }
@@ -10,7 +10,7 @@
     @include mediaQueries(dummy-pos);
     position: absolute;
   }
-  .creation-form{
+  .creation-form {
     @include mediaQueries(form-pos);
     position: absolute;
     color: $color-lV;
@@ -18,17 +18,17 @@
     height: 30%;
     .choice {
       color: $color-lll;
-      margin: .3rem 0;
+      margin: 0.3rem 0;
     }
   }
   .create-button {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
   .start-button {
     @extend button;
   }
   .view-collection-button {
-     @extend button;
+    @extend button;
   }
   .rules {
     @include mediaQueries(rules-pos);
@@ -37,6 +37,4 @@
     right: 2%;
     margin-top: 3.5rem;
   }
-  
 }
-

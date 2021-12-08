@@ -33,15 +33,15 @@
   display: grid;
   justify-items: center;
   @if $viewport==mobile {
-    grid-template-columns: repeat(1 , 1fr);
-    gap: 0rem 0rem;;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0rem 0rem;
   } @else if $viewport==small-window {
-    grid-template-columns: repeat(1 , 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 1rem 1rem;
   } @else if $viewport==tablet {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem 0rem;
-  } @else if $viewport==desktop{
+  } @else if $viewport==desktop {
     grid-template-columns: repeat(52, 1fr);
     gap: 1rem 1rem;
   }
@@ -71,8 +71,8 @@
     transition: 100ms;
     @if $property == moon-pos {
       left: -9.5%;
-    } 
-      @if $property == form-pos {
+    }
+    @if $property == form-pos {
       margin-top: 23.5rem;
       top: 100%;
       right: 20%;
@@ -84,13 +84,13 @@
     }
     @if $property == dialog-size {
       width: 11.5rem;
-      margin-right: .3rem;
+      margin-right: 0.3rem;
     }
     @if $property == rules {
       visibility: hidden;
     }
     @if $property == dummy-size {
-      width: clamp(12rem, 20vw ,20rem);
+      width: clamp(12rem, 20vw, 20rem);
     }
     @if $property == spread-grid {
       @include grid(mobile);
@@ -99,13 +99,13 @@
       overflow: hidden;
 
       > .moon-card {
-        margin: .5rem 0;
+        margin: 0.5rem 0;
       }
     }
     @if $property == levels-pos {
-     top: 18%;
-     right: 5%;
-     height: 80%;
+      top: 18%;
+      right: 5%;
+      height: 80%;
     }
   }
 }
@@ -116,8 +116,8 @@
     transition: 100ms;
     @if $property == moon-pos {
       left: -7.2%;
-    } 
-      @if $property == form-pos {
+    }
+    @if $property == form-pos {
       margin-top: 23.5rem;
       top: 100%;
       right: 42%;
@@ -134,7 +134,7 @@
       visibility: unset;
     }
     @if $property == dummy-size {
-      width: clamp(12rem, 20vw ,20rem);
+      width: clamp(12rem, 20vw, 20rem);
     }
     @if $property == spread-grid {
       @include grid(small-window);
@@ -144,20 +144,19 @@
 
       .moon-card {
         margin: 0;
-      .inner-card {
-          width: clamp(10rem, 50vw, 20rem );
+        .inner-card {
+          width: clamp(10rem, 50vw, 20rem);
         }
       }
     }
     @if $property == levels-pos {
       right: 1%;
       height: 83%;
-     }
+    }
   }
 }
 
-
-@mixin tablet($property) { 
+@mixin tablet($property) {
   @media only screen and (min-width: 750px) {
     @content;
     transition: 100ms;
@@ -169,7 +168,6 @@
       top: 100%;
       right: 40%;
       line-height: 1;
-
     }
     @if $property == dummy-pos {
       top: 100%;
@@ -184,28 +182,28 @@
       line-height: 2;
     }
     @if $property == dummy-size {
-      width: clamp(12rem, 20vw ,20rem);
+      width: clamp(12rem, 20vw, 20rem);
     }
     @if $property == spread-grid {
       @include grid(tablet);
-        margin-top: 15rem;
-        margin-left: 0rem;
-        margin-right: 0rem;
+      margin-top: 15rem;
+      margin-left: 0rem;
+      margin-right: 0rem;
 
-        padding: 1rem;
-        .moon-card {
-          margin: 0;
-          .inner-card {
-            width: clamp(13rem, 20vw, 15rem);
-          }
+      padding: 1rem;
+      .moon-card {
+        margin: 0;
+        .inner-card {
+          width: clamp(13rem, 20vw, 15rem);
         }
+      }
     }
     @if $property == levels-pos {
       transform: rotate(90deg) scale(2);
       top: 65%;
       right: 48%;
       height: 60%;
-     }
+    }
   }
 }
 
@@ -230,7 +228,7 @@
       margin-top: 5rem;
     }
     @if $property == dummy-size {
-      width: clamp(20rem, 20vw , 25rem);
+      width: clamp(20rem, 20vw, 25rem);
     }
     @if $property == msgbar-size {
       width: clamp(20rem, 95vw, 60rem);
@@ -258,7 +256,7 @@
       top: 55%;
       right: 48%;
       height: 80%;
-     }
+    }
   }
 }
 
@@ -277,5 +275,3 @@
 @mixin scaling-font($property) {
   font-size: $property;
 }
-
-

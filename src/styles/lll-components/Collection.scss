@@ -1,19 +1,19 @@
 .card-collection {
   @include flex(column, center);
   height: 100%;
-  .message-bar{
+  .message-bar {
     position: absolute;
     top: 2.5%;
-    }
-  .card-containers{
+  }
+  .card-containers {
     @include grid(desktop);
     max-width: 100%;
     overflow-x: scroll;
     height: 80%;
-   .inner-card {
-    width: clamp(10rem, 40vw, 15rem);
+    .inner-card {
+      width: clamp(10rem, 40vw, 15rem);
     }
-    }
+  }
   .back-button {
     @extend button;
     transform: scale(2);

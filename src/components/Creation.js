@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import PropTypes from 'prop-types';
-import { Link } from "react-router-dom"
-import { DummyCard } from "./DummyCard"
-import { MoonMsgBar } from "./MoonMsgBar"
+import PropTypes from 'prop-types'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import { swapCard } from '../utility/util'
+import { DummyCard } from './DummyCard'
+import { MoonMsgBar } from './MoonMsgBar'
 import { Talents } from './Talents'
-import { swapCard } from "../utility/util"
 
-
-export const Creation = ({update}) =>  {
+export const Creation = ({ update }) => {
   const [talent, setTalent] = useState('')
   const [terms, setTerms] = useState('')
   const [count, setCount] = useState('∞')
@@ -15,26 +15,29 @@ export const Creation = ({update}) =>  {
 
   const uniqueCard = {
     code: '',
-    talent: talent ,
-    terms: terms ,
+    talent: talent,
+    terms: terms,
     count: count,
     intervals: intervals
   }
 
   const onHandle = (event) => {
     event.preventDefault()
-      validateForm()
+    validateForm()
   }
 
   const validateForm = () => {
-   return ( 
-    !talent ? setTalent('choose talent'): 
-    !terms || terms === 'Your terms are the activity you want to do' ? setTerms('Your terms are the activity you want to do') : 
-    !count || count === ('∞') ? setCount('∞'):
-    !intervals || terms === 'Choose interval'? setIntervals('Choose interval') :
-    terms && count && intervals ? submitCard() :
-    setTalent('Try again')
-    )
+    return !talent
+      ? setTalent('choose talent')
+      : !terms || terms === 'Your terms are the activity you want to do'
+      ? setTerms('Your terms are the activity you want to do')
+      : !count || count === '∞'
+      ? setCount('∞')
+      : !intervals || terms === 'Choose interval'
+      ? setIntervals('Choose interval')
+      : terms && count && intervals
+      ? submitCard()
+      : setTalent('Try again')
   }
 
   const submitCard = () => {
@@ -52,8 +55,8 @@ export const Creation = ({update}) =>  {
   const updateCardValues = () => {
     uniqueCard.talent = talent
     uniqueCard.terms = terms
-    uniqueCard.count= count
-    uniqueCard.intervals= intervals
+    uniqueCard.count = count
+    uniqueCard.intervals = intervals
     uniqueCard.code = talent[0].toLowerCase() + count
   }
 
@@ -66,54 +69,61 @@ export const Creation = ({update}) =>  {
 
   return (
     <section className="creation-view">
-      <DummyCard card={uniqueCard} />   
-      <MoonMsgBar  />
+      <DummyCard card={uniqueCard} />
+      <MoonMsgBar />
       <form className="creation-form">
-        <label htmlFor="talent">Choose a talent</label> 
-        <select 
-          className='talents choice'
-          id='talents'
-          name='talents'
-          value={talent} 
+        <label htmlFor="talent">Choose a talent</label>
+        <select
+          className="talents choice"
+          id="talents"
+          name="talents"
+          value={talent}
           onChange={(event) => {
-          event.preventDefault()
-          setTalent(event.target.value)}} >
+            event.preventDefault()
+            setTalent(event.target.value)
+          }}>
           <option hidden> Talents </option>
           <option name="mind">Mind</option>
           <option name="spirit">Spirit</option>
           <option name="wisdom">Wisdom</option>
           <option name="vitality">Vitality</option>
         </select>
-        <label htmlFor='count'>Choose a number between 1 and 13.</label> 
-        <input 
-          className='count choice'   
-          id='count'
-          type="range" 
+        <label htmlFor="count">Choose a number between 1 and 13.</label>
+        <input
+          className="count choice"
+          id="count"
+          type="range"
           name="count"
-          min="1" max="13"
+          min="1"
+          max="13"
           value={count}
           onChange={(event) => {
-          event.preventDefault()
-          setCount(event.target.value)}} />
-        <label htmlFor='terms'>Write your terms.</label> 
-        <input 
-          className='terms choice'
-          id='terms'
+            event.preventDefault()
+            setCount(event.target.value)
+          }}
+        />
+        <label htmlFor="terms">Write your terms.</label>
+        <input
+          className="terms choice"
+          id="terms"
           type="text"
           name="terms"
           placeholder="Enter your challenge here"
           value={terms}
           onChange={(event) => {
-          event.preventDefault()
-          setTerms(event.target.value)}} />
-        <label htmlFor='intervals'>Choose an interval.</label> 
-        <select 
-          className='intervals choice'
-          id='intervals'
-          value={intervals} 
+            event.preventDefault()
+            setTerms(event.target.value)
+          }}
+        />
+        <label htmlFor="intervals">Choose an interval.</label>
+        <select
+          className="intervals choice"
+          id="intervals"
+          value={intervals}
           onChange={(event) => {
-          event.preventDefault()
-          setIntervals(event.target.value)}} >
+            event.preventDefault()
+            setIntervals(event.target.value)
+          }}>
           <option hidden> Intervals </option>
           <option name="minutes">minutes</option>
           <option name="repetition">repetitions</option>
@@ -125,9 +135,24 @@ export const Creation = ({update}) =>  {
           <option name="reps-of-ten">reps of 10</option>
           <option name="ounces">ounces</option>
         </select>
-      <button className="create-button" type="submit" onClick={(event) => onHandle(event)}>Create a moon card</button>
-      <Link className="start-button" to="/lunares" onClick={() => update('lunares')}>I'm content</Link>
-      <Link className="view-collection-button" to="/collection" onClick={() => update()}>See your collection</Link>
+        <button
+          className="create-button"
+          type="submit"
+          onClick={(event) => onHandle(event)}>
+          Create a moon card
+        </button>
+        <Link
+          className="start-button"
+          to="/lunares"
+          onClick={() => update('lunares')}>
+          I'm content
+        </Link>
+        <Link
+          className="view-collection-button"
+          to="/collection"
+          onClick={() => update()}>
+          See your collection
+        </Link>
       </form>
       <Talents />
     </section>

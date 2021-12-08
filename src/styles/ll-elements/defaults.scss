@@ -5,15 +5,21 @@
   font-family: $font-family-defaults;
 }
 
-a, Link {
+a,
+Link {
   text-decoration: none;
-  &:focus, &:hover, &:visited, &:link, &:active {
+  &:focus,
+  &:hover,
+  &:visited,
+  &:link,
+  &:active {
     text-decoration: none;
   }
 }
 
-ol, ul {
-	list-style: none;
+ol,
+ul {
+  list-style: none;
 }
 
 button {
