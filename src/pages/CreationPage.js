@@ -5,10 +5,10 @@ import { GameContext } from "../utility/GameContext"
 
 export const CreationPage = () => {
   const { state, dispatch } = useContext(GameContext)
-
+  
   return (
     <>
-      <Creation />
+      <Creation context={[state, dispatch]}/>
     </>
   )
 }
