@@ -7,7 +7,6 @@ import { GamePage } from './pages/GamePage'
 import { cleanCards, fetchDeck } from './utility/api'
 import { GameContext } from './utility/GameContext'
 import { reducer } from './utility/reducer'
-import { drawHand } from './utility/util'
 
 const initialState = {
   deck: [],
@@ -18,14 +17,14 @@ export const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    !state.deck.length && 
-    (async () => {
-      await fetchDeck().then((cards) => {
-        let cleanedCards = cleanCards(cards)
-        console.log(cleanedCards)
-        dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
-      })
-    })()
+    !state.deck.length &&
+      (async () => {
+        await fetchDeck().then((cards) => {
+          let cleanedCards = cleanCards(cards)
+          console.log(cleanedCards)
+          dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
+        })
+      })()
   }, [state])
 
   return (
