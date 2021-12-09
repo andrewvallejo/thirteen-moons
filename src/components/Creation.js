@@ -1,94 +1,46 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useMemo, useReducer, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { formReducer } from '../utility/reducer'
 
-import { swapCard } from '../utility/util'
 import { DummyCard } from './DummyCard'
 import { MoonMsgBar } from './MoonMsgBar'
 import { Talents } from './Talents'
 
-export const Creation = ({ update }) => {
-  const [talent, setTalent] = useState('')
-  const [terms, setTerms] = useState('')
-  const [count, setCount] = useState('∞')
-  const [intervals, setIntervals] = useState('')
+const initialState = {
+  code: '',
+  talent: '',
+  terms: '',
+  count: 0,
+  intervals: ''
+}
 
-  const uniqueCard = {
-    code: '',
-    talent: talent,
-    terms: terms,
-    count: count,
-    intervals: intervals
-  }
+export const Creation = (context) => {
+  const [state, dispatch] = useReducer(formReducer, initialState)
 
-  const onHandle = (event) => {
-    event.preventDefault()
-    validateForm()
-  }
-
-  const validateForm = () => {
-    return !talent
-      ? setTalent('choose talent')
-      : !terms || terms === 'Your terms are the activity you want to do'
-      ? setTerms('Your terms are the activity you want to do')
-      : !count || count === '∞'
-      ? setCount('∞')
-      : !intervals || terms === 'Choose interval'
-      ? setIntervals('Choose interval')
-      : terms && count && intervals
-      ? submitCard()
-      : setTalent('Try again')
-  }
-
-  const submitCard = () => {
-    updateCardValues()
-    swapCard(uniqueCard)
-    resetForm()
-    setTalent('You did it!')
-    setTerms('You made a moon card!')
-    setTimeout(() => {
-      setTalent('')
-      setTerms('')
-    }, 1500)
-  }
-
-  const updateCardValues = () => {
-    uniqueCard.talent = talent
-    uniqueCard.terms = terms
-    uniqueCard.count = count
-    uniqueCard.intervals = intervals
-    uniqueCard.code = talent[0].toLowerCase() + count
-  }
-
-  const resetForm = () => {
-    setTalent('')
-    setTerms('')
-    setCount('')
-    setIntervals('')
+  const handleChange = (event) => {
+    const { value } = event.target
+    dispatch({ state, action: { type: 'UPDATE_TALENT', value: value } })
   }
 
   return (
     <section className="creation-view">
-      <DummyCard card={uniqueCard} />
+      {/* <DummyCard card={card} /> */}
       <MoonMsgBar />
       <form className="creation-form">
         <label htmlFor="talent">Choose a talent</label>
         <select
           className="talents choice"
-          id="talents"
-          name="talents"
-          value={talent}
-          onChange={(event) => {
-            event.preventDefault()
-            setTalent(event.target.value)
-          }}>
+          id="talent"
+          value={state.talent || 'talent'}
+          onChange={handleChange}>
           <option hidden> Talents </option>
           <option name="mind">Mind</option>
           <option name="spirit">Spirit</option>
           <option name="wisdom">Wisdom</option>
           <option name="vitality">Vitality</option>
         </select>
-        <label htmlFor="count">Choose a number between 1 and 13.</label>
+
+        {/* <label htmlFor="count">Choose a number between 1 and 13.</label>
         <input
           className="count choice"
           id="count"
@@ -99,7 +51,7 @@ export const Creation = ({ update }) => {
           value={count}
           onChange={(event) => {
             event.preventDefault()
-            setCount(event.target.value)
+            setCard(count, event.target.value)
           }}
         />
         <label htmlFor="terms">Write your terms.</label>
@@ -112,7 +64,7 @@ export const Creation = ({ update }) => {
           value={terms}
           onChange={(event) => {
             event.preventDefault()
-            setTerms(event.target.value)
+            setCard(terms, event.target.value)
           }}
         />
         <label htmlFor="intervals">Choose an interval.</label>
@@ -122,7 +74,7 @@ export const Creation = ({ update }) => {
           value={intervals}
           onChange={(event) => {
             event.preventDefault()
-            setIntervals(event.target.value)
+            setCard(...intervals, event.target.value)
           }}>
           <option hidden> Intervals </option>
           <option name="minutes">minutes</option>
@@ -135,30 +87,17 @@ export const Creation = ({ update }) => {
           <option name="reps-of-ten">reps of 10</option>
           <option name="ounces">ounces</option>
         </select>
-        <button
-          className="create-button"
-          type="submit"
-          onClick={(event) => onHandle(event)}>
+        <button className="create-button" type="submit" onClick={handleChange}>
           Create a moon card
         </button>
-        <Link
-          className="start-button"
-          to="/lunares"
-          onClick={() => update('lunares')}>
+        <Link className="start-button" to="/lunares">
           I'm content
         </Link>
-        <Link
-          className="view-collection-button"
-          to="/collection"
-          onClick={() => update()}>
+        <Link className="view-collection-button" to="/collection">
           See your collection
-        </Link>
+        </Link> */}
       </form>
       <Talents />
     </section>
   )
-}
-
-Creation.propTypes = {
-  update: PropTypes.func
 }
