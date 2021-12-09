@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
 import { MoonCard } from './MoonCard'
@@ -17,8 +16,3 @@ export const Spread = ({ deck, hand, draw }) => {
   )
 }
 
-Spread.propTypes = {
-  deck: PropTypes.array,
-  hand: PropTypes.array,
-  draw: PropTypes.func
-}

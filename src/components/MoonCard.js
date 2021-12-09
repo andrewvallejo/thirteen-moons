@@ -1,5 +1,5 @@
 import { nanoid } from 'nanoid'
-import PropTypes from 'prop-types'
+
 import React, { useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 
@@ -49,13 +49,3 @@ export const MoonCard = ({ cards, draw }) => {
   })
 }
 
-MoonCard.propTypes = {
-  card: PropTypes.shape({
-    code: PropTypes.string,
-    talent: PropTypes.string,
-    terms: PropTypes.string,
-    count: PropTypes.number,
-    intervals: PropTypes.string
-  }),
-  draw: PropTypes.func
-}
