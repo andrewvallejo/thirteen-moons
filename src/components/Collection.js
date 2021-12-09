@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
@@ -17,10 +16,4 @@ export const Collection = ({ deck }) => {
       </Link>
     </section>
   )
-}
-
-Collection.propTypes = {
-  deck: PropTypes.array,
-  hand: PropTypes.array,
-  draw: PropTypes.func
 }
