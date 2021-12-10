@@ -25,33 +25,26 @@ lll - Elements | Defaults & Semantic Elements
 @import './elements/landmarks';
 @import './elements/typography';
 
-
-
 // /* ==========================================================================
 // 0 - Components 
 // ========================================================================== */
-@import './layout/Creation.scss';
-@import './layout/Collection.scss';
-@import './layout/DummyCard.scss';
-@import './layout/LoadingCard.scss';
-@import './layout/Moon.scss';
-@import './layout/MoonCard.scss';
-@import './layout/MoonLevel.scss';
-@import './layout/MoonMsgBar.scss';
-@import './layout/Spread.scss';
-@import './layout/Talents.scss';
-@import './layout/WrongTurn.scss';
 
-
+// @import './layout/Collection.scss';
+// @import './layout/LoadingCard.scss';
+// @import './layout/Moon.scss';
+// @import './layout/MoonCard.scss';
+// @import './layout/MoonLevel.scss';
+// @import './layout/MoonMsgBar.scss';
+// @import './layout/Spread.scss';
+// @import './layout/WrongTurn.scss';
 
 /* ==========================================================================
 lV - Layout | Component specific
 ========================================================================== */
-@import './layout/Header';
-@import './layout/SideBar';
+@import './layout/DummyCard.scss';
 
 /* ==========================================================================
 V - Pages | Main stylesheets 
 ========================================================================== */
-@import './pages/HomePage';
-@import './pages/QuestionPage';
+@import './pages/GamePage.scss';
+
