@@ -1,0 +1,30 @@
+/* ==========================================================================
+Pages - HomePage | Components - main header, search bar, question form 
+========================================================================== */
+
+.home-page {
+  // @include flex (row, flex-start);
+  width: 100%;
+  /* ===== Scrollbar ===== */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: $color-ii $color-iii;
+  }
+  *::-webkit-scrollbar {
+    width: 1rem;
+  }
+  *::-webkit-scrollbar-track {
+    border-radius: 100vw;
+    margin-inline: 0.5rem;
+  }
+  *::-webkit-scrollbar-thumb {
+    background: $color-ii;
+    opacity: 1;
+    border-radius: 100vw;
+    max-height: 1rem;
+    border: 0.25rem solid $color-iii;
+    &:hover {
+      border-color: $color-ii;
+    }
+  }
+}

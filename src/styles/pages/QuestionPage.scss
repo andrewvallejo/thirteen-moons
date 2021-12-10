@@ -1,0 +1,112 @@
+/* ==========================================================================
+Pages - QuestionPage | Components - details, answers, rating container
+========================================================================== */
+
+/* === details === */
+.question-page {
+  @include flex (row, flex-start);
+  width: 100%;
+  .main-area {
+    @include flex(column, center);
+    width: 100%;
+    .answers-board {
+      @include flex(column, center);
+      overflow: auto;
+    }
+    .answer {
+      overflow-y: scroll;
+    }
+  } 
+  
+  .details-container {
+    @include flex(column, center);
+    .question-header {
+      @include flex(row, center);
+      width: 100%;
+      border-bottom: 1px solid pink;
+    }
+    .return-btn {
+      border-radius: 100vw;
+      border: $color-ii 3px solid;
+      width: 3rem;
+      aspect-ratio: 1;
+      &:hover {
+        border-color: $color-iv;
+      }
+    }
+    
+  }
+
+}
+
+/* === answers === */
+
+
+/* === QuestionForm === */
+
+
+  
+  .answer-input {
+    width: 100%;
+    min-height: 5rem;
+    height: 10rem;
+    text-align: center;
+    resize: none;
+    padding: 1rem;
+  }
+  
+  .question-header {
+    @include flex(row, center);
+    margin-bottom: 0.1rem;
+  }
+  
+  .shuffle-btn {
+    width: 54px;
+    height: 35px;
+    display: flex;
+    place-self: flex-end;
+    margin: 0 0 0.5rem 0;
+  
+    .shuffle-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  
+  .submit-btn {
+    opacity: 1;
+    width: 70px;
+    height: 30px;
+    place-self: flex-end;
+    margin: 10px 0px 10px 0px;
+    transition: 1s;
+    &:hover {
+      background: $color-ii;
+    }
+    &:disabled {
+      cursor: auto;
+      opacity: 0;
+      transition: 900ms;
+      transform: scale(0.5);
+    }
+  }
+  
+  .gold-btn {
+    transition: 1s;
+    transform: scale(1.1);
+    border: 1.5px solid $color-ii;
+    &:hover {
+      border: 1.5px solid $color-ii;
+    }
+  }
+  
+  .char-counter {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
+  
+  
+  
+   

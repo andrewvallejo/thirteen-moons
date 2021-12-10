@@ -1,0 +1,44 @@
+/* ==========================================================================
+  Base -  Typography
+========================================================================== */
+
+
+// @mixin fonts($font-type, $weight: $fw-regular) {
+//   @if $font-type==large {
+//     font-size: $fs-large;
+//     font-weight: $weight;
+//   } @else if $font-type==medium {
+//     font-size: $fs-medium;
+//     font-weight: $weight;
+//   } @else if $font-type==small {
+//     font-size: $fs-small;
+//     font-weight: $weight;
+//   } @else if $font-type==tiny {
+//     font-size: $fs-tiny;
+//     font-weight: $weight;
+//   } @else if $font-type==link {
+//     font-size: $fs-link;
+//     font-weight: $weight;
+//   } @else if $font-type==semi {
+//     font-size: $fs-semi;
+//     font-weight: $weight;
+//   }
+// }
+
+
+
+@mixin fonts($font-size, $weight: $fw-regular) {
+  @if $font-size==10px {
+    font-size: $fs-10px;
+    font-weight: $weight;
+  } @else if $font-size==12px {
+    font-size: $fs-12px;
+    font-weight: $weight;
+  } @else if $font-size==16px {
+    font-size: $fs-16px;
+    font-weight: $weight;
+  } @else if $font-size==17px {
+    font-size: $fs-17px;
+    font-weight: $weight;
+  }
+}
