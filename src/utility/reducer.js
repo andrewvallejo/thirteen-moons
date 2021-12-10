@@ -12,18 +12,13 @@ export const reducer = (state, { action }) => {
   }
 }
 
-export const formReducer = (state, {action}) => {
-  const {type, value} = action
+export const formReducer = (state, { action }) => {
+  const { type, value, id } = action
   switch (type) {
-    case 'UPDATE_TALENT':     
-      return { ...state, talent: value }
-    case 'UPDATE_TERMS':     
-      break;
-    case 'UPDATE_COUNT':     
-      break;
-    case 'UPDATE_INTERVALS':     
-      break;
+    case 'UPDATE_CARD':
+      return { ...state, [id]: value }
+
     default:
-      return state;
+      return state
   }
-} 
+}
