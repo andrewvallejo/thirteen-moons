@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo, useReducer, useState } from 'react'
+import React, { useReducer } from 'react'
 import { Link } from 'react-router-dom'
-import { formReducer } from '../utility/reducer'
 
+import { formReducer } from '../utility/reducer'
 import { DummyCard } from './DummyCard'
 import { MoonMsgBar } from './MoonMsgBar'
 import { Talents } from './Talents'
@@ -18,20 +18,20 @@ export const Creation = (context) => {
   const [state, dispatch] = useReducer(formReducer, initialState)
 
   const handleChange = (event) => {
-    const { value } = event.target
-    dispatch({ state, action: { type: 'UPDATE_TALENT', value: value } })
+    const { value, id } = event.target
+    dispatch({ state, action: { type: 'UPDATE_CARD', value: value, id } })
   }
 
   return (
     <section className="creation-view">
-      {/* <DummyCard card={card} /> */}
+      <DummyCard card={state} />
       <MoonMsgBar />
       <form className="creation-form">
         <label htmlFor="talent">Choose a talent</label>
         <select
           className="talents choice"
           id="talent"
-          value={state.talent || 'talent'}
+          value={state.talent}
           onChange={handleChange}>
           <option hidden> Talents </option>
           <option name="mind">Mind</option>
@@ -40,7 +40,7 @@ export const Creation = (context) => {
           <option name="vitality">Vitality</option>
         </select>
 
-        {/* <label htmlFor="count">Choose a number between 1 and 13.</label>
+        <label htmlFor="count">Choose a number between 1 and 13.</label>
         <input
           className="count choice"
           id="count"
@@ -48,12 +48,10 @@ export const Creation = (context) => {
           name="count"
           min="1"
           max="13"
-          value={count}
-          onChange={(event) => {
-            event.preventDefault()
-            setCard(count, event.target.value)
-          }}
+          value={state.count}
+          onChange={handleChange}
         />
+
         <label htmlFor="terms">Write your terms.</label>
         <input
           className="terms choice"
@@ -61,21 +59,16 @@ export const Creation = (context) => {
           type="text"
           name="terms"
           placeholder="Enter your challenge here"
-          value={terms}
-          onChange={(event) => {
-            event.preventDefault()
-            setCard(terms, event.target.value)
-          }}
+          value={state.terms}
+          onChange={handleChange}
         />
+
         <label htmlFor="intervals">Choose an interval.</label>
         <select
           className="intervals choice"
           id="intervals"
-          value={intervals}
-          onChange={(event) => {
-            event.preventDefault()
-            setCard(...intervals, event.target.value)
-          }}>
+          value={state.intervals}
+          onChange={handleChange}>
           <option hidden> Intervals </option>
           <option name="minutes">minutes</option>
           <option name="repetition">repetitions</option>
@@ -95,7 +88,7 @@ export const Creation = (context) => {
         </Link>
         <Link className="view-collection-button" to="/collection">
           See your collection
-        </Link> */}
+        </Link>
       </form>
       <Talents />
     </section>
