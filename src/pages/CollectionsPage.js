@@ -1,14 +1,11 @@
-import { useContext } from "react"
-import { Collection } from "../components/Collection"
-import { GameContext } from "../utility/GameContext"
+import { Collection } from '../components/Collection'
 
 export const CollectionPage = () => {
-  const { state, dispatch } = useContext(GameContext)
-  
+
 
   return (
     <>
-                  <Collection />
+      <Collection />
     </>
   )
 }
