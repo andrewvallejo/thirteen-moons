@@ -9,7 +9,7 @@ export const DummyCard = ({ card }) => {
 
   return (
     <article className="dummy-card" key={id}>
-      <div className="inner-card">
+      <section className="inner-card">
         <img
           className="card-back"
           id={code}
@@ -17,10 +17,10 @@ export const DummyCard = ({ card }) => {
           alt="card"
           src={dummyCover}
         />
-        <aside className="darken" />
-        <aside className="overlay" />
-        <div className="card-front">
-          <aside className="card-content">
+        <div className="darken" />
+        <div className="overlay" />
+        <section className="card-front">
+          <div className="card-content">
             <h2 className="talent">{talent}</h2>
             <h3 className="terms">
               {terms}
@@ -28,9 +28,9 @@ export const DummyCard = ({ card }) => {
               {intervals}
             </h3>
             <h3 className="talent mirrored">{talent}</h3>
-          </aside>
-        </div>
-      </div>
+          </div>
+        </section>
+      </section>
     </article>
   )
 }

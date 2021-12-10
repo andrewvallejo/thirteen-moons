@@ -1,9 +1,9 @@
 import React, { useEffect, useReducer } from 'react'
 import { Route } from 'react-router-dom'
 
-import { CollectionPage } from './pages/CollectionsPage'
+// import { CollectionPage } from './pages/CollectionsPage'
 import { CreationPage } from './pages/CreationPage'
-import { GamePage } from './pages/GamePage'
+// import { GamePage } from './pages/GamePage'
 import { cleanCards, fetchDeck } from './utility/api'
 import { GameContext } from './utility/GameContext'
 import { reducer } from './utility/reducer'
@@ -21,7 +21,6 @@ export const App = () => {
       (async () => {
         await fetchDeck().then((cards) => {
           let cleanedCards = cleanCards(cards)
-          console.log(cleanedCards)
           dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
         })
       })()
@@ -30,9 +29,9 @@ export const App = () => {
   return (
     <GameContext.Provider value={{ state, dispatch }}>
       <main>
-        <Route path="/lunares/" component={GamePage} />
+        {/* <Route path="/lunares/" component={GamePage} /> */}
         <Route exact path="/" component={CreationPage} />
-        <Route exact path="/collection/" component={CollectionPage} />
+        {/* <Route exact path="/collection/" component={CollectionPage} /> */}
       </main>
     </GameContext.Provider>
   )
