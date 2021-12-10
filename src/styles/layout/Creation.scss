@@ -13,11 +13,11 @@
   .creation-form {
     @include mediaQueries(form-pos);
     position: absolute;
-    color: $color-lV;
+    color: $color-iv;
     width: clamp(15rem, 40vw, 34rem);
     height: 30%;
     .choice {
-      color: $color-lll;
+      color: $color-iii;
       margin: 0.3rem 0;
     }
   }

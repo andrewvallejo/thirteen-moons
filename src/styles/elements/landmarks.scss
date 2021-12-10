@@ -1,0 +1,58 @@
+/* ==========================================================================
+  Elements - Landmarks
+========================================================================== */
+
+html {
+  background: $color-i;
+}
+
+body {
+  background: $color-iii $background-texture;
+}
+
+header {
+  @include flex(row, between);
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+article {
+  @include flex(column, around);
+}
+
+form {
+  @include flex(column, space);
+}
+
+button {
+  @include flex(column, center);
+  @include fonts(10px, $fw-regular);
+  color: $color-v;
+  &:hover {
+    color: $color-iv;
+  }
+}
+
+h1 {
+  @include fonts(17px, $fw-demi-bold);
+}
+
+h2 {
+  @include fonts(16px, $fw-regular);
+}
+
+h3 {
+  @include fonts(12px, $fw-regular);
+}
+
+p {
+  @include fonts(10px, $fw-regular);
+}
+
+a {
+  color: $color-white;
+}

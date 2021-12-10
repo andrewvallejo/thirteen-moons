@@ -1,6 +1,6 @@
 /* ==========================================================================
-  Tools - Mixins
-  ========================================================================== */
+  Base - Mixins
+========================================================================== */
 
 /* === Flexbox === */
 @mixin flex($direction, $alignment, $wrap: nowrap) {
@@ -47,22 +47,6 @@
   }
 }
 
-/* === Fonts === */
-@mixin heading {
-  @include scaling-font($font-size-heading);
-}
-
-@mixin subheading {
-  @include scaling-font($font-size-subheading);
-}
-
-@mixin paragraph {
-  @include scaling-font($font-size-paragraph);
-}
-
-@mixin button {
-  @include scaling-font($font-size-button);
-}
 
 /* === Media Queries === */
 @mixin mobile($property) {
@@ -270,8 +254,4 @@
 
 @mixin opacity($color, $value) {
   background: adjust-color($color, $alpha: $value);
-}
-
-@mixin scaling-font($property) {
-  font-size: $property;
 }
