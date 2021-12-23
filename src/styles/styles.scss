@@ -1,4 +1,3 @@
-
 /* ==========================================================================
 l - Abstracts | Global Variables 
 ========================================================================== */
@@ -25,8 +24,20 @@ lll - Elements | Defaults & Semantic Elements
 @import './elements/landmarks';
 @import './elements/typography';
 
+/* ==========================================================================
+lV - Layout | Component specific
+========================================================================== */
+@import './layout/MoonCard.scss';
+
+@import './layout/MoonMsgBar.scss';
+@import './layout/Rulebook.scss';
+/* ==========================================================================
+V - Pages | Main stylesheets 
+========================================================================== */
+@import './pages/CreationPage.scss';
+
 // /* ==========================================================================
-// 0 - Components 
+// 0 - Components
 // ========================================================================== */
 
 // @import './layout/Collection.scss';
@@ -34,17 +45,5 @@ lll - Elements | Defaults & Semantic Elements
 // @import './layout/Moon.scss';
 // @import './layout/MoonCard.scss';
 // @import './layout/MoonLevel.scss';
-// @import './layout/MoonMsgBar.scss';
 // @import './layout/Spread.scss';
 // @import './layout/WrongTurn.scss';
-
-/* ==========================================================================
-lV - Layout | Component specific
-========================================================================== */
-@import './layout/DummyCard.scss';
-
-/* ==========================================================================
-V - Pages | Main stylesheets 
-========================================================================== */
-@import './pages/GamePage.scss';
-
