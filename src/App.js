@@ -9,30 +9,34 @@ import { GameContext } from './utility/GameContext'
 import { reducer } from './utility/reducer'
 
 const initialState = {
-  deck: [],
-  hand: []
+	deck: [],
+	hand: [],
+	creationCard: []
 }
 
 export const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
+	const [ state, dispatch ] = useReducer(reducer, initialState)
 
-  useEffect(() => {
-    !state.deck.length &&
-      (async () => {
-        await fetchDeck().then((cards) => {
-          let cleanedCards = cleanCards(cards)
-          dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
-        })
-      })()
-  }, [state])
+	useEffect(
+		() => {
+			!state.deck.length &&
+				(async () => {
+					await fetchDeck().then((cards) => {
+						let cleanedCards = cleanCards(cards)
+						dispatch({ state, action: { type: 'ADD_DECK', value: cleanedCards } })
+					})
+				})()
+		},
+		[ state ]
+	)
 
-  return (
-    <GameContext.Provider value={{ state, dispatch }}>
-      <main>
-        {/* <Route path="/lunares/" component={GamePage} /> */}
-        <Route exact path="/" component={CreationPage} />
-        {/* <Route exact path="/collection/" component={CollectionPage} /> */}
-      </main>
-    </GameContext.Provider>
-  )
+	return (
+		<GameContext.Provider value={{ state, dispatch }}>
+			<main>
+				{/* <Route path="/lunares/" component={GamePage} /> */}
+				<Route exact path='/' component={CreationPage} />
+				{/* <Route exact path="/collection/" component={CollectionPage} /> */}
+			</main>
+		</GameContext.Provider>
+	)
 }
