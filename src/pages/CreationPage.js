@@ -1,13 +1,19 @@
-import { useContext } from 'react'
-import { Creation } from '../components/Creation'
-import { GameContext } from '../utility/GameContext'
+import { CreationForm } from '../components/CreationForm'
+import { MoonCard } from '../components/MoonCard'
+import { MoonMsgBar } from '../components/MoonMsgBar'
+import { Rulebook } from '../components/Rulebook'
 
 export const CreationPage = () => {
-  const { state, dispatch } = useContext(GameContext)
-
-  return (
-    <>
-      <Creation context={[state, dispatch]} />
-    </>
-  )
+	return (
+		<main className='creation-page'>
+			<header className='creation-header'>
+				<MoonMsgBar />
+			</header>
+			<section className='creation-section'>
+				<MoonCard />
+				<CreationForm />
+				<Rulebook />
+			</section>
+		</main>
+	)
 }
