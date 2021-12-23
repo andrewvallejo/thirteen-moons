@@ -1,0 +1,24 @@
+/* ==========================================================================
+Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
+========================================================================== */
+
+.creation-page {
+	@include center;
+	.creation-header {
+		@include center;
+	}
+	.moon-card {
+		transform: scale(0.75);
+	}
+
+	.creation-section {
+		@include flex(row, space-between);
+
+		.creation-form {
+			@include flex(column, space);
+			color: $color-iv;
+			width: clamp(15rem, 40vw, 34rem);
+			height: 30%;
+		}
+	}
+}

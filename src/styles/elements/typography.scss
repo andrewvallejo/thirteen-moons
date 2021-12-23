@@ -6,3 +6,31 @@
   font-size: $fs-10px;
   font-weight: $fw-regular;
 }
+
+h1 {
+  @include fonts(17px, $fw-demi-bold);
+}
+
+h2 {
+  @include fonts(16px, $fw-regular);
+}
+
+h3 {
+  @include fonts(12px, $fw-regular);
+}
+
+p {
+  @include fonts(10px, $fw-regular);
+}
+
+a {
+  color: $color-white;
+}
+
+button {
+  @include fonts(10px, $fw-regular);
+  color: $color-v;
+  &:hover {
+    color: $color-iv;
+  }
+}
