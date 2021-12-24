@@ -1,5 +1,4 @@
 export const reducer = (state, { action }) => {
-	console.log('action', action)
 	const { type, value } = action
 	switch (type) {
 		case 'ADD_DECK':
