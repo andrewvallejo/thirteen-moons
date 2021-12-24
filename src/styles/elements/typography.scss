@@ -3,34 +3,32 @@
 ========================================================================== */
 
 :is(h1, h2, h3, h4, h5, h6) {
-  font-size: $fs-10px;
-  font-weight: $fw-regular;
+	@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, true);
 }
 
 h1 {
-  @include fonts(17px, $fw-demi-bold);
+	@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, true);
 }
 
 h2 {
-  @include fonts(16px, $fw-regular);
+	@include fonts($fs-17px, $fw-demi-bold, $color-iv, $color-iv, true);
 }
 
 h3 {
-  @include fonts(12px, $fw-regular);
+	@include fonts($fs-16px, $fw-demi-bold, $color-iv, $color-iv, true);
 }
 
 p {
-  @include fonts(10px, $fw-regular);
+	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
 }
 
 a {
-  color: $color-white;
+	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
 }
 
 button {
-  @include fonts(10px, $fw-regular);
-  color: $color-v;
-  &:hover {
-    color: $color-iv;
-  }
+	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
+	&:hover {
+		color: $color-iv;
+	}
 }
