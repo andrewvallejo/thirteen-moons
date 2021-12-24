@@ -15,7 +15,7 @@
 		.card-front {
 			position: absolute;
 			inset: 0;
-			transform: scale(.83, .80);
+			transform: scale(.82, .89);
 			@include opacity($color-i, -0.5);
 			&:active,
 			&:hover > * {
@@ -28,36 +28,27 @@
 		border-radius: $b-radius;
 		border: 1px solid $color-iv;
 		height: 100%;
-		// padding: 0.5rem 0.3rem;
-		> * {
-			-webkit-text-stroke: 0.1px $color-iv;
-			color: transparent;
-			text-align: center;
+
+		& > * {
 			width: 100%;
+			text-align: center;
+			color: transparent;
+			-webkit-text-stroke: 0.1px $color-iv;
 		}
 		.talent {
+			@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, capitalize);
 			-webkit-text-stroke: 0.3px $color-iv;
-			text-transform: uppercase;
-			letter-spacing: clamp(0.15em, 0.2vw, 0.35em);
-			margin-bottom: auto;
-			font-size: $fs-12px;
 		}
 		.terms {
-			align-self: center;
-			margin: auto;
-			font-size: $fs-12px;
-			line-height: 20px;
-			-webkit-text-stroke: 0.3px $color-iv;
-			color: $color-iii;
+			-webkit-text-stroke: 0.3px $color-ii;
+
 			> .count {
 				display: block;
-				font-size: $fs-12px;
-				color: $color-iv;
 				filter: drop-shadow(0 0 0.1rem $color-iv);
 			}
 		}
 		.count {
-			color: $color-iii;
+			@include fonts($fs-30px, $fw-regular, $color-iv, $color-iv, capitalize);
 		}
 		.mirrored {
 			margin: auto;
