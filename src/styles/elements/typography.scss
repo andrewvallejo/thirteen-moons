@@ -3,31 +3,31 @@
 ========================================================================== */
 
 :is(h1, h2, h3, h4, h5, h6) {
-	@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, true);
+	@include fonts($fs-card-large, $fw-demi-bold, $color-i, $text-shadow-i, capitalize);
 }
 
 h1 {
-	@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, true);
+	@include fonts($fs-card-large, $fw-demi-bold, $color-i, $text-shadow-i, capitalize);
 }
 
 h2 {
-	@include fonts($fs-17px, $fw-demi-bold, $color-iv, $color-iv, true);
+	@include fonts($fs-card-large, $fw-demi-bold, $color-i, $text-shadow-i,capitalize );
 }
 
 h3 {
-	@include fonts($fs-16px, $fw-demi-bold, $color-iv, $color-iv, true);
+	@include fonts($fs-card-large, $fw-demi-bold, $color-i, $text-shadow-i,capitalize );
 }
 
 p {
-	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
+	@include fonts($fs-card-medium, $fw-regular, $color-i, $text-shadow-i,capitalize );
 }
 
 a {
-	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
+	@include fonts($fs-card-medium, $fw-demi-bold, $color-i, $text-shadow-i,capitalize );
 }
 
 button {
-	@include fonts($fs-12px, $fw-regular, $color-iv, $color-iv, true);
+	@include fonts( $fs-card-medium, $fw-demi-bold, $color-i, $text-shadow-i,capitalize );
 	&:hover {
 		color: $color-iv;
 	}
