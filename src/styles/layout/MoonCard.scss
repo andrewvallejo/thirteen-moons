@@ -4,13 +4,13 @@
 	border-radius: $b-radius;
 	max-width: 16rem;
 	.card-image {
-		box-shadow: 0 0 10px $color-iv;
+		box-shadow: 0 10px 30px -20px $color-iv;
 		border-radius: $b-radius;
 		transition: 1s;
 		transition-delay: 200ms;
 		&:hover,
 		&:focus {
-			box-shadow: 0 0 2.5rem $color-iv;
+			box-shadow: 0 10px 2.5rem $color-iv;
 		}
 	}
 	.card-contents {
@@ -23,6 +23,7 @@
 		.card-traits {
 			@include flex (column, space-around);
 			position: relative;
+			border: 2.5px solid $color-ii;
 			@include opacity($color-i, -0.5);
 			height: 100%;
 			width: 100%;
