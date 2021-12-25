@@ -1,12 +1,12 @@
 .rulebook {
-  background: $color-iv;
-  border: 10px solid $color-v;
-  border-radius: 5px;
-  .rules {
-    @include center;
-    width: 10rem;
-  }
-  .hidden {
-    @include hidden(deep);
-  }
+	@include flex(column, center);
+	border: 5px solid $color-v;
+	border-radius: 5px;
+	.rules {
+		@include center;
+		width: 10rem;
+	}
+	.hidden {
+		@include hidden(deep);
+	}
 }
