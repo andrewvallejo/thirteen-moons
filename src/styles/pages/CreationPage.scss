@@ -14,7 +14,6 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 		@include flex(row, space-around);
 		width: 100%;
 		height: 70vh;
-		border: 1px solid $color-v;
 		padding-inline: 2rem;
 		.moon-card {
 			position: relative;
@@ -22,14 +21,13 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 		}
 		.creation-form {
 			@include flex(column, center);
-			color: $color-iv;
+			@include cardFonts(form);
+			.label {
+				@include cardFonts(labels);
+			}
 			.button {
 				@include cardFonts(button);
 			}
-		}
-		.rulebook {
-			@include flex(column, center);
-			max-width: 100%;
 		}
 	}
 }
