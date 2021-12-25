@@ -3,21 +3,18 @@ Abstracts - Typography
 ========================================================================== */
 
 /* === Font Size === */
-// $fs-10px: clamp(0.625rem, 5vw, 1.5rem);
-// $fs-12px: clamp(0.75rem, 5vw, 1.8rem);
-// $fs-16px: clamp(1rem, 5vw, 1.5rem);
-// $fs-17px: clamp(1.063rem, 5vw, 1.5rem);
-// $fs-25px: clamp(1.563rem, 5vw, 2.5rem);
-// $fs-30px: clamp(5rem, 50vw, 2.5rem);
 
 $fs-card-small: 1rem;
 $fs-card-medium: 1.563rem;
 $fs-card-large: 5.5rem;
 $fs-card-extraLarge: 10rem;
 
-$fs-card-talent: clamp(1.563rem, 5vw, 4.5rem);
-$fs-card-terms: clamp(1.563rem, 3vw, 4.5rem);
-$fs-card-count: clamp(8rem, 15vw, 15rem);
+$fs-card-talent: clamp(1.563rem, 3vw, 4rem);
+$fs-card-terms: clamp(1.563rem, 2vw, 2rem);
+$fs-card-count: clamp(5rem, 3vw, 4mrem);
+
+$fs-card-dialog: clamp(.5rem, 2vw, 2rem);
+$fs-form-button: clamp(.5rem, 1vw, 1rem);
 
 /* === Font Weights === */
 $fw-regular: 400;
