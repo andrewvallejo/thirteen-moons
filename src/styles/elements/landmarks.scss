@@ -2,25 +2,14 @@
   Elements - Landmarks
 ========================================================================== */
 body {
-  background: $color-iii $background-texture;
-  overflow: hidden;
+	background: $color-iii $background-texture;
 }
 
 main {
-  min-height: 100vh;
-}
-
-header {
-  height: 20vh;
-  min-width: 100%;
-}
-
-section {
-  height: 80vh;
-  min-width: 100%;
+	overflow: hidden;
+	height: 100vh;
 }
 
 button {
-  @include flex(column, center);
+	@include flex(column, center);
 }
-
