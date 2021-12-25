@@ -9,17 +9,18 @@
 	text-shadow: $text-shadow;
 	text-transform: $capitalize;
 	text-align: $align;
+	font-family: $font;
 }
 
 @mixin cardFonts($content) {
 	@if $content == 'talent' {
-		@include fonts($fs-card-talent, $fw-demi-bold, $color-iv, $text-shadow-i, capitalize);
+		@include fonts($fs-card-talent, $fw-demi-bold, $color-iv, _, uppercase);
 	}
 	@if $content == 'terms' {
-		@include fonts($fs-card-terms, $fw-demi-bold, $color-v, $text-shadow-i, capitalize);
+		@include fonts($fs-card-terms, $fw-demi-bold, $color-v, _, capitalize);
 	}
 	@if $content == 'count' {
-		@include fonts($fs-card-count, $fw-regular, $color-v, _, capitalize);
+		@include fonts($fs-card-count, $fw-regular, $color-iv, $text-shadow-i, capitalize);
 	}
 	@if $content == 'dialog' {
 		@include fonts($fs-card-dialog, $fw-regular, $color-v, $text-shadow-i, capitalize);
