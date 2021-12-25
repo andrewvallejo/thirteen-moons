@@ -9,13 +9,15 @@ export const MoonCard = () => {
 	return (
 		<article className='moon-card' key={code} id={code}>
 			<img className='card-image' alt='card' src={randomCover} />
-			<ul className='card-content'>
-				<li className='talent'>{talent}</li>
-				<li className='terms'>{terms} </li>
-				<li className='count'>{count}</li>
-				<li className='terms'>{intervals}</li>
-				<li className='talent mirrored'>{talent}</li>
-			</ul>
+			<div className='card-contents'>
+				<ul className='card-traits'>
+					<li className='talent'>{talent}</li>
+					<li className='terms'>{terms} </li>
+					<li className='count'>{count}</li>
+					<li className='intervals'>{intervals}</li>
+					<li className='talent mirrored'>{talent}</li>
+				</ul>
+			</div>
 		</article>
 	)
 }
