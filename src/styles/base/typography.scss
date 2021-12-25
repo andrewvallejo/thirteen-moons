@@ -3,7 +3,7 @@
 ========================================================================== */
 
 @mixin fonts($font-size, $font-weight, $color, $text-shadow, $capitalize, $align: center) {
-	font-size: clamp($font-size, 10vw, $font-size + 2rem);
+	font-size: $font-size;
 	font-weight: $font-weight;
 	color: $color;
 	text-shadow: $text-shadow;
@@ -20,5 +20,11 @@
 	}
 	@if $content == 'count' {
 		@include fonts($fs-card-count, $fw-regular, $color-v, _, capitalize);
+	}
+	@if $content == 'dialog' {
+		@include fonts($fs-card-dialog, $fw-regular, $color-v, $text-shadow-i, capitalize);
+	}
+	@if $content == 'button' {
+		@include fonts($fs-form-button, $fw-regular, $color-v, $text-shadow-i, capitalize);
 	}
 }
