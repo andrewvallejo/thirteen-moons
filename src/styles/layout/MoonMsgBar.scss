@@ -1,46 +1,25 @@
 .message-bar {
-	z-index: 1;
-	border-radius: 100px;
+	position: relative;
 	border: 2px solid $color-iv;
-	width: clamp(20rem, 95vw, 60rem);
-	height: clamp(5.5rem, 40vh, 8rem);
+	border-radius: 100px;
+	min-height: 12.6rem;
+	width: 90%;
 	background: $color-i;
-	.moon-face {
+	.moon {
 		position: absolute;
+		top: -1rem;
+		bottom: 1rem;
 		border: 3px solid $color-black;
 		border-radius: 50%;
-		background-color: $color-black;
-		mix-blend-mode: darken;
 	}
-	.dialog-container {
+	.dialog {
+		@include cardFonts(dialog);
+		@include flex(row, end);
 		position: absolute;
-		z-index: 2;
-		border-radius: 7px;
-		right: 10%;
-		height: clamp(5.5rem, 40vw, 6.5rem);
-		&:after {
-			content: "";
-			position: absolute;
-			top: -1.4%;
-			left: -.5%;
-			border-radius: 7px;
-			opacity: .3;
-			background: $color-v;
-			width: 100%;
-			height: 100%;
-			border: 1.5px solid $color-iii;
-		}
-		.dialog {
-			@include flex(column, center);
-			position: absolute;
-			z-index: 10;
-			inset: 0;
-			margin: 0 .4rem;
-			width: 95%;
-			height: 100%;
-			color: $color-v;
-			text-align: center;
-			filter: opacity(1);
-		}
+		inset: 0;
+		padding-inline-end: 2rem;
+		background: $color-i;
+		border-radius: 100px;
+		line-height: 1;
 	}
 }
