@@ -32,11 +32,9 @@ export const App = () => {
 
 	return (
 		<GameContext.Provider value={{ state, dispatch }}>
-			<main>
-				{/* <Route path="/lunares/" component={GamePage} /> */}
-				<Route exact path='/' component={CreationPage} />
-				{/* <Route exact path="/collection/" component={CollectionPage} /> */}
-			</main>
+			{/* <Route path="/lunares/" component={GamePage} /> */}
+			<Route exact path='/' component={CreationPage} />
+			{/* <Route exact path="/collection/" component={CollectionPage} /> */}
 		</GameContext.Provider>
 	)
 }
