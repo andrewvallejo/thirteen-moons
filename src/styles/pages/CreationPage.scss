@@ -3,22 +3,33 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 ========================================================================== */
 
 .creation-page {
-	@include center;
+	@include flex(column, center);
+	height: 100%;
 	.creation-header {
 		@include center;
+		height: 30vh;
+		width: 100%;
 	}
-	.moon-card {
-		transform: scale(0.4);
-	}
-
 	.creation-section {
-		@include flex(row, space-between);
-
+		@include flex(row, space-around);
+		width: 100%;
+		height: 70vh;
+		border: 1px solid $color-v;
+		padding-inline: 2rem;
+		.moon-card {
+			position: relative;
+			min-width: 12rem;
+		}
 		.creation-form {
-			@include flex(column, space);
+			@include flex(column, center);
 			color: $color-iv;
-			width: clamp(15rem, 40vw, 34rem);
-			height: 30%;
+			.button {
+				@include cardFonts(button);
+			}
+		}
+		.rulebook {
+			@include flex(column, center);
+			max-width: 100%;
 		}
 	}
 }
