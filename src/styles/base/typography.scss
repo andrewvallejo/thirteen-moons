@@ -14,10 +14,10 @@
 
 @mixin cardFonts($content) {
 	@if $content == 'talent' {
-		@include fonts($fs-card-talent, $fw-demi-bold, $color-iv, _, uppercase);
+		@include fonts($fs-card-talent, $fw-demi-bold, $color-iv, '', uppercase);
 	}
 	@if $content == 'terms' {
-		@include fonts($fs-card-terms, $fw-demi-bold, $color-v, _, capitalize);
+		@include fonts($fs-card-terms, $fw-demi-bold, $color-v, '', capitalize);
 	}
 	@if $content == 'count' {
 		@include fonts($fs-card-count, $fw-regular, $color-iv, $text-shadow-i, capitalize);
@@ -26,6 +26,12 @@
 		@include fonts($fs-card-dialog, $fw-regular, $color-v, $text-shadow-i, capitalize);
 	}
 	@if $content == 'button' {
-		@include fonts($fs-form-button, $fw-regular, $color-v, $text-shadow-i, capitalize);
+		@include fonts($fs-form-button, $fw-regular, $color-v, '', capitalize);
+		&:hover {
+			@include fonts($fs-form-button, $fw-demi-bold, $color-v, $text-shadow-ii, capitalize);
+		}
+	}
+	@if $content == 'labels' {
+		@include fonts($fs-form-labels, $fw-regular, $color-iv, $text-shadow-i , capitalize);
 	}
 }
