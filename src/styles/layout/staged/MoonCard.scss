@@ -56,28 +56,23 @@
 			text-transform: uppercase;
 			letter-spacing: clamp(0.15em, 0.2vw, 0.35em);
 			margin-bottom: auto;
-			font-size: $fs-12px;
 		}
 		.terms {
 			align-self: center;
 			margin: auto;
-			font-size: $fs-12px;
 			line-height: 0.8;
 			-webkit-text-stroke: 0.3px $color-iv;
 			color: $color-iii;
 			> .terms {
 				display: block;
-				font-size: $fs-12px;
 				color: $color-iv;
 				filter: drop-shadow(0 0 0.1rem $color-iv);
 			}
 		}
 		.count {
 			color: $color-iv;
-			font-size: $fs-12px;
 		}
 		.intervals {
-			font-size: $fs-12px;
 			color: $color-iii;
 			-webkit-text-stroke: 0.3px $color-iv;
 		}

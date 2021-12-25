@@ -1,57 +1,43 @@
 .moon-card {
-	.inner-card {
-		position: relative;
-		border-radius: $b-radius;
-		.card-back,
-		.card-front {
-			width: 100%;
-			height: 100%;
-			border-radius: $b-radius;
-			filter: brightness(1.3);
-			filter: drop-shadow(0 0 0.75rem $color-black);
-			will-change: transform;
-			transition: all 400ms;
-		}
-		.card-front {
-			position: absolute;
-			inset: 0;
-			transform: scale(.82, .89);
-			@include opacity($color-i, -0.5);
-			&:active,
-			&:hover > * {
-				box-shadow: inset 0 0 5px $color-iv, 0 0 10px $color-iv;
-			}
+	border-radius: $b-radius;
+	position: relative;
+	filter: drop-shadow(15px 10px 40px $color-black);
+	will-change: transform;
+	min-width: 30rem;
+	min-height: fit-content;
+	.card-image {
+		box-shadow: 0 0 10px $color-iv;
+		border-radius: 50px;
+		transition: 1s;
+		transition-delay: 200ms;
+		&:hover,
+		&:focus {
+			transition: all 1800ms;
+			box-shadow: 0 0 2.5rem $color-iv;
 		}
 	}
-	.card-content {
-		@include flex(column, center);
-		border-radius: $b-radius;
-		border: 1px solid $color-iv;
-		height: 100%;
 
-		& > * {
-			width: 100%;
-			text-align: center;
-			color: transparent;
-			-webkit-text-stroke: 0.1px $color-iv;
-		}
+	.card-content {
+		@include opacity($color-i, -0.5);
+		@include flex(column, space-evenly);
+		position: absolute;
+		inset: 0;
+		transform: scale(.80, .85);
+		box-shadow: inset 0 0 15px 20px $color-iii, 0 0 5px 4px $color-iv;
+		border: 0 solid $color-iv;
+		border-radius: $b-radius;
+		pointer-events: none;
+		padding: 1rem;
 		.talent {
-			@include fonts($fs-25px, $fw-demi-bold, $color-iv, $color-iv, capitalize);
-			-webkit-text-stroke: 0.3px $color-iv;
+			@include cardFonts(talent);
 		}
 		.terms {
-			-webkit-text-stroke: 0.3px $color-ii;
-
-			> .count {
-				display: block;
-				filter: drop-shadow(0 0 0.1rem $color-iv);
-			}
+			@include cardFonts(terms);
 		}
 		.count {
-			@include fonts($fs-30px, $fw-regular, $color-iv, $color-iv, capitalize);
+			@include cardFonts(count);
 		}
 		.mirrored {
-			margin: auto;
 			transform: scaleY(-1) scaleX(-1);
 		}
 	}
