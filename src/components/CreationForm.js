@@ -22,8 +22,10 @@ export const CreationForm = () => {
 
 	return (
 		<form className='creation-form'>
-			<label htmlFor='talent'>Choose a talent</label>
-			<select className='talents choice' id='talent' value={state.talent} onChange={handleChange}>
+			<label className='choice' htmlFor='talent'>
+				Choose a talent
+			</label>
+			<select className='talents' id='talent' value={state.talent} onChange={handleChange}>
 				<option hidden> Talents </option>
 				<option name='mind'>Mind</option>
 				<option name='spirit'>Spirit</option>
@@ -31,9 +33,11 @@ export const CreationForm = () => {
 				<option name='vitality'>Vitality</option>
 			</select>
 
-			<label htmlFor='count'>Choose a number between 1 and 13.</label>
+			<label className='choice' htmlFor='count'>
+				Choose a number between 1 and 13.
+			</label>
 			<input
-				className='count choice'
+				className='slider'
 				id='count'
 				type='range'
 				name='count'
@@ -43,19 +47,24 @@ export const CreationForm = () => {
 				onChange={handleChange}
 			/>
 
-			<label htmlFor='terms'>Write your terms.</label>
+			<label className='choice' htmlFor='terms'>
+				Write your terms.
+			</label>
 			<input
-				className='terms choice'
+				className='terms '
 				id='terms'
 				type='text'
 				name='terms'
 				placeholder='Enter your challenge here'
 				value={state.terms}
 				onChange={handleChange}
+				autoComplete='off'
 			/>
 
-			<label htmlFor='intervals'>Choose an interval.</label>
-			<select className='intervals choice' id='intervals' value={state.intervals} onChange={handleChange}>
+			<label className='choice' htmlFor='intervals'>
+				Choose an interval.
+			</label>
+			<select className='intervals ' id='intervals' value={state.intervals} onChange={handleChange}>
 				<option hidden> Intervals </option>
 				<option name='minutes'>minutes</option>
 				<option name='repetition'>repetitions</option>
