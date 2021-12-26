@@ -26,21 +26,22 @@
 		@include fonts($fs-card-dialog, $fw-regular, $color-v, $text-shadow-i, capitalize);
 	}
 	@if $content == 'button' {
-		@include fonts($fs-form-button, $fw-regular, $color-v, '', capitalize);
+		@include fonts($fs-form-button, $fw-regular, $color-iv, _, capitalize);
+		transition: color 0.3s;
 		&:hover {
-			@include fonts($fs-form-button, $fw-demi-bold, $color-v, $text-shadow-ii, capitalize);
+			@include fonts($fs-form-button, $fw-demi-bold, $color-v, _, capitalize);
 		}
 	}
 	@if $content == 'labels' {
 		@include fonts($fs-form-labels, $fw-regular, $color-v, $text-shadow-i , capitalize);
 	}
 	@if $content == 'select' {
-		@include fonts($fs-form-select, $fw-demi-bold, $color-iv, _, uppercase);
+		@include fonts($fs-form-select, $fw-demi-bold, $color-v, _, uppercase);
 	}
 	@if $content == 'option' {
 		@include fonts($fs-form-labels, $fw-regular, $color-v, _, capitalize);
 	}
 	@if $content == 'input' {
-		@include fonts($fs-form-input, $fw-demi-bold, $color-iii, _, capitalize);
+		@include fonts($fs-form-input, $fw-demi-bold, $color-v, _, capitalize);
 	}
 }
