@@ -76,13 +76,13 @@ export const CreationForm = () => {
 				<option name='reps-of-ten'>reps of 10</option>
 				<option name='ounces'>ounces</option>
 			</select>
-			<button className='create-button' type='submit' onClick={handleChange}>
+			<button className='create button' type='submit' onClick={handleChange}>
 				Create a moon card
 			</button>
-			<Link className='start-button' to='/lunares'>
+			<Link className='start button' to='/lunares'>
 				I'm content
 			</Link>
-			<Link className='view-collection-button' to='/collection'>
+			<Link className='view-collection button' to='/collection'>
 				See your collection
 			</Link>
 		</form>
