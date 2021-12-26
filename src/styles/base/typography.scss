@@ -32,6 +32,15 @@
 		}
 	}
 	@if $content == 'labels' {
-		@include fonts($fs-form-labels, $fw-regular, $color-iv, $text-shadow-i , capitalize);
+		@include fonts($fs-form-labels, $fw-regular, $color-v, $text-shadow-i , capitalize);
+	}
+	@if $content == 'select' {
+		@include fonts($fs-form-select, $fw-demi-bold, $color-iv, _, uppercase);
+	}
+	@if $content == 'option' {
+		@include fonts($fs-form-labels, $fw-regular, $color-v, _, capitalize);
+	}
+	@if $content == 'input' {
+		@include fonts($fs-form-input, $fw-demi-bold, $color-iii, _, capitalize);
 	}
 }
