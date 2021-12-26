@@ -3,6 +3,8 @@
 	filter: drop-shadow(15px 10px 40px $color-black);
 	border-radius: $b-radius;
 	max-width: 16rem;
+	position: relative;
+	min-width: 12rem;
 	.card-image {
 		box-shadow: 0 10px 30px -20px $color-iv;
 		border-radius: $b-radius;
@@ -10,7 +12,8 @@
 		transition-delay: 200ms;
 		&:hover,
 		&:focus {
-			box-shadow: 0 2.5rem $color-iv;
+			cursor: pointer;
+			box-shadow: 0 0 2.5rem $color-iv;
 		}
 	}
 	.card-contents {
