@@ -42,7 +42,7 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 				&:focus,
 				&:hover {
 					outline: none;
-					border: 2px solid $color-v;
+					border: 2px solid $color-ii;
 					opacity: 1;
 				}
 			}
@@ -51,16 +51,16 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 				@include cardFonts(select);
 				-webkit-appearance: none;
 				appearance: none;
-				border: 2px solid $color-v;
+				border: 2px solid $color-ii;
 				border-radius: 25px;
 				padding-inline: .5rem;
 				text-align: center;
-				background: transparent;
+				background: $color-iv;
 				min-width: 17rem;
+				opacity: .7;
 				transition: 0.3s;
 				&:hover {
-					@include opacity($color-v, 0.5);
-					opacity: .6;
+					opacity: 1;
 				}
 				option {
 					@include cardFonts(option);
@@ -98,6 +98,9 @@ Pages - Creation | Components - DummyCard MoonMsgBar, CreationForm, Talents
 					}
 				}
 			}
+		}
+		.rulebook {
+			visibility: hidden;
 		}
 	}
 }
