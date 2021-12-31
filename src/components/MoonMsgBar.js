@@ -1,12 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import moonFace from '../assets/moon-face.png'
 
-export const MoonMsgBar = () => {
+export const MoonMsgBar = ({ quote }) => {
 	return (
 		<article className='message-bar' key='moon'>
-			<blockquote className='dialog'>Do you wish to craft a Moon Card?</blockquote>
-			<img className='moon' alt='the face of the moon' src={moonFace} />
+			<blockquote className='dialog'>{quote}</blockquote>
+			<Link to='/'>
+				<img className='moon' alt='the face of the moon' src={moonFace} />
+			</Link>
 		</article>
 	)
 }
