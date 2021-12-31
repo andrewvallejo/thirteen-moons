@@ -1,0 +1,19 @@
+.game-page {
+	@include flex(column, center);
+	.game-header {
+		@include center;
+		height: 30vh;
+		width: 100%;
+	}
+	.spread {
+		@include flex(column, start);
+		width: 100%;
+		height: 70vh;
+		padding-inline: 2rem;
+		.moon-levels {
+			@include flex(row, space-around);
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
