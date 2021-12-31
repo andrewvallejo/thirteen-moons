@@ -1,15 +1,36 @@
 import { useContext, useEffect } from 'react'
-import { Spread } from '../components/Spread'
+
+import { MoonMsgBar } from '../components/MoonMsgBar'
+import { fetchDeck } from '../utility/api'
 import { GameContext } from '../utility/GameContext'
 import { drawHand } from '../utility/util'
 
 export const GamePage = () => {
-  const { state, dispatch } = useContext(GameContext)
+	const { state, dispatch } = useContext(GameContext)
+	const { gameStarted } = state
 
-  useEffect(() => {
-    const hand = drawHand(state.deck)
-    dispatch({state, action:{type:'UPDATE_HAND', value: hand}})
-  }, [dispatch, state])
+	useEffect(
+		() => {
+			if (!gameStarted) {
+				fetchDeck().then((deck) => {
+					dispatch({ type: 'SET_DECK', deck })
+					dispatch({ type: 'SET_HAND', hand: drawHand(deck) })
+					dispatch({ type: 'SET_CREATION_CARD', creationCard: deck[0] })
+					dispatch({ type: 'SET_GAME_STARTED', gameStarted: true })
+				})
+			}
+		},
+		[ gameStarted, dispatch ]
+	)
 
-  return (<>{<Spread deck={state.deck} hand={state.hand} />}</>)
+	const quote = 'Choose your destiny, child'
+
+	return (
+		<main className='home-page'>
+			<header className='home-header'>
+				<MoonMsgBar quote={quote} />
+			</header>
+			<section className='main-section'>{/* {<Spread deck={state.deck} hand={state.hand} />} */}</section>
+		</main>
+	)
 }
