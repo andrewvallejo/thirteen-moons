@@ -3,11 +3,12 @@
 ========================================================================== */
 body {
 	background: $color-iii $background-texture;
+	min-height: 100vh;
 }
 
 main {
 	overflow: hidden;
-	height: 100vh;
+	height: 100%;
 }
 
 button {
