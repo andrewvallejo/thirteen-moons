@@ -1,5 +1,8 @@
 import { useContext, useEffect } from 'react'
 
+import divider from '../assets/lavender-divider.png'
+import { MoonCard } from '../components/MoonCard'
+import { MoonLevels } from '../components/MoonLevels'
 import { MoonMsgBar } from '../components/MoonMsgBar'
 import { fetchDeck } from '../utility/api'
 import { GameContext } from '../utility/GameContext'
@@ -7,7 +10,7 @@ import { drawHand } from '../utility/util'
 
 export const GamePage = () => {
 	const { state, dispatch } = useContext(GameContext)
-	const { gameStarted } = state
+	const { deck, hand, creationCard, gameStarted } = state
 
 	useEffect(
 		() => {
@@ -26,11 +29,15 @@ export const GamePage = () => {
 	const quote = 'Choose your destiny, child'
 
 	return (
-		<main className='home-page'>
-			<header className='home-header'>
+		<main className='game-page'>
+			<header className='game-header'>
 				<MoonMsgBar quote={quote} />
 			</header>
-			<section className='main-section'>{/* {<Spread deck={state.deck} hand={state.hand} />} */}</section>
+			<section className='spread'>
+				<MoonCard />
+				<img src={divider} alt='divider' />
+				<MoonLevels />
+			</section>
 		</main>
 	)
 }
