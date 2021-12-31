@@ -18,13 +18,8 @@ export const discardFour = (deck, cards) => {
 }
 
 export const drawHand = (deck) => {
-	const cards = drawFour(deck)
-	const currentDeck = discardFour(deck, cards)
-	const actions = {
-		currentDeck: { type: 'currentDeck', deck: currentDeck },
-		currentHand: { type: 'hand', deck: cards }
-	}
-	return actions
+	const hand = drawFour(deck)
+	return hand
 }
 
 export const swapCard = (uniqueCard) => {
