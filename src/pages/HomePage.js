@@ -9,7 +9,7 @@ export const HomePage = () => {
 				<MoonMsgBar quote={quote} />
 			</header>
 			<section className='main-section'>
-				<Link className='view-game button' to='/lunares'>
+				<Link className='view-game button' to='/lunares/1'>
 					Begin Game
 				</Link>
 				<Link className='view-home button' to='/creation'>
