@@ -5,6 +5,8 @@
 	max-width: 16rem;
 	position: relative;
 	min-width: 12rem;
+	transform-style: preserve-3d;
+	transition: transform 0.8s ease-in-out;
 	.card-image {
 		box-shadow: 0 10px 30px -20px $color-iv;
 		border-radius: $b-radius;
@@ -49,5 +51,8 @@
 				transform: scaleY(-1) scaleX(-1);
 			}
 		}
+	}
+	&.flipped {
+		transform: rotateY(180deg) scale(1.1);
 	}
 }
