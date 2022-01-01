@@ -8,6 +8,8 @@ export const reducer = (state, action) => {
 			return { ...state, creationCard: action.creationCard }
 		case 'SET_GAME_STARTED':
 			return { ...state, gameStarted: action.gameStarted }
+		case 'SET_LEVEL':
+			return { ...state, level: action.level }
 		default:
 			return state
 	}
