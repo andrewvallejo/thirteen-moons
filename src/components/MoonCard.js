@@ -7,7 +7,7 @@ export const MoonCard = () => {
 	const { code, talent, terms, count, intervals } = creationCard
 	const [ isFlipped, setIsFlipped ] = useState(false)
 
-	const handleClick = () => {
+	const handleFlip = () => {
 		if (gameStarted && !isFlipped) {
 			setIsFlipped(true)
 		} else {
@@ -16,7 +16,7 @@ export const MoonCard = () => {
 	}
 
 	return (
-		<article className={`moon-card ${isFlipped && 'flipped'}`} key={code} id={code} onClick={handleClick}>
+		<article className={`moon-card ${isFlipped && 'flipped'}`} key={code} id={code} onClick={handleFlip}>
 			<img className='card-image' alt='card' src={randomCover} />
 			<div className='card-contents'>
 				<ul className='card-traits'>
