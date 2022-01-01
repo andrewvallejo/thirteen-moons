@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 import { CollectionPage } from './pages/CollectionsPage'
 import { CreationPage } from './pages/CreationPage'
@@ -12,7 +12,8 @@ const initialState = {
 	deck: [],
 	hand: [],
 	creationCard: [],
-	gameStarted: false
+	gameStarted: false,
+	level: 1
 }
 
 export const App = () => {
@@ -20,10 +21,14 @@ export const App = () => {
 
 	return (
 		<GameContext.Provider value={{ state, dispatch }}>
-			<Route path='/lunares/' component={GamePage} />
-			<Route path='/creation/' component={CreationPage} />
-			<Route exact path='/' component={HomePage} />
-			<Route exact path='/collection/' component={CollectionPage} />
+			<Routes>
+				<Route path='/lunares/' element={<GamePage />}>
+					<Route path=':level' element={<GamePage />} />
+				</Route>
+				<Route path='/creation/' element={<CreationPage />} />
+				<Route exact path='/' element={<HomePage />} />
+				<Route exact path='/collection/' element={<CollectionPage />} />
+			</Routes>
 		</GameContext.Provider>
 	)
 }
