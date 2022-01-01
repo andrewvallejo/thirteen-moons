@@ -1,13 +1,22 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { GameContext } from '../utility/GameContext'
 import { randomCover } from '../utility/util'
 
 export const MoonCard = () => {
-	const { state: { creationCard } } = useContext(GameContext)
+	const { state: { creationCard, gameStarted } } = useContext(GameContext)
 	const { code, talent, terms, count, intervals } = creationCard
+	const [ isFlipped, setIsFlipped ] = useState(false)
+
+	const handleClick = () => {
+		if (gameStarted && !isFlipped) {
+			setIsFlipped(true)
+		} else {
+			setIsFlipped(false)
+		}
+	}
 
 	return (
-		<article className='moon-card' key={code} id={code}>
+		<article className={`moon-card ${isFlipped && 'flipped'}`} key={code} id={code} onClick={handleClick}>
 			<img className='card-image' alt='card' src={randomCover} />
 			<div className='card-contents'>
 				<ul className='card-traits'>
