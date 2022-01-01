@@ -10,7 +10,7 @@ import { drawHand } from '../utility/util'
 
 export const GamePage = () => {
 	const { state, dispatch } = useContext(GameContext)
-	const { deck, hand, creationCard, gameStarted } = state
+	const { gameStarted } = state
 
 	useEffect(
 		() => {
