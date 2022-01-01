@@ -1,6 +1,5 @@
 import React from 'react'
 
-import divider from '../assets/lavender-divider.png'
 import { Moon } from './Moon'
 
 export const MoonLevels = () => {
