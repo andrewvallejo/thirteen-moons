@@ -6,7 +6,7 @@ const initialState = {
 	code: '',
 	talent: '',
 	terms: '',
-	count: 0,
+	count: '',
 	intervals: ''
 }
 
@@ -16,8 +16,7 @@ export const CreationForm = () => {
 	const handleChange = (event) => {
 		const { value, id } = event.target
 		initialState[id] = value
-
-		dispatch({ state, action: { type: 'CREATE_CARD', value: initialState } })
+		dispatch({ type: 'SET_CREATION_CARD', creationCard: initialState })
 	}
 
 	return (
