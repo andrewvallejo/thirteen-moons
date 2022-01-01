@@ -28,16 +28,18 @@ export const GamePage = () => {
 
 	const quote = 'Choose your destiny, child'
 
+	const cards = state.hand.map((card) => <MoonCard key={card.id} card={card} />)
+
 	return (
 		<main className='game-page'>
 			<header className='game-header'>
 				<MoonMsgBar quote={quote} />
 			</header>
-			<section className='spread'>
-				<MoonCard />
-				<img src={divider} alt='divider' />
+			<section className='spread'>{cards}</section>
+			<footer className='levels'>
+				<img src={divider} alt='divider' className='divider' />
 				<MoonLevels />
-			</section>
+			</footer>
 		</main>
 	)
 }
