@@ -1,4 +1,4 @@
-import { dialogData } from '../dialogData'
+import { dialogData } from '../assets/data/dialogData'
 import { covers } from './cardCovers'
 
 export const randomize = (items) => Math.floor(Math.random() * items.length)
