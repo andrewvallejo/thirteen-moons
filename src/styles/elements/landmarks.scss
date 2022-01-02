@@ -4,10 +4,10 @@
 body {
 	background: $color-iii $background-texture;
 	min-height: 100vh;
+	overflow: hidden;
 }
 
 main {
-	overflow: hidden;
 	height: 100%;
 }
 
