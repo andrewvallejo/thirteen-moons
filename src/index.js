@@ -12,15 +12,16 @@ import { GameContext } from './store/GameContext'
 import { reducer } from './store/reducer'
 
 const initialState = {
+	gameStarted: false,
+	creationCard: [],
 	deck: [],
 	hand: [],
-	creationCard: [],
-	gameStarted: false,
-	level: 1
+	quote: '',
+	level: 0
 }
 
 const App = () => {
-	const [ state, dispatch ] = useReducer(reducer, initialState)
+	const [state, dispatch] = useReducer(reducer, initialState)
 
 	return (
 		<Router>
