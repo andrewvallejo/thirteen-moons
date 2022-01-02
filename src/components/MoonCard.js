@@ -18,8 +18,8 @@ export const MoonCard = ({ card }) => {
 	}
 
 	return (
-		<article className='container' key={code} id={code} onClick={handleFlip}>
-			<div className={`card ${isFlipped && 'flipped'}`}>
+		<article className='card' key={code} id={code} onClick={handleFlip}>
+			<div className={`card-container ${isFlipped && 'flipped'}`}>
 				<div className='back'>
 					<ul className='card-contents'>
 						<li className='talent'>{talent}</li>
