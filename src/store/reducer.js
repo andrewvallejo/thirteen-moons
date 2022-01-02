@@ -6,7 +6,7 @@ export const reducer = (state, action) => {
 			return { ...state, hand: action.hand }
 		case 'SET_CREATION_CARD':
 			return { ...state, creationCard: action.creationCard }
-		case 'SET_GAME_STARTED':
+		case 'SET_GAME':
 			return { ...state, gameStarted: action.gameStarted }
 		case 'SET_LEVEL':
 			return { ...state, level: action.level }
