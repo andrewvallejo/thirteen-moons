@@ -6,7 +6,7 @@ import { MoonLevels } from '../components/MoonLevels'
 import { MoonMsgBar } from '../components/MoonMsgBar'
 import { fetchDeck } from '../api/api'
 import { GameContext } from '../store/GameContext'
-import { drawHand } from '../utility/util'
+import { drawHand, shuffleDeck } from '../utility/util'
 
 export const GamePage = () => {
 	const { state: { gameStarted, hand }, dispatch } = useContext(GameContext)
@@ -15,14 +15,14 @@ export const GamePage = () => {
 		() => {
 			if (!gameStarted) {
 				fetchDeck().then((deck) => {
-					dispatch({ type: 'SET_DECK', deck })
-					dispatch({ type: 'SET_HAND', hand: drawHand(deck) })
-					dispatch({ type: 'SET_CREATION_CARD', creationCard: deck[0] })
+					const shuffled = shuffleDeck(deck)
+					dispatch({ type: 'SET_DECK', deck: shuffled })
+					dispatch({ type: 'SET_HAND', hand: drawHand(shuffled) })
 					dispatch({ type: 'SET_GAME', gameStarted: true })
 				})
 			}
 		},
-		[ gameStarted, dispatch ]
+		[gameStarted, dispatch]
 	)
 
 	const quote = 'Choose your destiny, child'
