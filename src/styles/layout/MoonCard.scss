@@ -50,6 +50,16 @@
 			.mirrored {
 				transform: scaleY(-1) scaleX(-1);
 			}
+			.talent,
+			.mirrored,
+			.terms,
+			.count,
+			.intervals {
+				transition: 100ms ease-out 350ms;
+				&.flipped {
+					opacity: 0;
+				}
+			}
 		}
 	}
 	&.flipped {
