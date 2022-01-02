@@ -9,8 +9,7 @@ import { GameContext } from '../store/GameContext'
 import { drawHand } from '../utility/util'
 
 export const GamePage = () => {
-	const { state, dispatch } = useContext(GameContext)
-	const { gameStarted } = state
+	const { state: { gameStarted, hand }, dispatch } = useContext(GameContext)
 
 	useEffect(
 		() => {
@@ -19,7 +18,7 @@ export const GamePage = () => {
 					dispatch({ type: 'SET_DECK', deck })
 					dispatch({ type: 'SET_HAND', hand: drawHand(deck) })
 					dispatch({ type: 'SET_CREATION_CARD', creationCard: deck[0] })
-					dispatch({ type: 'SET_GAME_STARTED', gameStarted: true })
+					dispatch({ type: 'SET_GAME', gameStarted: true })
 				})
 			}
 		},
@@ -28,7 +27,7 @@ export const GamePage = () => {
 
 	const quote = 'Choose your destiny, child'
 
-	const cards = state.hand.map((card) => <MoonCard key={card.code} card={card} />)
+	const cards = hand.map((card) => <MoonCard key={card.code} card={card} />)
 
 	return (
 		<main className='game-page'>
