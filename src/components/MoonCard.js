@@ -17,16 +17,16 @@ export const MoonCard = () => {
 
 	return (
 		<article className={`moon-card ${isFlipped && 'flipped'}`} key={code} id={code} onClick={handleFlip}>
-			<img className='card-image' alt='card' src={randomCover} />
 			<div className='card-contents'>
-				<ul className='card-traits'>
-					<li className='talent'>{talent}</li>
-					<li className='terms'>{terms} </li>
-					<li className='count'>{count}</li>
-					<li className='intervals'>{intervals}</li>
-					<li className='talent mirrored'>{talent}</li>
+				<ul className={`card-traits ${isFlipped && 'flipped'}`}>
+					<li className={`talent ${isFlipped && 'flipped'}`}>{talent}</li>
+					<li className={`terms ${isFlipped && 'flipped'}`}>{terms} </li>
+					<li className={`count ${isFlipped && 'flipped'}`}>{count}</li>
+					<li className={`intervals ${isFlipped && 'flipped'}`}>{intervals}</li>
+					<li className={`talent mirrored ${isFlipped && 'flipped'}`}>{talent}</li>
 				</ul>
 			</div>
+			<img className='card-image' alt='card' src={randomCover} />
 		</article>
 	)
 }
