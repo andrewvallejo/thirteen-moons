@@ -5,9 +5,17 @@ export const randomize = (items) => Math.floor(Math.random() * items.length)
 
 export const randomCover = covers[randomize(covers)]
 
-export const shuffle = (deck) => deck.sort(() => Math.random() - 0.5)
+export const shuffleDeck = (deck) => {
+	const shuffledDeck = [...deck]
+	for (let i = shuffledDeck.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1))
+		const temp = shuffledDeck[i]
+		shuffledDeck[i] = shuffledDeck[j]
+		shuffledDeck[j] = temp
+	}
+	return shuffledDeck
+}
 
-export const drawFour = (deck) => deck.splice(-4).map((card) => card)
 
 export const discardFour = (deck, cards) => {
 	return deck.filter((card) => {
@@ -17,10 +25,14 @@ export const discardFour = (deck, cards) => {
 	})
 }
 
+
+
 export const drawHand = (deck) => {
-	const hand = drawFour(deck)
+	const handCount = 4
+	const hand = deck.slice(0, handCount)
 	return hand
 }
+
 
 export const swapCard = (uniqueCard) => {
 	return dialogData.map((card, index) => {
