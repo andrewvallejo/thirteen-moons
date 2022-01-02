@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { GameContext } from '../utility/GameContext'
+import { GameContext } from '../store/GameContext'
 import { randomCover } from '../utility/util'
 
 export const MoonCard = () => {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-import moon from '../assets/moon.png'
+import moon from '../assets/images/moon.png'
 import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
