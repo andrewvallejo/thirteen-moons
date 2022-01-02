@@ -1,68 +1,67 @@
-.moon-card {
+.container {
 	@include center;
-	filter: drop-shadow(15px 10px 40px $color-black);
+	position: relative;
 	border-radius: $b-radius;
 	max-width: 13rem;
-	position: relative;
 	min-width: 12rem;
-	transform-style: preserve-3d;
+	filter: drop-shadow(15px 10px 40px $color-black);
 	transition: transform 0.8s ease-in-out;
-	.card-image {
-		box-shadow: 0 10px 30px -20px $color-iv;
-		border-radius: $b-radius;
-		transition: 1s;
-		transition-delay: 200ms;
-		&:hover,
-		&:focus {
-			cursor: pointer;
-			box-shadow: 0 0 2.5rem $color-iv;
-		}
-	}
-	.card-contents {
-		position: absolute;
-		border-radius: $b-radius;
-		pointer-events: none;
+	.card {
+		width: 100%;
+		transform-style: preserve-3d;
+		height: 100%;
 		min-height: 100%;
+		position: absolute;
 		inset: 0;
-		margin-top: -1rem;
-		.card-traits {
+		transition: transform 0.8s ease-in-out;
+		border-radius: $b-radius;
+		backface-visibility: hidden;
+		cursor: pointer;
+
+		div,
+		ul {
 			@include flex (column, space-around);
-			position: relative;
-			border: 2.5px solid $color-ii;
-			@include opacity($color-i, -0.5);
-			height: 100%;
 			width: 100%;
-			box-shadow: inset 0 0 15px 20px $color-iii, 0 0 5px 4px $color-iv;
+			height: 100%;
+			backface-visibility: hidden;
+			position: absolute;
+		}
+
+		.card-image {
+			pointer-events: none;
+			box-shadow: 0 10px 30px -20px $color-iv;
 			border-radius: $b-radius;
-			.talent,
-			.mirrored {
-				@include cardFonts(talent);
-			}
-			.terms {
-				@include cardFonts(terms);
-			}
-			.count {
-				@include cardFonts(count);
-			}
-			.intervals {
-				@include cardFonts(terms);
-			}
-			.mirrored {
-				transform: scaleY(-1) scaleX(-1);
-			}
-			.talent,
-			.mirrored,
-			.terms,
-			.count,
-			.intervals {
-				transition: 100ms ease-out 350ms;
-				&.flipped {
-					opacity: 0;
-				}
+			transition: 1s;
+			transition-delay: 200ms;
+			z-index: -1;
+
+			&:hover,
+			&:focus {
+				box-shadow: 0 0 2.5rem $color-iv;
 			}
 		}
+
+		.talent,
+		.mirrored {
+			@include cardFonts(talent);
+		}
+		.terms {
+			@include cardFonts(terms);
+		}
+		.count {
+			@include cardFonts(count);
+		}
+		.intervals {
+			@include cardFonts(terms);
+		}
+		.mirrored {
+			transform: scaleY(-1) scaleX(-1);
+		}
 	}
-	&.flipped {
+	.back {
+		transform: rotateY(180deg);
+	}
+	.flipped {
 		transform: rotateY(180deg) scale(1.1);
 	}
 }
