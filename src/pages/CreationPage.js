@@ -10,7 +10,9 @@ export const CreationPage = () => {
 				<MoonMsgBar />
 			</header>
 			<section className='creation-section'>
-				<MoonCard />
+				<section className='card-section'>
+					<MoonCard />
+				</section>
 				<CreationForm />
 				<Rulebook />
 			</section>

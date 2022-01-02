@@ -1,11 +1,10 @@
-.container {
+.card {
 	@include center;
 	position: relative;
 	border-radius: $b-radius;
-	max-width: 13rem;
-	min-width: 12rem;
+	min-width: 15rem;
 	filter: drop-shadow(15px 10px 40px $color-black);
-	.card {
+	.card-container {
 		width: 100%;
 		transform-style: preserve-3d;
 		transition: transform 0.8s ease-in-out;
