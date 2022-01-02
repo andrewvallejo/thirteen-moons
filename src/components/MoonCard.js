@@ -4,10 +4,11 @@ import { randomCover } from '../utility/util'
 
 export const MoonCard = ({ card }) => {
 	const { state: { creationCard, gameStarted } } = useContext(GameContext)
-
-	const { code, talent, terms, count, intervals } = creationCard
-
 	const [ isFlipped, setIsFlipped ] = useState(false)
+
+	const mooncard = card || creationCard
+
+	const { code, talent, terms, count, intervals } = mooncard
 
 	const handleFlip = () => {
 		if (gameStarted && !isFlipped) {
