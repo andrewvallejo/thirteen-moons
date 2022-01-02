@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react'
 
-import divider from '../assets/lavender-divider.png'
+import divider from '../assets/images/lavender-divider.png'
 import { MoonCard } from '../components/MoonCard'
 import { MoonLevels } from '../components/MoonLevels'
 import { MoonMsgBar } from '../components/MoonMsgBar'
-import { fetchDeck } from '../utility/api'
-import { GameContext } from '../utility/GameContext'
+import { fetchDeck } from '../api/api'
+import { GameContext } from '../store/GameContext'
 import { drawHand } from '../utility/util'
 
 export const GamePage = () => {
@@ -28,7 +28,7 @@ export const GamePage = () => {
 
 	const quote = 'Choose your destiny, child'
 
-	const cards = state.hand.map((card) => <MoonCard key={card.id} card={card} />)
+	const cards = state.hand.map((card) => <MoonCard key={card.code} card={card} />)
 
 	return (
 		<main className='game-page'>

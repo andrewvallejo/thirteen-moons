@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import moonFace from '../assets/moon-face.png'
+import moonFace from '../assets/images/moon-face.png'
 
 export const MoonMsgBar = ({ quote }) => {
 	return (

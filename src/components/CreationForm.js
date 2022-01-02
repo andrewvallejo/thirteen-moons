@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { GameContext } from '../utility/GameContext'
+import { GameContext } from '../store/GameContext'
 
 const initialState = {
 	code: '',
