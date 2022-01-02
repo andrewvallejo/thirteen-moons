@@ -5,35 +5,27 @@
 	max-width: 13rem;
 	min-width: 12rem;
 	filter: drop-shadow(15px 10px 40px $color-black);
-	transition: transform 0.8s ease-in-out;
 	.card {
 		width: 100%;
 		transform-style: preserve-3d;
-		height: 100%;
-		min-height: 100%;
-		position: absolute;
-		inset: 0;
 		transition: transform 0.8s ease-in-out;
 		border-radius: $b-radius;
 		backface-visibility: hidden;
 		cursor: pointer;
-
 		div,
 		ul {
 			@include flex (column, space-around);
-			width: 100%;
-			height: 100%;
 			backface-visibility: hidden;
 			position: absolute;
 		}
 
 		.card-image {
-			pointer-events: none;
 			box-shadow: 0 10px 30px -20px $color-iv;
 			border-radius: $b-radius;
 			transition: 1s;
 			transition-delay: 200ms;
 			z-index: -1;
+			pointer-events: none;
 
 			&:hover,
 			&:focus {
