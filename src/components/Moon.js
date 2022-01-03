@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 export const Moon = ({ id }) => {
-	const [ isInactive, setInactive ] = useState(false)
+	const [isInactive, setInactive] = useState(false)
 	const location = useLocation().pathname.split('/')[2]
 
 	useEffect(
@@ -14,7 +14,7 @@ export const Moon = ({ id }) => {
 				setInactive(true)
 			}
 		},
-		[ id, isInactive, location ]
+		[id, isInactive, location]
 	)
 
 	return <img alt='moon' src={moon} key={'moon'} className={`moon ${isInactive && 'inactive'}`} />
