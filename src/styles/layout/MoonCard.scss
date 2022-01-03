@@ -3,14 +3,19 @@
 	position: relative;
 	border-radius: $b-radius;
 	min-width: 15rem;
-	filter: drop-shadow(15px 10px 40px $color-black);
+	filter: drop-shadow(0 0 20px $color-black);
+	transition: filter 300ms ease-in;
+	&:hover {
+		filter: drop-shadow(0 0 30px $color-iv);
+	}
 	.card-container {
 		width: 100%;
 		transform-style: preserve-3d;
-		transition: transform 0.8s ease-in-out;
+		transition: transform 1s cubic-bezier(0.175, 1.885, 0.32, 1.2752);
 		border-radius: $b-radius;
 		backface-visibility: hidden;
 		cursor: pointer;
+
 		div,
 		ul {
 			@include flex (column, space-around);
@@ -41,6 +46,16 @@
 		}
 		.count {
 			@include cardFonts(count);
+			&.hidden {
+				@include hidden(deep);
+			}
+		}
+		.next {
+			@include cardFonts(talent);
+			position: relative;
+			&.hidden {
+				@include hidden(deep);
+			}
 		}
 		.intervals {
 			@include cardFonts(terms);
