@@ -1,4 +1,4 @@
-import { dialogData } from '../assets/data/dialogData'
+import { cardData } from '../assets/data/cardData'
 import { covers } from './cardCovers'
 
 export const randomize = (items) => Math.floor(Math.random() * items.length)
@@ -35,26 +35,12 @@ export const drawHand = (deck) => {
 
 
 export const swapCard = (uniqueCard) => {
-	return dialogData.map((card, index) => {
+	return cardData.map((card, index) => {
 		if (card.code === uniqueCard.code) {
-			return dialogData.splice(index, 1, uniqueCard)
+			return cardData.splice(index, 1, uniqueCard)
 		} else {
 			return card
 		}
 	})
 }
 
-export const updateCardInfo = (cards) => {
-	const updatedCards = cards.map((card) => {
-		const { code, talent, terms, count, intervals } = card
-		const newCard = {
-			code: code,
-			talent: talent,
-			count: count,
-			terms: terms,
-			intervals: intervals
-		}
-		return newCard
-	})
-	return updatedCards
-}
