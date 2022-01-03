@@ -1,9 +1,13 @@
+import { cardData } from "../assets/data/cardData"
+
 export const deckUrl = 'https://deckofcardsapi.com/api/deck/new/'
 export const drawUrl = (id, remaining) => `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}`
 
 export const fetchDeck = async () => {
 	const { deck_id, remaining } = await fetchApi(deckUrl)
-	const cards = fetchApi(drawUrl(deck_id, remaining)).then((data) => cleanCards(data.cards))
+	const cards = fetchApi(drawUrl(deck_id, remaining)).then(({ cards }) => {
+		return cleanCards(cards)
+	})
 	return cards
 }
 
@@ -27,10 +31,22 @@ export const cleanCards = (cards) => {
 		if (suit === 'HEARTS') suit = 'mind'
 
 		const newCard = {
-			count: parseInt(value),
+			code: suit[0] + value,
 			talent: suit,
-			code: suit[0] + value
+			count: parseInt(value)
 		}
+
+		updateCardInfo(newCard)
 		return newCard
 	})
+}
+const updateCardInfo = (card) => {
+	return cardData.map((data) => {
+		if (data.code === card.code) {
+			card.terms = data.terms
+			card.intervals = data.intervals
+		}
+		return card
+	})
+
 }
