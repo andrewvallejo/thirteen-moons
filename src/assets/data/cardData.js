@@ -1,4 +1,4 @@
-export const dialogData = [
+export const cardData = [
   {
     code: 'w1',
     talent: 'wisdom',
@@ -30,7 +30,7 @@ export const dialogData = [
   {
     code: 'w5',
     talent: 'wisdom',
-    terms: 'Google', 
+    terms: 'Google',
     count: 5,
     intervals: 'interests'
   },
@@ -43,7 +43,7 @@ export const dialogData = [
   },
   {
     code: 'w7',
-talent: 'wisdom',
+    talent: 'wisdom',
     terms: 'Enjoy scenary, stare through the window for',
     count: 7,
     intervals: 'minutes'
@@ -271,7 +271,7 @@ talent: 'wisdom',
     terms: 'Do slow calf raises for',
     count: 13,
     intervals: 'Sets of 2'
-  },  {
+  }, {
     code: 'm1',
     talent: 'Mind',
     terms: 'Learn something new and read ',
@@ -362,6 +362,5 @@ talent: 'wisdom',
     count: 13,
     intervals: 'minutes'
   },
- ]
- 
- 
+]
+
