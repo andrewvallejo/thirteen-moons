@@ -1,7 +1,7 @@
 import { cardData } from "../assets/data/cardData"
 
-export const deckUrl = 'https://deckofcardsapi.com/api/deck/new/'
-export const drawUrl = (id, remaining) => `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}`
+const deckUrl = 'https://deckofcardsapi.com/api/deck/new/'
+const drawUrl = (id, remaining) => `https://deckofcardsapi.com/api/deck/${id}/draw/?count=${remaining}`
 
 export const fetchDeck = async () => {
 	const { deck_id, remaining } = await fetchApi(deckUrl)
@@ -11,11 +11,11 @@ export const fetchDeck = async () => {
 	return cards
 }
 
-export const fetchApi = async (url) => {
+const fetchApi = async (url) => {
 	return await fetch(url).then((response) => response.json()).catch((error) => console.error('Can not reach server.'))
 }
 
-export const cleanCards = (cards) => {
+const cleanCards = (cards) => {
 	return cards.map((card) => {
 		let { value, suit } = card
 

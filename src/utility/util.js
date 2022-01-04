@@ -1,7 +1,7 @@
 import { cardData } from '../assets/data/cardData'
 import { covers } from './cardCovers'
 
-export const randomize = (items) => Math.floor(Math.random() * items.length)
+const randomize = (items) => Math.floor(Math.random() * items.length)
 
 export const randomCover = covers[randomize(covers)]
 
