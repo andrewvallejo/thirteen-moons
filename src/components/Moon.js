@@ -1,21 +1,21 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import moon from '../assets/images/moon.png'
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { GameContext } from '../store/GameContext'
 
 export const Moon = ({ id }) => {
-	const [isInactive, setInactive] = useState(false)
-	const location = useLocation().pathname.split('/')[2]
+	const [isActive, setActive] = useState(false)
+	const { state } = useContext(GameContext)
 
 	useEffect(
 		() => {
-			if (location <= id && !isInactive) {
-				setInactive(true)
+			if (state.level === id + 1 && !isActive && state.level > 1) {
+				setActive(true)
 			}
 		},
-		[id, isInactive, location]
+		[id, isActive, state.level]
 	)
 
-	return <img alt='moon' src={moon} key={'moon'} className={`moon ${isInactive && 'inactive'}`} />
+	return <img alt='moon' src={moon} key={'moon'} className={`moon ${!isActive && 'disabled'}`} />
 }
