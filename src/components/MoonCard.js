@@ -5,7 +5,7 @@ import { GameContext } from '../store/GameContext'
 import { randomCover } from '../utility/util'
 
 export const MoonCard = ({ card }) => {
-	const { state: { creationCard, gameStarted } } = useContext(GameContext)
+	const { state: { creationCard, gameStarted }, dispatch } = useContext(GameContext)
 	const [isFlipped, setFlipped] = useState(false)
 	const [clicks, setClicks] = useState(0)
 
@@ -18,20 +18,18 @@ export const MoonCard = ({ card }) => {
 	const navigate = useNavigate()
 
 	const handleFlip = () => {
-		if (gameStarted && !isFlipped && clicks === 0) {
+		setClicks(clicks + 1)
+		if (gameStarted && !isFlipped && clicks === 1) {
 			setFlipped(true)
-			setClicks(clicks + 1)
-		}
-		if (clicks === 1) {
-			setClicks(clicks + 1)
 		}
 		if (clicks === 2) {
 			setNextClass('next')
 			setClicks(clicks + 1)
 		}
-		if (clicks >= 3) {
+		if (clicks === 3) {
 			setClicks(clicks + 1)
 			location++
+			dispatch({ type: 'SET_LEVEL', level: location })
 			navigate(`/lunares/${location}`)
 		}
 	}
