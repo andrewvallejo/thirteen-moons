@@ -1,7 +1,6 @@
-import { Rules } from "./Rules"
+import { Rules } from './Rules'
 
 export const Rulebook = () => {
-
 
   return (
     <article className="rulebook">
@@ -14,7 +13,3 @@ export const Rulebook = () => {
     </article>
   )
 }
-
-
-
-
