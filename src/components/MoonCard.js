@@ -8,7 +8,7 @@ import { randomCover } from '../utility/util'
 
 export const MoonCard = ({ card }) => {
 	const { state: { creationCard, gameStarted }, dispatch } = useContext(GameContext)
-	const [isFlipped, setFlipped] = useState(false)
+	const [isFlipped, setFlipped] = useState(true)
 	const [clicks, setClicks] = useState(0)
 
 	const [nextClass, setNextClass] = useState('next hidden')
@@ -21,8 +21,8 @@ export const MoonCard = ({ card }) => {
 
 	useEffect(
 		() => {
-			if (!gameStarted) {
-				setFlipped(true)
+			if (gameStarted) {
+				setFlipped(false)
 			}
 		},
 		[gameStarted]
