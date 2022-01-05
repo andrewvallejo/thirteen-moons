@@ -1,6 +1,8 @@
 import { useContext, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+
 import { GameContext } from '../store/GameContext'
 import { randomCover } from '../utility/util'
 
@@ -14,10 +16,20 @@ export const MoonCard = ({ card }) => {
 
 	const { code, talent, terms, count, intervals } = mooncard
 
-	let location = useLocation().pathname.split('/')[2]
+	let location = useLocation().pathname
 	const navigate = useNavigate()
 
+	useEffect(
+		() => {
+			if (!gameStarted) {
+				setFlipped(true)
+			}
+		},
+		[gameStarted]
+	)
+
 	const handleFlip = () => {
+		let level = location.split('/')[2]
 		setClicks(clicks + 1)
 		if (gameStarted && !isFlipped && clicks === 1) {
 			setFlipped(true)
@@ -28,9 +40,9 @@ export const MoonCard = ({ card }) => {
 		}
 		if (clicks === 3) {
 			setClicks(clicks + 1)
-			location++
-			dispatch({ type: 'SET_LEVEL', level: location })
-			navigate(`/lunares/${location}`)
+			level++
+			dispatch({ type: 'SET_LEVEL', level: level })
+			navigate(`/lunares/${level}`)
 		}
 	}
 
