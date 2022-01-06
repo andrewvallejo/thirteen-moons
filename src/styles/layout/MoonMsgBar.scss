@@ -1,0 +1,23 @@
+.message-bar {
+	position: relative;
+	border: 2px solid $color-iv;
+	border-radius: 100px;
+	min-height: 12.6rem;
+	width: 90%;
+	background: $color-i;
+	.moon {
+		position: absolute;
+		inset: 0;
+		border: 3px solid $color-black;
+		border-radius: 50%;
+	}
+	.dialog {
+		@include cardFonts(dialog);
+		@include center;
+		position: absolute;
+		inset: 0;
+		background: $color-i;
+		border-radius: 100px;
+		line-height: 1;
+	}
+}

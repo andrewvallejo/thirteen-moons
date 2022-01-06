@@ -1,59 +1,74 @@
-import React, { useState } from 'react'
-import { Link, useRouteMatch } from 'react-router-dom'
-import PropTypes from 'prop-types' 
-import { nanoid } from 'nanoid'
-import { createCover } from '../utility/util'
+import { useContext, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
 
+import { GameContext } from '../store/GameContext'
+import { randomCover } from '../utility/util'
 
-export const MoonCard = ({ cards, draw }) => {
-   const [level, setLevel] = useState(1)
-   const match = useRouteMatch().url;
-   return cards.map((card) => {
-      const id = nanoid(10)
-      const { code, talent, terms, count, intervals } = card
-      const endTurn = () => {
-         setLevel(level + 1) 
-         draw()
-      }
+export const MoonCard = ({ card }) => {
+	const { state: { creationCard, gameStarted }, dispatch } = useContext(GameContext)
+	const [isFlipped, setFlipped] = useState(true)
+	const [clicks, setClicks] = useState(0)
 
-      
+	const [nextClass, setNextClass] = useState('next hidden')
+	const mooncard = card || creationCard
 
-      return (
-         <article className='moon-card' key={id}>
-            <Link to={match.includes('lunares') ? `${match}/${level}` : match } onClick={()=> {
-              if(match.includes('lunares')) endTurn() 
-               } }>
-               <div className="inner-card">
-                  <div className="card-front"> 
-                     <aside className="card-content">
-                        <h2 className='talent'>{talent}</h2>
-                        <h3 className='terms'> {terms}</h3>
-                              <h3 className="count">{count}</h3>
-                           <h4 className="intervals">{intervals}</h4>
-                        <h3 className='talent mirrored'>{talent}</h3>
-                     </aside>
-                  </div>
-                     <img className="card-back"    
-                        id={code} 
-                        key={id}
-                        alt="card" 
-                        src={createCover()} />
-                     <aside className='darken'/> 
-                     <aside className='overlay'/>  
-               </div>
-               </Link>
-         </article>
-       )
-   })
+	const { code, talent, terms, count, intervals } = mooncard
+
+	let location = useLocation().pathname
+	const navigate = useNavigate()
+
+	useEffect(
+		() => {
+			if (gameStarted) {
+				setFlipped(false)
+			}
+		},
+		[gameStarted]
+	)
+
+	const handleFlip = () => {
+		let level = location.split('/')[2]
+		setClicks(clicks + 1)
+		if (gameStarted && !isFlipped && clicks === 1) {
+			setFlipped(true)
+		}
+		if (clicks === 2) {
+			setNextClass('next')
+			setClicks(clicks + 1)
+		}
+		if (clicks === 3) {
+			setClicks(clicks + 1)
+			level++
+			dispatch({ type: 'SET_LEVEL', level: level })
+			navigate(`/lunares/${level}`)
+		}
+	}
+
+	return (
+		<article className='card' key={code} id={code} onClick={handleFlip}>
+			<div className={`card-container ${isFlipped && 'flipped'}`}>
+				<div>
+					<ul className='card-contents'>
+						<li className='talent'>{talent}</li>
+						<li className='count'>{count}</li>
+						<li className='talent mirrored'>{talent}</li>
+					</ul>
+					<img className='card-image' alt='card' src={randomCover} />
+				</div>
+				<div className='back'>
+					<ul className='card-contents'>
+						<li className='talent'>{talent}</li>
+						<li className='terms'>{terms} </li>
+						<li className='count'>{count}</li>
+						<li className={nextClass}>Attempt?</li>
+						<li className='intervals'>{intervals}</li>
+						<li className={`talent mirrored ${isFlipped && 'flipped'}`}>{talent}</li>
+					</ul>
+					<img className='card-image' alt='card' src={randomCover} />
+				</div>
+			</div>
+		</article>
+	)
 }
-
-MoonCard.propTypes = {
-   card: PropTypes.shape({
-      code: PropTypes.string,
-      talent: PropTypes.string,
-      terms: PropTypes.string,
-      count: PropTypes.number,
-      intervals: PropTypes.string,
-   }),
-   draw: PropTypes.func
- }

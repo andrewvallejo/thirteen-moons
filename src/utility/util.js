@@ -1,53 +1,46 @@
-import { covers } from "./cardCovers";
-import { dialogData } from "../dialogData";
+import { cardData } from '../assets/data/cardData'
+import { covers } from './cardCovers'
 
-export const randomize = (items) => Math.floor(Math.random() * items.length);
+const randomize = (items) => Math.floor(Math.random() * items.length)
 
-export const createCover = () => covers[randomize(covers)];
+export const randomCover = covers[randomize(covers)]
 
-export const shuffle = (deck) => deck.sort(() => Math.random() - 0.5)
+export const shuffleDeck = (deck) => {
+	const shuffledDeck = [...deck]
+	for (let i = shuffledDeck.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1))
+		const temp = shuffledDeck[i]
+		shuffledDeck[i] = shuffledDeck[j]
+		shuffledDeck[j] = temp
+	}
+	return shuffledDeck
+}
 
-export const drawFour = (deck) => deck.splice(-4).map((card) => card)
 
 export const discardFour = (deck, cards) => {
-  return deck.filter((card) => {
-    const drawnCard = cards.map((card) => card)
-    const leftover = card !== drawnCard.code
-    return leftover
-  })
+	return deck.filter((card) => {
+		const drawnCard = cards.map((card) => card)
+		const leftover = card !== drawnCard.code
+		return leftover
+	})
 }
+
+
 
 export const drawHand = (deck) => {
-  const cards = drawFour(deck)
-  const currentDeck = discardFour(deck, cards)
-  const actions = {
-   currentDeck: {type: 'currentDeck', deck: currentDeck},
-   currentHand: {type: 'hand', deck: cards}
+	const handCount = 4
+	const hand = deck.slice(0, handCount)
+	return hand
 }
-  return actions
-}
+
 
 export const swapCard = (uniqueCard) => {
-  return dialogData.map((card, index) => {
-    if (card.code === uniqueCard.code) {
-      return dialogData.splice(index, 1, uniqueCard)
-    } else {
-      return card
-    }
-  })
+	return cardData.map((card, index) => {
+		if (card.code === uniqueCard.code) {
+			return cardData.splice(index, 1, uniqueCard)
+		} else {
+			return card
+		}
+	})
 }
 
-export const updateCardInfo = (cards) => {
-  const updatedCards = cards.map((card) => {
-   const {code, talent, terms, count, intervals} = card
-   const newCard = {
-      code: code,
-      talent: talent,
-      count: count,
-      terms: terms,
-      intervals: intervals
-   } 
-   return newCard
-  })
-  return updatedCards
-}

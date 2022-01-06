@@ -1,0 +1,16 @@
+/* ==========================================================================
+  Elements - Landmarks
+========================================================================== */
+body {
+	background: $color-iii $background-texture;
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+main {
+	height: 100%;
+}
+
+button {
+	@include flex(column, center);
+}

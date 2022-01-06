@@ -1,0 +1,55 @@
+/* ==========================================================================
+  Base -  Typography
+========================================================================== */
+
+@mixin fonts($font-size, $font-weight, $color, $text-shadow, $capitalize, $align: center) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+	text-shadow: $text-shadow;
+	text-transform: $capitalize;
+	text-align: $align;
+	font-family: $font;
+}
+
+@mixin cardFonts($content) {
+	@if $content == 'talent' {
+		@include fonts($fs-card-talent, $fw-demi-bold, $color-iv, '', uppercase);
+	}
+	@if $content == 'terms' {
+		@include fonts($fs-card-terms, $fw-demi-bold, $color-v, '', capitalize);
+	}
+	@if $content == 'count' {
+		@include fonts($fs-card-count, $fw-regular, $color-iv, $text-shadow-i, capitalize);
+	}
+	@if $content == 'dialog' {
+		@include fonts($fs-card-dialog, $fw-regular, $color-v, $text-shadow-i, capitalize);
+	}
+	@if $content == 'button' {
+		@include fonts($fs-form-button, $fw-regular, $color-iv, _, capitalize);
+		transition: color 0.3s;
+		&:hover {
+			@include fonts($fs-form-button, $fw-demi-bold, $color-v, _, capitalize);
+		}
+	}
+	@if $content == 'home-button' {
+		@include fonts($fs-home-button, $fw-regular, $color-v, _, uppercase);
+		transition: 0.8s color 0.5s;
+		&:hover {
+			@include fonts($fs-home-button, $fw-regular, $color-iv, _, uppercase);
+		}
+	}
+
+	@if $content == 'labels' {
+		@include fonts($fs-form-labels, $fw-regular, $color-v, $text-shadow-i , capitalize);
+	}
+	@if $content == 'select' {
+		@include fonts($fs-form-select, $fw-demi-bold, $color-v, _, uppercase);
+	}
+	@if $content == 'option' {
+		@include fonts($fs-form-labels, $fw-regular, $color-v, _, capitalize);
+	}
+	@if $content == 'input' {
+		@include fonts($fs-form-input, $fw-demi-bold, $color-v, _, capitalize);
+	}
+}

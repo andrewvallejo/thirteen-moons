@@ -1,0 +1,257 @@
+/* ==========================================================================
+  Base - Mixins
+========================================================================== */
+
+/* === Flexbox === */
+@mixin flex($direction, $alignment, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  @if $alignment == center {
+    align-items: center;
+    justify-content: center;
+  } @else if $alignment == evenly {
+    align-items: center;
+    justify-content: space-evenly;
+  } @else if $alignment == between {
+    align-items: center;
+    justify-content: space-between;
+  } @else if $alignment == around {
+    align-items: center;
+    justify-content: space-around;
+  } @else if $alignment == start {
+    align-items: center;
+    justify-content: flex-start;
+  } @else if $alignment == end {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* === Grid === */
+@mixin grid($viewport) {
+  display: grid;
+  justify-items: center;
+  @if $viewport==mobile {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0rem 0rem;
+  } @else if $viewport==small-window {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem 1rem;
+  } @else if $viewport==tablet {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 0rem;
+  } @else if $viewport==desktop {
+    grid-template-columns: repeat(52, 1fr);
+    gap: 1rem 1rem;
+  }
+}
+
+
+/* === Media Queries === */
+@mixin mobile($property) {
+  @media only screen and (min-width: 350px) {
+    @content;
+    transition: 100ms;
+    @if $property == moon-pos {
+      left: -9.5%;
+    }
+    @if $property == form-pos {
+      margin-top: 23.5rem;
+      top: 100%;
+      right: 20%;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      margin-top: 2rem;
+      left: 20%;
+    }
+    @if $property == dialog-size {
+      width: 11.5rem;
+      margin-right: 0.3rem;
+    }
+    @if $property == rules {
+      visibility: hidden;
+    }
+    @if $property == dummy-size {
+      width: clamp(12rem, 20vw, 20rem);
+    }
+    @if $property == spread-grid {
+      @include grid(mobile);
+      margin-top: 9rem;
+      margin-right: 3rem;
+      overflow: hidden;
+
+      > .moon-card {
+        margin: 0.5rem 0;
+      }
+    }
+    @if $property == levels-pos {
+      top: 18%;
+      right: 5%;
+      height: 80%;
+    }
+  }
+}
+
+@mixin small-window($property) {
+  @media only screen and (min-width: 500px) {
+    @content;
+    transition: 100ms;
+    @if $property == moon-pos {
+      left: -7.2%;
+    }
+    @if $property == form-pos {
+      margin-top: 23.5rem;
+      top: 100%;
+      right: 42%;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      margin-top: 2rem;
+      left: 12%;
+    }
+    @if $property == dialog-size {
+      width: clamp(9rem, 58vw, 35rem);
+    }
+    @if $property == rules {
+      visibility: unset;
+    }
+    @if $property == dummy-size {
+      width: clamp(12rem, 20vw, 20rem);
+    }
+    @if $property == spread-grid {
+      @include grid(small-window);
+      margin-top: 10rem;
+      margin-left: 0rem;
+      margin-right: 0rem;
+
+      .moon-card {
+        margin: 0;
+        .inner-card {
+          width: clamp(10rem, 50vw, 20rem);
+        }
+      }
+    }
+    @if $property == levels-pos {
+      right: 1%;
+      height: 83%;
+    }
+  }
+}
+
+@mixin tablet($property) {
+  @media only screen and (min-width: 750px) {
+    @content;
+    transition: 100ms;
+    @if $property == moon-pos {
+      left: -4.5%;
+    }
+    @if $property == form-pos {
+      margin-top: 24rem;
+      top: 100%;
+      right: 40%;
+      line-height: 1;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      left: 27%;
+      margin-top: 2rem;
+    }
+    @if $property == dialog-size {
+      width: clamp(7rem, 64vw, 60rem);
+    }
+    @if $property == rules {
+      visibility: unset;
+      line-height: 2;
+    }
+    @if $property == dummy-size {
+      width: clamp(12rem, 20vw, 20rem);
+    }
+    @if $property == spread-grid {
+      @include grid(tablet);
+      margin-top: 15rem;
+      margin-left: 0rem;
+      margin-right: 0rem;
+
+      padding: 1rem;
+      .moon-card {
+        margin: 0;
+        .inner-card {
+          width: clamp(13rem, 20vw, 15rem);
+        }
+      }
+    }
+    @if $property == levels-pos {
+      transform: rotate(90deg) scale(2);
+      top: 65%;
+      right: 48%;
+      height: 60%;
+    }
+  }
+}
+
+@mixin desktop($property) {
+  @media only screen and (min-width: 1200px) {
+    @content;
+    transition: 100ms;
+    @if $property == moon-pos {
+      left: -3.5%;
+    }
+    @if $property == form-pos {
+      margin-top: 8rem;
+      top: 100%;
+      right: 7%;
+      width: 20rem;
+      line-height: 1.5;
+      font-size: $font-size-subheading;
+    }
+    @if $property == dummy-pos {
+      top: 100%;
+      left: 38%;
+      margin-top: 5rem;
+    }
+    @if $property == dummy-size {
+      width: clamp(20rem, 20vw, 25rem);
+    }
+    @if $property == msgbar-size {
+      width: clamp(20rem, 95vw, 60rem);
+    }
+    @if $property == dialog-size {
+      width: 45.5rem;
+    }
+    @if $property == rules-pos {
+      margin-top: 6rem;
+      left: 2%;
+      line-height: 1.3;
+    }
+    @if $property == rules {
+      visibility: unset;
+      font-size: $font-size-paragraph;
+    }
+    @if $property == spread-grid {
+      @include grid(tablet);
+      margin-top: 13rem;
+      margin-right: 0rem;
+      margin-left: 1rem;
+    }
+    @if $property == levels-pos {
+      transform: rotate(90deg) scale(2);
+      top: 55%;
+      right: 48%;
+      height: 80%;
+    }
+  }
+}
+
+/* === Helpers === */
+@mixin mediaQueries($property) {
+  @include mobile($property);
+  @include small-window($property);
+  @include tablet($property);
+  @include desktop($property);
+}
+
+@mixin opacity($color, $value) {
+  background: adjust-color($color, $alpha: $value);
+}

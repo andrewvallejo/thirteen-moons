@@ -1,0 +1,30 @@
+/* ==========================================================================
+Abstracts - Typography
+========================================================================== */
+
+/* === Font Size === */
+
+$fs-card-small: 1rem;
+$fs-card-medium: 1.563rem;
+$fs-card-large: 5.5rem;
+$fs-card-extraLarge: 10rem;
+
+$fs-card-talent: clamp(1.563rem, 3vw, 4rem);
+$fs-card-terms: clamp(1.563rem, 2vw, 2rem);
+$fs-card-count: clamp(5rem, 3vw, 4rem);
+
+$fs-card-dialog: clamp(2rem, 4vw, 5rem);
+$fs-form-button: clamp(.5rem, 2vw, 3rem);
+$fs-form-labels: clamp(.5rem, 2vw, 2rem);
+$fs-form-select: clamp(.5rem, 2vw, 1.5rem);
+$fs-form-option: clamp(.5rem, 2vw, 2rem);
+$fs-form-input: clamp(.5rem, 2vw, 1rem);
+$fs-home-button: clamp(.5rem, 5vw, 6rem);
+
+/* === Font Weights === */
+$fw-regular: 400;
+$fw-demi-bold: 600;
+
+/* === Text Shadows === */
+$text-shadow-i: 0 0 4px $color-iv;
+$text-shadow-ii: 0 0 4px $color-v;

@@ -1,30 +1,51 @@
 /* ==========================================================================
-l - Tools & Settings - Global Variables & Mixins
+l - Abstracts | Global Variables 
 ========================================================================== */
-@import './l-tools-&-settings/settings-colors.scss';
-@import './l-tools-&-settings/settings-misc.scss';
-@import './l-tools-&-settings/settings-typography.scss';
-@import './l-tools-&-settings/tools-keyframes.scss';
-@import './l-tools-&-settings/tools-mixins.scss';
+@import './abstracts/colors';
+@import './abstracts/keyframes';
+@import './abstracts/misc';
+@import './abstracts/typography';
 
 /* ==========================================================================
-ll - Elements - Semantic Elements & Defaults
+ll - Base | Mixins 
 ========================================================================== */
-@import './ll-elements/defaults.scss';
-@import './ll-elements/elements.scss';
+@import './base/a11ylist';
+@import './base/flexbox';
+@import './base/grid';
+@import './base/hidden';
+@import './base/mediaqueries';
+@import './base/misc';
+@import './base/typography';
 
 /* ==========================================================================
-lll - Components 
+lll - Elements | Defaults & Semantic Elements 
 ========================================================================== */
-@import './lll-components/Creation.scss';
-@import './lll-components/Collection.scss';
-@import './lll-components/DummyCard.scss';
-@import './lll-components/LoadingCard.scss';
-@import './lll-components/Moon.scss';
-@import './lll-components/MoonCard.scss';
-@import './lll-components/MoonLevel.scss';
-@import './lll-components/MoonMsgBar.scss';
-@import './lll-components/Spread.scss';
-@import './lll-components/Talents.scss';
-@import './lll-components/WrongTurn.scss'
+@import './elements/defaults';
+@import './elements/landmarks';
+@import './elements/typography';
 
+/* ==========================================================================
+lV - Layout | Component specific
+========================================================================== */
+@import './layout/MoonCard.scss';
+
+@import './layout/MoonMsgBar.scss';
+@import './layout/Rulebook.scss';
+/* ==========================================================================
+V - Pages | Main stylesheets 
+========================================================================== */
+@import './pages/CreationPage.scss';
+@import './pages/HomePage.scss';
+@import './pages/GamePage.scss';
+
+// /* ==========================================================================
+// 0 - Components
+// ========================================================================== */
+
+// @import './layout/Collection.scss';
+// @import './layout/LoadingCard.scss';
+// @import './layout/Moon.scss';
+// @import './layout/MoonCard.scss';
+// @import './layout/MoonLevel.scss';
+// @import './layout/Spread.scss';
+// @import './layout/WrongTurn.scss';
