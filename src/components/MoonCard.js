@@ -31,6 +31,9 @@ export const MoonCard = ({ card }) => {
 	const handleFlip = () => {
 		let level = location.split('/')[2]
 		setClicks(clicks + 1)
+		if (!level) {
+			level = 1
+		}
 		if (gameStarted && !isFlipped && clicks === 1) {
 			setFlipped(true)
 		}

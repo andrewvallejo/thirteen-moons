@@ -29,7 +29,7 @@
 			height: 10vh;
 			.moon {
 				filter: grayscale(0);
-				&.inactive {
+				&.disabled {
 					filter: grayscale(0.8);
 				}
 			}
