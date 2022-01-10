@@ -1,5 +1,5 @@
 /* ==========================================================================
-l - Abstracts | Global Variables 
+l - Abstracts | Global Variables
 ========================================================================== */
 @import './abstracts/colors';
 @import './abstracts/keyframes';
@@ -7,7 +7,7 @@ l - Abstracts | Global Variables
 @import './abstracts/typography';
 
 /* ==========================================================================
-ll - Base | Mixins 
+ll - Base | Mixins
 ========================================================================== */
 @import './base/a11ylist';
 @import './base/flexbox';
@@ -18,7 +18,7 @@ ll - Base | Mixins
 @import './base/typography';
 
 /* ==========================================================================
-lll - Elements | Defaults & Semantic Elements 
+lll - Elements | Defaults & Semantic Elements
 ========================================================================== */
 @import './elements/defaults';
 @import './elements/landmarks';
@@ -28,24 +28,12 @@ lll - Elements | Defaults & Semantic Elements
 lV - Layout | Component specific
 ========================================================================== */
 @import './layout/MoonCard.scss';
-
 @import './layout/MoonMsgBar.scss';
 @import './layout/Rulebook.scss';
+
 /* ==========================================================================
-V - Pages | Main stylesheets 
+V - Pages | Main stylesheets
 ========================================================================== */
 @import './pages/CreationPage.scss';
 @import './pages/HomePage.scss';
 @import './pages/GamePage.scss';
-
-// /* ==========================================================================
-// 0 - Components
-// ========================================================================== */
-
-// @import './layout/Collection.scss';
-// @import './layout/LoadingCard.scss';
-// @import './layout/Moon.scss';
-// @import './layout/MoonCard.scss';
-// @import './layout/MoonLevel.scss';
-// @import './layout/Spread.scss';
-// @import './layout/WrongTurn.scss';
