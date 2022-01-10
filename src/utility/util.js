@@ -1,5 +1,4 @@
-import { cardData } from '../assets/data/cardData'
-import { covers } from './cardCovers'
+import {covers} from './cardCovers'
 
 const randomize = (items) => Math.floor(Math.random() * items.length)
 
@@ -16,7 +15,6 @@ export const shuffleDeck = (deck) => {
 	return shuffledDeck
 }
 
-
 export const discardFour = (deck, cards) => {
 	return deck.filter((card) => {
 		const drawnCard = cards.map((card) => card)
@@ -25,22 +23,8 @@ export const discardFour = (deck, cards) => {
 	})
 }
 
-
-
 export const drawHand = (deck) => {
 	const handCount = 4
 	const hand = deck.slice(0, handCount)
 	return hand
 }
-
-
-export const swapCard = (uniqueCard) => {
-	return cardData.map((card, index) => {
-		if (card.code === uniqueCard.code) {
-			return cardData.splice(index, 1, uniqueCard)
-		} else {
-			return card
-		}
-	})
-}
-
