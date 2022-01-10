@@ -1,25 +1,28 @@
-import { useContext, useEffect } from 'react'
+import {useContext, useEffect} from 'react'
 
 import divider from '../assets/images/lavender-divider.png'
-import { MoonCard } from '../components/MoonCard'
-import { MoonLevels } from '../components/MoonLevels'
-import { MoonMsgBar } from '../components/MoonMsgBar'
-import { fetchDeck } from '../api/api'
-import { GameContext } from '../store/GameContext'
-import { drawHand, shuffleDeck } from '../utility/util'
+import {MoonCard} from '../components/MoonCard'
+import {MoonLevels} from '../components/MoonLevels'
+import {MoonMsgBar} from '../components/MoonMsgBar'
+import {fetchDeck} from '../api/api'
+import {GameContext} from '../store/GameContext'
+import {drawHand, shuffleDeck} from '../utility/util'
 
 export const GamePage = () => {
-	const { state: { gameStarted, hand }, dispatch } = useContext(GameContext)
+	const {state: {gameStarted, hand}, dispatch} = useContext(GameContext)
 
 	useEffect(
 		() => {
 			if (!gameStarted) {
-				fetchDeck().then((deck) => {
-					const shuffled = shuffleDeck(deck)
-					dispatch({ type: 'SET_DECK', deck: shuffled })
-					dispatch({ type: 'SET_HAND', hand: drawHand(shuffled) })
-					dispatch({ type: 'SET_GAME', gameStarted: true })
-				})
+				fetchDeck()
+					.then((deck) => {
+						const shuffledDeck = shuffleDeck(deck)
+						const hand = drawHand(shuffledDeck)
+						dispatch({type: 'SET_HAND', hand})
+					})
+					.catch((error) => {
+						console.log(error)
+					})
 			}
 		},
 		[gameStarted, dispatch]
